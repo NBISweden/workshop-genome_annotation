@@ -9,4 +9,5 @@
 analysis space for each student. 
 * Has the course dinner been booked?
 * Run workflow to test tools and generate necessary working files.
+* Update the reservation number in the uppmax_login.md file.
 
