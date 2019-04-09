@@ -1,6 +1,8 @@
+<<<<<<< HEAD
 # Genome Annotation Workshop
 
 [<img align="center" src="NBIS.png" width="200" height="100" />](https://nbis.se)   
+
 This is the NBIS repository for the Genome Assembly Workshop.
 
 ## Setting up course.
