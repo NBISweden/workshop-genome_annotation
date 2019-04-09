@@ -16,7 +16,7 @@ defaults:
 
 menu:
   - title: Overview
-    url:index
+    url: index
   - title: Uppmax Login
     url: uppmax_login
   - title: Schedule
