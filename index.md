@@ -27,4 +27,4 @@ Test your Unix comfort with these exercises: [NGS Introduction - Introduction to
 
 ## Where to apply:
 
-Please follow the link here: [SciLifeLab Events Page - De Novo Genome Assembly](https://www.scilifelab.se/events/introduction-to-genome-annotation/)
+Please follow the link here: [SciLifeLab Events Page - De Novo Genome Annotation](https://www.scilifelab.se/events/introduction-to-genome-annotation/)
