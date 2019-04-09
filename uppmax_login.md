@@ -43,14 +43,14 @@ To get this reservation you need to use the salloc command like this:
 $ salloc -A <reservation> -t 08:00:00 -p core -n 10 --no-shell --reservation=<reservation_id> &
 ```
 
-where you should substitute `<reservation>` with `g2018019` and `<reservation_id>` with one of these 
+where you should substitute `<reservation>` with `XXX` and `<reservation_id>` with one of these 
 alternatives depending on the day.
 
-Day 1: `gXXX`
+Day 1: `gXXX_15`
 
-Day 2: `gXXX`
+Day 2: `gXXX_16`
 
-Day 3: `gXXX`
+Day 3: `gXXX_17`
 
 Now check which node you got (replace *username* with your uppmax user name) like this:
 
