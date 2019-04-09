@@ -2,11 +2,10 @@
 layout: default
 title:  'Introduction to Genome Annotation - May 2019'
 ---
- 
-
-# Genome Annotation Workshop
 
 [<img align="center" src="NBIS.png" width="200" height="100" />](https://nbis.se) 
+
+# Genome Annotation Workshop
 
 **Date and Location:**
 
