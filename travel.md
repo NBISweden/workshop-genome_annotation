@@ -10,7 +10,7 @@ one of the inner courtyards of BMC. If you do not have an access card you will n
 you in through to the door to the Hub. The room for the course, E10:1307, is on the ground floor of 
 the new building.
 
-![Map of LifeLifeLab at Uppsala BMC](files/MapBMCScilife.png)
+![Map of LifeLifeLab at Uppsala BMC](files/mapBMCScilife.png)
 
 ## Travel Information
 
