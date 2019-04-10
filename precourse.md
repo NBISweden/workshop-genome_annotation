@@ -28,6 +28,7 @@ SeqAnswers: [http://seqanswers.com/](http://seqanswers.com/)
 
 Trinity: [http://trinityrnaseq.sourceforge.net/](https://github.com/trinityrnaseq/trinityrnaseq/wiki)  
 Cufflinks: [http://cufflinks.cbcb.umd.edu/](http://cufflinks.cbcb.umd.edu/)  
+Stringtie :
 Satuma/Spines: [http://www.broadinstitute.org/science/programs/genome-biology/spines](http://www.broadinstitute.org/science/programs/genome-biology/spines)  
 Allpaths-lg: [http://www.broadinstitute.org/software/allpaths-lg/blog/?page_id=12](http://www.broadinstitute.org/software/allpaths-lg/blog/?page_id=12)  
 blat: [http://genome.ucsc.edu/goldenPath/help/blatSpec.html](http://genome.ucsc.edu/goldenPath/help/blatSpec.html)  
