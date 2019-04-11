@@ -10,15 +10,10 @@ title:  'Prokka exercise'
 
 Before going into the exercises below, you should create in your home folder a specific folder for this practical session and copy a folder with the course data using:  
 
-*mkdir annotation course*
-
-*cd annotation_course*
-
-*ln -s /sw/courses/annotation/2016/course_material/*
-
-*mkdir practical1*
-
-*cd practical1*
+```
+mkdir -p ~/annotation_course/practical4
+cd ~/annotation_course
+```
 
 
 The data we are providing for the course is organized in the following way in the folder annotation\_course:
@@ -76,17 +71,18 @@ You will run BUSCO on 3 bacterial assemblies provided (one E coli, one chlamydia
 
 BUSCO2 is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up the environment.
 
-*cp -r ~/annotation_course/course_material/augustus_path .*
+```
+cp -r ~/annotation_course/course_material/augustus_path .*
 
-*chmod ug+w -R augustus_path*
+chmod ug+w -R augustus_path
 
-_module load bioinfo-tools_  
-_module load BUSCO_  
+module load bioinfo-tools 
+module load BUSCO 
 
-*AUGUSTUS_CONFIG_PATH=augustus_path*
+AUGUSTUS_CONFIG_PATH=augustus_path*
 
-*BUSCO -i /home/__login__/annotation\_course/course\_material/data/prokka/Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9*
-
+BUSCO -i /home/__login__/annotation\_course/course\_material/data/prokka/Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
+```
 look at the results of busco in short_summary_chlamydia_busco.txt
 
 - what do you see? 
@@ -101,13 +97,14 @@ Prokka is a really easy tool to use for bacterial annotation.
 
 You are going to use the same assemblies you used previously for Busco
 
-_module load bioinfo-tools_  
-*module unload BUSCO*
+```
+module load bioinfo-tools  
+module unload BUSCO
 
-*module load prokka*
+module load prokka
 
-*prokka --help*
-
+prokka --help
+```
 The goal of the exercise is for you to learn how to use prokka and to annotate the 3 assemblies and then visualize them in IGV.
 
 run prokka without any options and then with options of your choices (we encourage you to try at least the options --proteins and --rfam )
@@ -121,7 +118,9 @@ You could now also visualise all this information using a genome browser, such a
 IGV requires a genome fasta file and any number of annotation files in GTF or GFF3 format (note that GFF3 formatted file tend to look a bit weird in IGV sometimes).
 
 Transfer the gff3 files to your computer using scp:    
-*scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical1/prokka/YOURFILE .*  
+```
+scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical1/prokka/YOURFILE .
+
 
 
 - Do you see any differences with the different options and no option you used?
