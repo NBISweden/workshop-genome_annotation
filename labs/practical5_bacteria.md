@@ -3,7 +3,7 @@ layout: default
 title:  'Prokka exercise'
 ---
 
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](files/LoginInstructions).
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
 
 
 # Organizing data
