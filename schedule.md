@@ -55,7 +55,7 @@ Room: E10:1309
 **12.00-13.00** Lunch  
 **13.00-13.30** Submission DB  
 **13.30-14.00** [Lecture: Prokaryote annotation](slides/prokkaLS_08_05_2017_v2.pdf) (Lucile Soler)  
-**14.00-15.45** [Practical 1: Prokaryote annotation and visualization](labs/prokka) (incl. coffee break) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**14.00-15.45** [Practical 1: Prokaryote annotation and visualization](labs/practical5_bacteria) (incl. coffee break) (Lucile Soler, Jacques Dainat, Nima Rafati)  
 **15.45-16.00**	Summary of prokaryote annotation exercise (Lucile Soler)  
 **16.00-17.00** Wrap-up  
 
