@@ -65,4 +65,4 @@ Room: E10:1309
 <br/>
 
 ***Note:***
-The practical exercise sessions will be made on the UPPMAX cluster. **>>[UPPMAX login instructions](labs/LoginInstructions)<<**
+The practical exercise sessions will be made on the UPPMAX cluster. **>>[UPPMAX login instructions](files/LoginInstructions)<<**
