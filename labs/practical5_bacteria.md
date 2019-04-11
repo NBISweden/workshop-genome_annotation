@@ -15,50 +15,6 @@ mkdir -p ~/annotation_course/practical4
 cd ~/annotation_course
 ```
 
-
-The data we are providing for the course is organized in the following way in the folder annotation\_course:
-
-course\_material/data/prokka
-
-course\_material/data/human
-
-course\_material/data/dmel
-
-- chromosome_4/
-
-  - bam/
-
-  - chromosome/
-
-  - evidence/
-
-  - raw_computes/
-  
-  - annotation/
-  
-  - cegma/
-  
-  - RNAseq/
-
-- full_genome/
-
-
-course\_material/data/blastdb/
-
-course\_material/git/
-
-course\_material/lib/  
-
-course\_material/script
-
-course\_material/augustus_path/
-
-The folder git contains scripts that we will use to analyse or format data. 
-the folder lib contains perl library required by perl script.
-The Blastdb folder will be used for the functional annotation exercise tomorrow.
-
-All the files needed for this practical will be in course_material/data/prokka and course_material/augustus_path
-
 # Bacterial annotation using Prokka
 
 Before running Prokka on genomes assemblies, it is a good step to start with checking the gene content of the assembly
@@ -120,8 +76,6 @@ IGV requires a genome fasta file and any number of annotation files in GTF or GF
 Transfer the gff3 files to your computer using scp:    
 ```
 scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical1/prokka/YOURFILE .
-
-
-
+```
 - Do you see any differences with the different options and no option you used?
 
