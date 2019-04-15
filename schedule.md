@@ -1,10 +1,10 @@
 # Introduction to genome annotation
 
-**Teachers:**
+**Teachers:**  
 [Henrik Lantz, Ph.D.](https://nbis.se/about/staff/henrik-lantz/)  
-[Jacques Dainat, Ph.D.](http://nbis.se/about/staff/jacques-dainat/)
-[Lucile Soler, Ph. D.](http://nbis.se/about/staff/lucile-soler/)
-[N]ima Rafati, Ph. D.]()
+[Jacques Dainat, Ph.D.](http://nbis.se/about/staff/jacques-dainat/)  
+[Lucile Soler, Ph. D.](http://nbis.se/about/staff/lucile-soler/)  
+[Nima Rafati, Ph. D.]()  
 
 [NBIS (National Bioinformatics Infrastructure Sweden)](https://nbis.se)
 Genome Annotation Service   
@@ -18,20 +18,27 @@ Genome Annotation Service
 
 #### This course is given at Navet (E10) at BMC. Click the heading of a topic to see the lecture slides or lab instructions.
 
-**Tuesday 15th** 
+**Wednesday 15th** 
 
 Room: E10:1309  
-**09.00-9.15** Introduction (Elina Staaf, Henrik Lantz)  
-**09.15-10.00** [Lecture: Understanding Annotation](slides/Annotation_course_may2017.ppt) (Henrik Lantz)  
+**09.00-10.00**  [Lecture: Understanding Annotation](lectures/) (Henrik Lantz)  
+**10.00-10.15** [Practical: Get started](labs/get_started) (Lucile Soler, Jacques Dainat, Nima Rafati)
 **10.00-10.15** Coffee break  
-**10.15-12.00** [Practical 1: Gathering and preparation of data](labs/practical1) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**10.45-12.00** [Practical: assembly check](labs/assembly_check) (Lucile Soler, Jacques Dainat, Nima Rafati)
+**10.15-10.45** [Practical: find_evidence](labs/find_all_evidence) (Lucile Soler, Jacques Dainat, Nima Rafati)
+Rafati)  
 **12.00-13.00** Lunch  
-**13.00-14.30** Lecture : Structural annotation part 1  (Jacques Dainat)  
-**14.30-17.00** [Practical 1: Gathering and preparation of data](labs/practical1) (incl. coffee break) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-
+**13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/)  (Jacques Dainat)  
+**14.00-15.00** [Practical: Abinitio with augustus](labs/augustus) (Lucile Soler, Jacques Dainat, Nima Rafati)
+**15.00-15.15** Coffee break  
+**14.00-17.00** [Practical: Evidence base annotation - How to use RNAseq (short reads)]
+**14.00-17.00**             - [fetch](labs/rnaseq_fetch) (Lucile Soler, Jacques Dainat, Nima Rafati) 
+**14.00-15.00**             - [guided assembly](labs/rnaseq_guided_assembly) (Lucile Soler, Jacques Dainat, Nima Rafati) 
+**14.00-15.00**             - [denovo assebmlby](labs/rnaseq_denovo_assembly) (Lucile Soler, Jacques Dainat, Nima Rafati) 
+**14.00-15.00**             - [quality assessment ](labs/rnaseq_assembly_assessment) (Lucile Soler, Jacques Dainat, Nima Rafati) 
 <hr>
 
-**Wednesday 16th**
+**Thursday 16th**
 
 Room: E10:1309  
 **09.00-9.15** Summary of yesterday’s exercise (Lucile Soler, Jacques Dainat)  
@@ -45,7 +52,7 @@ Room: E10:1309
 
 <hr>
 
-**Thursday 17th** 
+**Friday 17th** 
 
 Room: E10:1309  
 **09.00-9.15** Summary of yesterday’s exercise (Lucile Soler, Jacques Dainat)  
