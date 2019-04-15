@@ -32,3 +32,16 @@ Go to the NCBI website and find how many ESTs are available for the drosophila m
 # Obtaining RNA-seq
 
 Commonly, such data are produced within the project you are working on. Otherwise the most appropriate data could be retrieved on the Sequence Read Archive (SRA) website from the NCBI or the European Nucleotide Archive (ENA) from the EBI.
+
+**_Exercise 5_ - EBI:**
+Go to [ENA website](https://www.ebi.ac.uk/ena) and find how many paired illumina HiSeq 4000 runs are available.
+<details>
+<summary>:key: Click to see how to get the answer.</summary>
+{% highlight bash %}
+click on the <search and browse> tab, then under the <Free text search> paragraph click on the <ENA Advanced Search> link. You should end up on this page: https://www.ebi.ac.uk/ena/data/warehouse/search .  
+From here two solution:  
+1 - Select **Read** from the <select domain> list; Type **Drosophila melanogaster** into the <Drosophila melanogaster> field;  Select **Paired** from the <Librairy layout> field; select **Illumina HiSeq 4000** from the <Instrument model> field; and click on search. 
+2 - Write directly into the <Search query> box the following comand: library_layout="PAIRED" AND tax_eq(7227) AND instrument_model="Illumina HiSeq 4000"
+
+{% endhighlight %} 
+</details>  

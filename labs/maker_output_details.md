@@ -1,6 +1,6 @@
-## Inspect the output
+# The MAKER output in details
 
-### Finding your way around
+## Finding your way around
 
 By default, Maker will write the output of its different analyses into a folder named:
 
