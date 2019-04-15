@@ -30,7 +30,7 @@ Room: E10:1309
 **13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/)  (Jacques Dainat)  
 **14.00-15.00** [Practical: Abinitio with augustus](labs/augustus) (Lucile Soler, Jacques Dainat, Nima Rafati)  
 **15.00-15.15** Coffee break  
-**14.00-17.00** [Practical: Evidence based annotation - How to prepare RNAseq](short reads)  
+**14.00-17.00** Practical: Evidence based annotation - How to prepare RNAseq (short reads)  
    *   **14.00-17.00** [fetch](labs/rnaseq_fetch) (Lucile Soler, Jacques Dainat, Nima Rafati)  
    *   **14.00-15.00** [guided assembly](labs/rnaseq_guided_assembly) (Lucile Soler, Jacques Dainat, Nima Rafati)  
    *   **14.00-15.00** [denovo assebmlby](labs/rnaseq_denovo_assembly) (Lucile Soler, Jacques Dainat, Nima Rafati)  
