@@ -1,4 +1,6 @@
-# Obtaining Protein
+# Find evidence
+
+## 1 Obtaining Protein
 
 <u>**Swissprot:**</u> Uniprot is an excellent source for high quality protein sequences. The main site can be found at [http://www.uniprot.org](http://www.uniprot.org). This is also the place to find Swissprot, a collection of manually curated non-redundant proteins that cover a wide range of organisms while still being manageable in size.
 
@@ -17,10 +19,10 @@ Navigate the Refseq ftp site to find the invertebrate collection of protein sequ
 
 <u>**Ensembl:**</u> The European Ensembl project makes data available for a number of genome projects, in particular vertebrate animals, through their excellent webinterface. This is a good place to find annotations for model organisms as well as download protein sequences and other types of data. They also supply the Biomart interface, which is excellent if you want to download data for a specific region, a specific gene, or create easily parsable file with gene names etc.
 
-**_Exercise 4_ - Ensembl Biomart:**  
+**_Exercise 4_ - Ensembl Biomart:**  SHOULD WE KEEP IT???
 Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.org/biomart/martview) and use it to download all protein sequences for chromosome 4 in Drosophila melanogaster. Once you have downloaded the file, use some command line magic to figure out how many sequences are included in the file. Please ask the teachers if you are having problems here.
 
-# Obtaining EST
+## 2 Obtaining EST
 
 EST data is not commonly generated anymore, but may become useful for some projects where such data is still available. Examples may include older genomes targeted for re-annotation or genomes with available EST data for closely related species.
 
@@ -29,19 +31,19 @@ The NCBI or EBI websites are the most appropriate places to retrieve such kind o
 **_Exercise 5_ - NCBI:**  
 Go to the NCBI website and find how many ESTs are available for the drosophila melanogaster species.
 
-# Obtaining RNA-seq
+## 3 Obtaining RNA-seq
 
 Commonly, such data are produced within the project you are working on. Otherwise the most appropriate data could be retrieved on the Sequence Read Archive (SRA) website from the NCBI or the European Nucleotide Archive (ENA) from the EBI.
 
-**_Exercise 5_ - EBI:**
+**_Exercise 6_ - EBI:**
 Go to [ENA website](https://www.ebi.ac.uk/ena) and find how many paired illumina HiSeq 4000 runs are available.
 <details>
 <summary>:key: Click to see how to get the answer.</summary>
 {% highlight bash %}
 click on the <search and browse> tab, then under the <Free text search> paragraph click on the <ENA Advanced Search> link. You should end up on this page: https://www.ebi.ac.uk/ena/data/warehouse/search .  
 From here two solution:  
-1 - Select **Read** from the <select domain> list; Type **Drosophila melanogaster** into the <Drosophila melanogaster> field;  Select **Paired** from the <Librairy layout> field; select **Illumina HiSeq 4000** from the <Instrument model> field; and click on search. 
+1 - Select **Read** from the <select domain> list; Type **Drosophila melanogaster** into the <Drosophila melanogaster> field;  Select **Paired** from the <Librairy layout> field; select **Illumina HiSeq 4000** from the <Instrument model> field; and click on search.
 2 - Write directly into the <Search query> box the following comand: library_layout="PAIRED" AND tax_eq(7227) AND instrument_model="Illumina HiSeq 4000"
 
-{% endhighlight %} 
+{% endhighlight %}
 </details>  
