@@ -23,6 +23,7 @@ First you need to be sure that you have access to the libraries required to run 
 export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
 ```
 
+
 Second load the needed modules using:  
 ```
 module load bioinfo-tools  
@@ -48,9 +49,9 @@ module load BioPerl/1.6.924_Perl5.18.4
 ```
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
 ```
-scp __login__@milou.uppmax.uu.se:~/annotation_course/practical2/augustus_drosophila.gff3 .  
+scp __login__@rackham.uppmax.uu.se:~/annotation_course/practical2/augustus_drosophila.gff3 .  
 ```
-Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). [Here find the WebApollo instruction](UsingWebapollo)
+Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). [Here find the WebApollo instruction](webapollo_usage)
 <br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/data/dmel/chromosome\_4/annotation
 How does the Augustus annotation compare with the Ensembl annotation? Are they identical?
 
