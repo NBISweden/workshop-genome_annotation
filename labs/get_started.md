@@ -5,37 +5,36 @@ We will for all exercises use data for the fruit fly, Drosophila melanogaster, a
 
 # Prerequisites
 
-FOLLOWING SHOULD BE CHANGED with connection to uppmax, cp data, get GAAS? add to PATH? module load busco and augustus, what about swissprot/ uniprot? other
 
-
-  * **Connection to your virtual machine**  
-Before going into the exercises below you need to connect to your virtual machine Ubuntu 16.04 following the instruction we will provide you.
+  * **Connection to Uppmax**  
+Please connect yourself to Uppmax following those instruction[UPPMAX login instructions](uppmax_login).
 
   * **Create the folder structure**  
 Once connected you will create and move into the **annotation\_course** folder, where all the magic will happen.
 ```
-mkdir -p ~/annotation_course/practical1
+mkdir -p ~/annotation_course/check_assembly
 cd ~/annotation_course
 ```
 
-  * **List of tools needed. For your convenience they all have been pre-installed.**  
-
-    * BUSCO
-    * augustsus
-    * GAAS repository
-
   * **Download the data**  
-You must download the archive of the data and uncompress it (it could take few minutes).
+Data that will be needed for the annotation course can be found THERE
+
 ```
-wget https://u-ip-81-109.hpc2n.umu.se/tickets/7mIStX-Y-zjj_XPzI-iYQni2_0LVBSdBtHf_vhiA_Zk/data.tar.gz/download
-tar xzvf download
-rm download
+ln -s /PATH/ . or copy?
 ```
+
+  * **install the GAAS repository**  
+
+  Here I will need you to clone our github indeed this github contain NBIS annotation team scripts and will be used during this pratical.
+
+  ```
+  git clone https://github.com/NBISweden/GAAS.git
+  ```
+
+
 
   * **Move into the proper folder to start the excercice**  
-Now move into the **practical1** folder and you are ready to start for this morning !
+Now move into the **check_assembly** folder and you are ready to start for this morning !
 ```
-cd ~/annotation_course/practical1
+cd ~/annotation_course/check_assembly
 ```
-
-## Install GAAS
