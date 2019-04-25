@@ -1,51 +1,60 @@
-# 1. Assembly Check
+# Running an ab initio gene finder
 
-Before starting an annotation project, we need to carefully inspect the assembly to identify potential problems before running expensive computes.
-You can look at i) the Fragmentation (N50, N90, how many short contigs); ii) the Sanity of the fasta file (Presence of Ns, presence of ambiguous nucleotides, presence of lowercase nucleotides, single line sequences vs multiline sequences); iii) completeness using BUSCO; iv) presence of organelles; v) Others (GC content, How distant the investigated species is from the others annotated species available).
-The two next exercices will perform some of these checks.
-
-## 1.1 Checking the gene space of your assembly
-
-BUSCO provides measures for quantitative assessment of genome assembly, gene set, and transcriptome completeness. Genes that make up the BUSCO sets for each major lineage are selected from orthologous groups with genes present as single-copy orthologs in at least 90% of the species.
-
-***Note:*** In a real-world scenario, this step should come first and foremost. Indeed, if the result is under your expectation you might be required to enhance your assembly before to go further.
-
-**_Exercise 1_ - BUSCO -:**
-
-You will run BUSCO on the genome assembly.
-
-First create a busco folder where you work:
-```
-mkdir busco
-cd busco
-```
-
-The [BUSCO website](http://busco.ezlab.org) provides a list of datasets containing the cores genes expected in the different branches of the tree of life. To know in which part/branch of the tree of life is originated your species you can have a look at the [NCBI taxonomy website](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=7227) (Lineage line).
-Then select the proper BUSCO Dataset on the [busco website](http://busco.ezlab.org) to check the completness of your assembly. To download the dataset to the cluster, you need the URL (right click on it, Copy Link). Then download the dataset.
-/!\ In the example below the link copied is **http://busco.ezlab.org/datasets/metazoa_odb9.tar.gz**, so replace it by something else if you decided to take another dataset.
-```
-wget http://busco.ezlab.org/datasets/metazoa_odb9.tar.gz
-tar xzvf metazoa_odb9.tar.gz
-```
-
-Now you are ready to launch BUSCO on our genome (genome.fa).
-```
-BUSCO.py -i ~/annotation_course/data/genome/genome.fa -o genome_dmel_busco -m geno -c 8 -l metazoa_odb9
-```
-
-While BUSCO is running, start the exercise 2.
-When done, check the short\_summary\_genome\_dmel\_busco file in the output folder. How many core genes have been searched in you assembly ? How many are reported as complete? Does this sound reasonable?
-**Tips**: the "genome" is here in fact only the chromosome 4 that corresponds to less than 1% of the real size of the genome.
-
-## 1.2 Various Check of your Assembly
-
-**_Exercise 2_ :**
-Launching the following script will provide you some useful information.
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](LoginInstructions).
 
 ```
-cd ~/annotation_course/practical1
-fasta_statisticsAndPlot.pl -f ~/annotation_course/data/genome/genome.fa -o fasta_check
+cd ~/annotation_course/
+
+mkdir abinitio_augustus
+
+cd abinitio_augustus
 ```
 
-Is your genome very fragmented (number of sequences)? Do you have high GC content ? Do you have lowercase nucleotides ? Do you have N at sequence extremities? 
-If you don't see any peculiarities, you can then decide to go forward and start to perform your first wonderful annotation.
+We have made a genome browser called Webapollo available for you on the address [http://annotation-prod.scilifelab.se:8080/NBIS_gp1/](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/)  called drosophila\_melanogaster\_course.
+This browser can already has a number of tracks preloaded for you, but you can also load data you have generated yourself using the ‘file” menu and then ‘open’ and ‘local files’. First time you go there you need to log in using the email adress provided to register the course and your last name as password (lower case and if more than one last name separated by _ eg: lastname1_lastname2)(if you already have access to our webapollo please use the password that have been previously provided to you).
+
+<u>**Ab initio gene finders:**</u> These methods have been around for a very long time, and there are many different programs to try. We will in this exercise focus on the gene finder Augustus. These gene finders use likelihoods to find the most likely genes in the genome. They are aware of start and stop codons and splice sites, and will only try to predict genes that follow these rules. The most important factor here is that the gene finder needs to be trained on the organism you are running the program on, otherwise the probabilities for introns, exons, etc. will not be correct. Luckily, these training files are available for Drosophila.
+
+**_Exercise 1_ - Augustus:**
+
+First you need to be sure that you have access to the libraries required to run tools (you need to redo this if you have been logged off).
+
+```
+export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
+```
+
+Second load the needed modules using:  
+```
+module load bioinfo-tools  
+module load augustus
+```
+Run Augustus on your genome file using:  
+```
+augustus --species=fly ~/annotation_course/data/genome.fa > augustus_drosophila.gtf
+```
+
+Take a look at the result file using ‘less augustus\_drosophila.gtf’. What kinds of features have been annotated? Does it tell you anything about UTRs?
+
+The gff-format of Augustus is non-standard (looks like gtf) so to view it in a genome browser you need to convert it. You can do this using genometools which is available on Uppmax.
+
+Do this to convert your Augustus-file:
+
+```
+module load perl  
+module load perl_modules  
+module load BioPerl/1.6.924_Perl5.18.4
+
+~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3 --gff_version 2
+```
+Transfer the augustus\_drosophila.gff3 to your computer using scp:    
+```
+scp __login__@milou.uppmax.uu.se:~/annotation_course/practical2/augustus_drosophila.gff3 .  
+```
+Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). [Here find the WebApollo instruction](UsingWebapollo)
+<br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/data/dmel/chromosome\_4/annotation
+How does the Augustus annotation compare with the Ensembl annotation? Are they identical?
+
+**_Exercise 2 -_ Augustus with yeast models:**  
+Run augustus on the same genome file but using settings for yeast instead (change species to Saccharomyces).
+
+Load this result file into Webapollo and compare with your earlier results. Can you based on this draw any conclusions about how a typical yeast gene differs from a typical Drosophila gene?
