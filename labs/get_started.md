@@ -20,7 +20,7 @@ cd ~/annotation_course
 Data that will be needed for the annotation course can be found THERE
 
 ```
-ln -s /PATH/ . or copy?
+ln -s /proj/uppstore2019059/RESTOFPATH . or copy?
 ```
 
   * **install the GAAS repository**  
@@ -30,7 +30,11 @@ ln -s /PATH/ . or copy?
   ```
   git clone https://github.com/NBISweden/GAAS.git
   ```
+  As we will be using the scripts libraries available in the git gaas you need first to export the libraries :
 
+  ```
+  export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
+  ```
 
 
   * **Move into the proper folder to start the excercice**  
