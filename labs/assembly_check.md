@@ -16,6 +16,7 @@ You will run BUSCO on the genome assembly.We will select the lineage set of arth
 
 First create a busco folder where you work:
 ```
+cd ~/annotation_course/
 mkdir busco
 cd busco
 ```
