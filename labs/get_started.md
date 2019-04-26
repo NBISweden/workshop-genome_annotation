@@ -5,7 +5,6 @@ We will for all exercises use data for the fruit fly, Drosophila melanogaster, a
 
 # Prerequisites
 
-
   * **Connection to Uppmax**  
 Please connect yourself to Uppmax following those instruction[UPPMAX login instructions](uppmax_login).
 
@@ -16,7 +15,7 @@ mkdir -p ~/annotation_course/check_assembly
 cd ~/annotation_course
 ```
 
-  * **Download the data**  
+  * **get the data**  
 Data that will be needed for the annotation course can be found THERE
 
 ```
@@ -37,7 +36,7 @@ ln -s /proj/uppstore2019059/RESTOFPATH . or copy?
   ```
 
 
-  * **Move into the proper folder to start the excercice**  
+  * **Move into the proper folder to start the exercise**  
 Now move into the **check_assembly** folder and you are ready to start for this morning !
 ```
 cd ~/annotation_course/check_assembly
