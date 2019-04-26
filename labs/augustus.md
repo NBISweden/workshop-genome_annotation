@@ -1,3 +1,5 @@
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
 # Running an ab initio gene finder
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](LoginInstructions).

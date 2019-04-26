@@ -11,6 +11,8 @@ objectives:
   - be able to run a functional annotation
 
 ---
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
 
 # Functional annotation
 
@@ -49,7 +51,7 @@ Launch Interproscan with the option -h if you want have a look about all the par
 ```
 interproscan.sh -i maker_final.faa -t p -dp -pa -appl Pfam,ProDom-2006.1,SuperFamily-1.75 --goterms --iprlookup
 ```
-The analysis shoud take 2-3 secs per protein request - depending on how many sequences you have submitted, you can make a fairly deducted guess regarding the running time.  
+The analysis should take 2-3 secs per protein request - depending on how many sequences you have submitted, you can make a fairly deducted guess regarding the running time.  
 You will obtain 3 result files with the following extension '.gff3', '.tsv' and '.xml'. Explanation of these output are available [>>here<<](https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats).
 
 

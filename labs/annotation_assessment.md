@@ -1,3 +1,5 @@
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
 # Comparing and evaluating annotations
 
 In this exercise you will handle different annotation files:
@@ -10,7 +12,7 @@ In this exercise you will handle different annotation files:
 
  * the official annotation from Ensembl
 
-## overwiev
+## overview
 
 Evaluating an annotation can be done in different ways:
 

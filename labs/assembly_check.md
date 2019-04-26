@@ -1,3 +1,5 @@
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
 # Assembly Check
 
 Before starting an annotation project, we need to carefully inspect the assembly to identify potential problems before running expensive computes.

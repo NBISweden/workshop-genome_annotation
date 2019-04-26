@@ -3,6 +3,7 @@ layout: default
 title:  'Exercise RNAseq assembly'
 ---
 
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
 
 ## Genome-Guided Transcriptome Assembly
 
@@ -93,4 +94,4 @@ scp __YOURLOGIN__@rackham.uppmax.uu.se:~/RNAseq_assembly_annotation/RNAseq_assem
 
 Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
 
-CHANGE GTF TO GFF? 
+CHANGE GTF TO GFF?

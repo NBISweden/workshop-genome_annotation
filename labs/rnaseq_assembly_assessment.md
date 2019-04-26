@@ -3,6 +3,8 @@ layout: default
 title:  'Exercise RNAseq assembly'
 ---
 
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
 # Assessing quality of you RNAseq assembly
 
 There are different ways of assessing the quality of your assembly, you will find some of them [here](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Assembly-Quality-Assessment).

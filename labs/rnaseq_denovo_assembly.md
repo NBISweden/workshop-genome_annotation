@@ -3,6 +3,8 @@ layout: default
 title:  'Exercise RNAseq assembly'
 ---
 
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
 ## De-novo Transcriptome Assembly
 
 [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) assemblies can be used as complementary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
@@ -27,7 +29,7 @@ Trinity --seqType fq --max_memory 32G --left ~/RNAseq_assembly_annotation/assemb
 Trinity takes a long time to run (like hours), you can stop the program when you start it and have a look at the results, look in ~/RNAseq_assembly_annotation/assembly_annotation/RNAseq/trinity the output is Trinity.fasta
 
 
-NECESSARY ???  not convince :
+NECESSARY ???  not convinced :
 
 In order to compare the output of stringtie and the output of trinity we need to map the trinity transcript to the chr4 of Drosophila.
 
