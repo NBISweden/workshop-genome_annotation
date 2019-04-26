@@ -1,44 +1,44 @@
 # Comparing and evaluating annotations
 
-In this exercise you will handle different annotation files: 
+In this exercise you will handle different annotation files:
 
- * the pure abinitio one done with augustus (practical1),
+ * the pure abinitio one done with augustus (practical : Abinitio with augustus),
 
  * the evidence-based done with MAKER
- 
+
  * the abinitio evidence-driven one done with MAKER.
- 
+
  * the official annotation from Ensembl
 
 ## overwiev
 
 Evaluating an annotation can be done in different ways:
 
- * looking at the number of genes  
+ * Looking at the number of genes  
 It isn't so much a quality check as a measure of congruency - i.e. the resulting numbers don't tell you which of the two gene builds is more correct.
 
- * comparison with another annotation  
- It doesnt help neither to see the quality of your annotation but could help to understand the major differences between several annotations.
+ * Comparison with another annotation  
+ It does not help neither to see the quality of your annotation but could help to understand the major differences between several annotations.
 
- * comparison against a reference
+ * Comparison against a reference
  This case is really rare in real life.
- 
- * running busco on proteins obtained from the annotation  
- It provides a nice feeling about the quality of the annotaiton but is biasied by the fact it focus only on well conserved genes between sepeceis during evolution. So, what about species specific genes ?
- 
- * in reference to the evidence alignments (AED score)  
+
+ * Running busco on proteins obtained from the annotation  
+ It provides a nice feeling about the quality of the annotation but is biased by the fact it focus only on well conserved genes between species during evolution. So, what about species specific genes ?
+
+ * In reference to the evidence alignments (AED score)  
  It is what Maker uses internally to select gene models. After synthesizing and annotating loci, the resulting model will be ranked against the filtered evidence alignments. The more congruent these two points of information are, the lower the 'annotation edit distance' (AED) will be. The AED score can be used to e.g. check an annotation for problematic models that may then be subjected to manual curation.
 
 ### Gene number
 
-As already seen previousy you can have a look at the statistics of an anntoation with the **gff3_sp_statistics.pl** script.  
+As already seen previously you can have a look at the statistics of an annotation with the **gff3_sp_statistics.pl** script.  
 As you will note, there are some differences - and of course, this is expected, since different approaches has been used to generate them. The EnsEMBL annotation is originally imported from FlyBase. Obviously, a lot of manual labor and much more data has been put into the FlyBase annotation - and this highlights a common limitation of any computational pipeline. You will simply never reach the same level of quality and detail as seen in a manually curated reference annotation.
 
 ### Comparison with another annotation
 
-We will compare the two anntation made with MAKER: the evidence one and the abinitio one.
+We will compare the two annotation made with MAKER: the evidence one and the abinitio one.
 ```
-cd ~/annotation_course/practical2
+cd ~/annotation_course/maker
 mkdir complement
 cd complement
 ln -s ../maker/maker_evidence/maker.gff maker_evidence.gff
@@ -68,7 +68,7 @@ BUSCO is run before annotating to check if the assembly is good and therefore if
 
 You will need to link the protein file created by maker on the run with the ab-initio
 ```
-cd ~/annotation_course/practical2
+cd ~/annotation_course/maker
 mkdir busco
 cd busco
 
@@ -83,25 +83,25 @@ BUSCO.py -i maker_abinitio_cplt_by_evidence.fasta -o dmel_maker_abinitio_cplt_by
 
 As with many tasks within bioinformatics, it is always a great idea to first look around for existing solutions. In the case of comparing annotations, there are in fact options already out there. One such example is genometools, which we have briefly used before.  
 
-First create the worling folder: 
+First create the working folder:
 ```
-cd ~/annotation_course/practical2/
+cd ~/annotation_course/maker/
 mkdir compare_ref
 cd compare_ref
 ```
 
 Then, copy or sym-link the EnsEMBL reference annotation as well as yours:
 ```
-ln -s ~/annotation_course/practical1/augustus/augustus_drosophila.gff
-ln -s ~/annotation_course/practical2/complement/maker_abinitio_cplt_by_evidence.gff 
+ln -s ~/annotation_course/abinitio_augustus/augustus/augustus_drosophila.gff
+ln -s ~/annotation_course/maker/complement/maker_abinitio_cplt_by_evidence.gff
 ln -s ~/annotation_course/data/annotation/ensembl.genome.gff
 ```
 
 Now we have to sort any GFF3-formatted annotation in a way that genometools accepts:
 ```
 gt gff3 -sort augustus_drosophila.gff > augustus_drosophila.sorted.gff
-gt gff3 -sort maker_abinitio_cplt_by_evidence.gff > maker_abinitio_cplt_by_evidence.sorted.gff 
-gt gff3 -sort ensembl.genome.gff > ensembl.sorted.gff 
+gt gff3 -sort maker_abinitio_cplt_by_evidence.gff > maker_abinitio_cplt_by_evidence.sorted.gff
+gt gff3 -sort ensembl.genome.gff > ensembl.sorted.gff
 ```
 
 With the sorted files, we can now perform a comparison two by two:
@@ -118,10 +118,10 @@ Note that the measures employed by genometools function in a all-or-nothing fash
 
 ### Filter MAKER annotation by AED score
 
-A AED value of 0 means the whole gene model is supported by evidence while 1 means there is none. Let's try to select only models with good congruency with evidence lines, AED <0.3. 
+A AED value of 0 means the whole gene model is supported by evidence while 1 means there is none. Let's try to select only models with good congruency with evidence lines, AED <0.3.
 
 ```
-cd ~/annotation_course/practical2/
+cd ~/annotation_course/maker/
 mkdir filter
 cd filter
 ln -s ~/annotation_course/practical2/complement/maker_abinitio_cplt_by_evidence.gff
@@ -142,7 +142,7 @@ There exist a number of 'annotation viewers' - IGV, Argo and Apollo, to name a f
 
 ### Using WebApollo to view annotations
 Transfer your maker annotation files to your computer using the scp command.  
-Then, jump to [WebApollo](http://annotation-prod.scilifelab.se:8080/NBIS_course/) and upload your annotation track into the genome portal called **drosophila\_melanogaster\_chr4**. [Here find the WebApollo instruction](UsingWebapollo)  
+Then, jump to [WebApollo](http://annotation-prod.scilifelab.se:8080/NBIS_course/) and upload your annotation track into the genome portal called **drosophila\_melanogaster\_chr4**. [Here find the WebApollo instruction](labs/webapollo_usage.md)  
 You can now compare your gene builds against this reference. Some questions to ask yourself:
 
 - Do my gene builds recover all the genes found in the reference?  
