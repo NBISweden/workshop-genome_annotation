@@ -1,5 +1,5 @@
 ---
-layout: episode
+layout: default
 title: Functional annotation
 teaching: 0
 exercises: 1h45
