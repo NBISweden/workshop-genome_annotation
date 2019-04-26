@@ -43,9 +43,9 @@ Room: E10:1309
 **09.00-9.15** Summary of yesterday’s exercise (Lucile Soler, Jacques Dainat)  
 **09.15-10.00** [Lecture: Structural annotation - Maker](slides/) (Jacques Dainat)  
 **10.00-10.15** Coffee break  
-**10.15-12.00** [Practical: Evidence based annotation - MAKER](labs/maker_umbrella) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**10.15-12.00** [Practical: Evidence based annotation - MAKER](labs/maker_evidence) (Lucile Soler, Jacques Dainat, Nima Rafati)  
 **12.00-13.00** Lunch   
-**13.00-15.00** [Practical: Abinitio evidence-driven annotation - MAKER](labs/maker_umbrella) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**13.00-15.00** [Practical: Abinitio evidence-driven annotation - MAKER](labs/maker_abinitio_evidence_driven) (Lucile Soler, Jacques Dainat, Nima Rafati)  
 **15.00-15.15** Coffee break  
 **15.15-16.00** [Practical: Annotation_assessment](labs/annotation_assessment)(Lucile Soler, Jacques Dainat, Nima Rafati)  
 **16.00-17.00** [Lecture/Practical: Manual curation](labs/manual_curation)(Lucile Soler, Jacques Dainat, Nima Rafati)  
