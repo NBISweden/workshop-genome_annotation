@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 title: Functional annotation
 teaching: 0
 exercises: 1h45
