@@ -1,5 +1,16 @@
 # Making an evidence based annotation with MAKER
 
+## Prerequisites
+
+  * **Connection to Uppmax**  
+Please connect yourself to Uppmax following those instruction[UPPMAX login instructions](uppmax_login).
+* **GAAS repository path**  
+As yesterday, make sure that the GAAS scripts are in your path or do the following command line :
+
+```
+export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
+```
+
 ## Overview
 
 The first run of Maker will be done without ab-initio predictions. What are your expectations for the resulting gene build? In essence, we are attempting a purely evidence-based annotation, where the best protein- and EST-alignments are chosen to build the most likely gene models. The purpose of an evidence-based annotation is simple. Basically, you may try to annotate an organism where no usable ab-initio model is available. The evidence-based annotation can then be used to create a set of genes on which a new model could be trained on (using e.g. Snap or Augustus). Selection of genes for training can be based on the annotation edit distance (AED score), which says something about how great the distance between a gene model and the evidence alignments is. A score of 0.0 would essentially say that the final model is in perfect agreement with the evidence.
@@ -11,7 +22,8 @@ Let's do this step-by-step:
 Create the folder where we will launch this maker run.
 
 ```
-cd ~/annotation_course/practical2/maker/
+mkdir -p ~/annotation_course/maker/maker_evidence
+cd ~/annotation_course/maker/maker_evidence
 ```
 
 Link the raw computes you want to use into your folder. The files you will need are:
@@ -29,7 +41,7 @@ ln -s ~/annotation_course/data/genome/genome.fa
 ```
 Then you will also need EST and protein fasta file:  
 ```
-ln -s ~/annotation_course/data/evidence/est.genome.fa 
+ln -s ~/annotation_course/data/evidence/est.genome.fa
 ln -s ~/annotation_course/data/evidence/proteins.genome.fa
 ```
 To finish you will could use a transcriptome assembly (This one has been made using Stringtie):
@@ -43,10 +55,11 @@ ln -s ~/annotation_course/data/RNAseq/stringtie/stringtie2genome.genome.gff
 gff3_sp_alignment_output_style.pl --gff stringtie2genome.genome.gff -o stringtie2genome.genome.ok.gff
 ```
 
-You should now have 2 repeat files, 1 EST file, 1 protein file, 1 transcript file, and the genome sequence in the working directory. 
+You should now have 2 repeat files, 1 EST file, 1 protein file, 1 transcript file, and the genome sequence in the working directory.
 
 For Maker to use this information, we need create the three config files, typing this command:
 ```
+module load maker
 maker -CTL
 ```
 
@@ -62,12 +75,12 @@ In the **maker_opts.ctl** you will set:
 - name of the 'EST' file in fasta format  (est=)
 - name of the 'Transcript' file in gff format (est_gff=)
 - name of the 'Protein' set file(s) (protein=)
-- name of the repeatmasker and repeatrunner files (rm_gff=) 
+- name of the repeatmasker and repeatrunner files (rm_gff=)
 
 You can list multiple files in one field by separating their names by a **comma** ','.
 
 This time, we do not specify a reference species to be used by augustus, which will disable ab-initio gene finding. Instead we set:
-  
+
   <i>protein2genome=1</i>  
   <i>est2genome=1</i>
 
@@ -123,7 +136,7 @@ snoscan\_rrna= #rRNA file to have Snoscan find snoRNAs
 unmask=0 #also run ab-initio prediction programs on unmasked sequence, 1 = yes, 0 = no
 
 
-{% endhighlight %} 
+{% endhighlight %}
 </details>  
 To better understand the different parameters you can have a look [here](http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/The_MAKER_control_files_explained)
 
@@ -153,7 +166,7 @@ maker_merge_outputs_from_datastore.pl --output maker_evidence
 ```
 We have specified a name for the output directory since we will be creating more than one annotation and need to be able to tell them apart.  
 
-This should create a **maker\_evidence** folder containing all computed data including **maker.gff** which is the maker annotation file and **genome.all.maker.proteins.fasta** which is the protein fasta file of this annotation. Those two files are the most important outputs from this analysis. 
+This should create a **maker\_evidence** folder containing all computed data including **maker.gff** which is the maker annotation file and **genome.all.maker.proteins.fasta** which is the protein fasta file of this annotation. Those two files are the most important outputs from this analysis.
 
 => You could sym-link the **maker.gff** and **genome.all.maker.proteins.fasta** files to another folder called e.g. dmel\_results, so everything is in the same place in the end. Just make sure to call the links with specific names, since any maker output will be called similarly.
 
