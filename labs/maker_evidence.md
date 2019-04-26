@@ -22,8 +22,8 @@ Let's do this step-by-step:
 Create the folder where we will launch this maker run.
 
 ```
-mkdir -p ~/annotation_course/maker/maker_evidence
-cd ~/annotation_course/maker/maker_evidence
+mkdir -p ~/annotation_course/maker
+cd ~/annotation_course/maker
 ```
 
 Link the raw computes you want to use into your folder. The files you will need are:
@@ -156,7 +156,7 @@ maker_check_progress.sh
 
 ## Inspect the output (optional)
 
-[Here you can find details about the MAKER output.](practical2_supl2_maker.md)
+[Here you can find details about the MAKER output.](maker_output_details.md)
 
 ## Compile the output
 
