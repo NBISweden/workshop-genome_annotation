@@ -16,15 +16,17 @@ No need to re-compute the mapping/alignment of the different lines of evidence. 
 
 Link the gff files you want to use into your folder:
 
+NAMES????
+
  - repeatmasker.chr4.gff (already present)
  - repeatrunner.chr4.gff (already present)
  - genome.fa (already present)
- - stringtie2genome.genome.gff (already present) 
- - est2genome.gff 
- - protein2genome.gff 
+ - stringtie2genome.genome.gff (already present)
+ - est2genome.gff
+ - protein2genome.gff
 
 ```
-ln -s maker_evidence/est2genome.gff 
+ln -s maker_evidence/est2genome.gff
 ln -s maker_evidence/protein2genome.gff
 ```
 
@@ -95,7 +97,7 @@ unmask=0 #also run ab-initio prediction programs on unmasked sequence, 1 = yes, 
 ...
 
 
-{% endhighlight %} 
+{% endhighlight %}
 </details>  
 To better understand the different parameters you can have a look [here](http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/The_MAKER_control_files_explained)
 
@@ -117,7 +119,7 @@ maker_check_progress.sh
 
 When Maker has finished, compile the output:
 ```
-maker_merge_outputs_from_datastore.pl --output maker_abinitio 
+maker_merge_outputs_from_datastore.pl --output maker_abinitio
 ```
 And again, it is probably best to link the resulting output (maker.gff) to a result folder (the same as defined in the previous exercise e.g. dmel\_results), under a descriptive name.
 
