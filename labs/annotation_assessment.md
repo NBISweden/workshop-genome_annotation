@@ -72,10 +72,10 @@ cd ~/annotation_course/maker
 mkdir busco
 cd busco
 
-ln -s  ~/annotation_course/practical2/complement/maker_abinitio_cplt_by_evidence.fasta
-ln -s ~/annotation_course/practical1/busco/metazoa_odb9
+ln -s  ~/annotation_course/maker/complement/maker_abinitio_cplt_by_evidence.fasta
 
-BUSCO.py -i maker_abinitio_cplt_by_evidence.fasta -o dmel_maker_abinitio_cplt_by_evidence -m prot -c 8 -l metazoa_odb9
+
+BUSCO -i maker_abinitio_cplt_by_evidence.fasta -o dmel_maker_abinitio_cplt_by_evidence -m prot -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_odb9
 ```
  * if you compare with you first busco results what do you see?
 
@@ -124,7 +124,7 @@ A AED value of 0 means the whole gene model is supported by evidence while 1 mea
 cd ~/annotation_course/maker/
 mkdir filter
 cd filter
-ln -s ~/annotation_course/practical2/complement/maker_abinitio_cplt_by_evidence.gff
+ln -s ~/annotation_course/maker/complement/maker_abinitio_cplt_by_evidence.gff
 maker_select_models_by_AED_score.pl -f maker_abinitio_cplt_by_evidence.gff -v 0.3 -t "<" -o result
 ```
 

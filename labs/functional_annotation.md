@@ -1,3 +1,17 @@
+---
+layout: episode
+title: Functional annotation
+teaching: 0
+exercises: 1h45
+questions:
+  - What is needed for functional annotation?
+  - How to do functional annotation?
+objectives:
+  - understand the different tools/processes to do a functional annotation
+  - be able to run a functional annotation
+
+---
+
 # Functional annotation
 
 Functional annotation is the process during which we try to put names to faces - what do genes that we have annotated and curated? Basically all existing approaches accomplish this by means of similarity. If a translation product has strong similarity to a protein that has previously been assigned a function, the function in this newly annotated transcript is probably the same. Of course, this thinking is a bit problematic (where do other functional annotations come from...?) and the method will break down the more distant a newly annotated genome is to existing reference data. A complementary strategy is to scan for more limited similarity - specifically to look for the motifs of functionally characterized protein domains. It doesn't directly tell you what the protein is doing exactly, but it can provide some first indication.
@@ -10,14 +24,15 @@ Since we do not wish to spend too much time on this, we will again limit our ana
 
 Move in the proper folder:  
 ```
-mkdir -p ~/annotation_course/practical4
-cd ~/annotation_course/practical4
+mkdir -p ~/annotation_course/functional_annotation
+cd ~/annotation_course/functional_annotation
 ```
 Now link the annotation you choose to work with. The command will looks like:
 ```
-ln -s ~/annotation_course/practical2/complement/maker_abinitio_cplt_by_evidence.gff maker_final.gff  
-ln -s ~/annotation_course/practical2/complement/maker_abinitio_cplt_by_evidence.fasta maker_final.faa
+ln -s ~/annotation_course/maker/complement/maker_abinitio_cplt_by_evidence.gff maker_final.gff  
+ln -s ~/annotation_course/maker/complement/maker_abinitio_cplt_by_evidence.fasta maker_final.faa
 ```
+
 ## Interproscan approach
  Interproscan combines a number of searches for conserved motifs and curated data sets of protein clusters etc. This step may take fairly long time. It is recommended to paralellize it for huge amount of data by doing analysis of chunks of tens or hundreds proteins.
 
@@ -32,7 +47,7 @@ Launch Interproscan with the option -h if you want have a look about all the par
 - If you enable the InterPro lookup ('-iprlookup'), you can also get the InterPro identifier corresponding to each motif retrieved: for example, the same motif is known as PF01623 in Pfam and as IPR002568 in InterPro.
 - The option '-pa' provides mappings from matches to pathway information (MetaCyc,UniPathway,KEGG,Reactome).
 ```
-interproscan.sh -i maker_final.fa -t p -dp -pa -appl Pfam,ProDom-2006.1,SuperFamily-1.75 --goterms --iprlookup
+interproscan.sh -i maker_final.faa -t p -dp -pa -appl Pfam,ProDom-2006.1,SuperFamily-1.75 --goterms --iprlookup
 ```
 The analysis shoud take 2-3 secs per protein request - depending on how many sequences you have submitted, you can make a fairly deducted guess regarding the running time.  
 You will obtain 3 result files with the following extension '.gff3', '.tsv' and '.xml'. Explanation of these output are available [>>here<<](https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats).
@@ -67,11 +82,11 @@ Now you should be able to use the following script:
 ```
 gff3_sp_manage_functional_annotation.pl -f maker_final.interpro.gff -b blast.out --db  ~/annotation_course/data/blastdb/uniprot_dmel/uniprot_dmel.faa -o maker_final.interpro.blast  
 ```
-That will add the name attribute to the "gene" feature and the description attribute (corresponding to the product information) to the "mRNA" feature into you annotation file. 
+That will add the name attribute to the "gene" feature and the description attribute (corresponding to the product information) to the "mRNA" feature into you annotation file.
 The improved annotation is the gff file inside the maker_final.interpro.blast folder.
 
  * How many genes do not have any names ?
- 
+
 ### Set nice IDs
 
 The purpose is to modify the ID value by something more convenient (i.e FLYG00000001 instead of maker-4-exonerate_protein2genome-gene-8.41).  
@@ -94,9 +109,9 @@ Transfer the final_annotation.gff file to your computer using scp in a new termi
 
 scp -i ~/.ssh/azure_rsa student@__IP__:/home/student/annotation_course/practical4/final_annotation.gff .
 
-Load the file in into the genome portal called drosophila_melanogaster_chr4 in the Webapollo genome browser available at the address [http://annotation-prod.scilifelab.se:8080/NBIS_course/](http://annotation-prod.scilifelab.se:8080/NBIS_course/). [Here find the WebApollo instruction](UsingWebapollo)
+Load the file in into the genome portal called drosophila_melanogaster_chr4 in the Webapollo genome browser available at the address [http://annotation-prod.scilifelab.se:8080/NBIS_course/](http://annotation-prod.scilifelab.se:8080/NBIS_course/). [Here find the WebApollo instruction](labs/webapollo_usage.md)
 
-Wondeful ! insn't it ?
+Wonderfull ! isn't it ?
 
 ## What's next?
 
