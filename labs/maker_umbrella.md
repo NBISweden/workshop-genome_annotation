@@ -2,21 +2,23 @@
 
 ## Prerequisites
 
-  * **Connection to your virtual machine**  
-Before going into the exercises below you need to connect to your virtual machine Ubuntu 16.04 following the instruction we will provide you.
+  * **Connection to Uppmax**  
+Please connect yourself to Uppmax following those instruction[UPPMAX login instructions](uppmax_login).
 
-  * **Create the folder structure**  
-Now create and move into the **practical2** folder and you are ready to start !
+   * **Create the folder structure**  
+Now create and move into the **maker_evidence** folder and you are ready to start !
 ```
-mkdir -p ~/annotation_course/practical2
-cd ~/annotation_course/practical2
+mkdir -p ~/annotation_course/maker
+cd ~/annotation_course/maker
 ```
 
-  * **List of tools needed. For your convenience they all hae been pre-installed.**  
+* **GAAS repository path**  
+As yesterday, make sure that the GAAS scripts are in your path or do the following command line :
 
-    * MAKER
-    * augustsus
-    * GAAS repository
+```
+export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
+```
+
 
 ## Overview
 
@@ -36,12 +38,11 @@ At minimum, most annotation projects will run with a protein data set, possibly 
 
 We will therefore first run our annotation project in the traditional way, with proteins and ESTs, and then repeat the process with a well-trained ab-initio gene predictor. You can then compare the output to get an idea of how crucial the use of a gene predictor is. However, before we get our hands dirty, we need to understand Maker a little better...
 
-Maker strings together a range of different tools into a complex pipeline (e.g. blast, exonerate, repeatmasker, augustus...), fortunately all its various dependencies have been already installed for you. 
+Maker strings together a range of different tools into a complex pipeline (e.g. blast, exonerate, repeatmasker, augustus...), fortunately all its various dependencies have been already installed for you.
 Check that everything is running smoothly by creating the MAKER config files:
 
 ```
-mkdir -p ~/annotation_course/practical2/maker
-cd ~/annotation_course/practical2/maker
+module load maker
 maker -CTL
 ```
 
