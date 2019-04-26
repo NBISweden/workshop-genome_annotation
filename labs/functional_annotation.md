@@ -1,7 +1,6 @@
 ---
 layout: default-overview
 title: Functional annotation
-teaching: 0
 exercises: 1h45
 questions:
   - What is needed for functional annotation?
