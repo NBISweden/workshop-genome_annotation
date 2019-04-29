@@ -24,8 +24,8 @@ Room: E10:1309
 **09.00-10.00** [Lecture: Understanding Annotation](lectures/) (Henrik Lantz)  
 **10.00-10.15** [Practical: Get started](labs/get_started) (Lucile Soler, Jacques Dainat, Nima Rafati)  
 **10.00-10.15** Coffee break  
-**10.45-12.00** [Practical: assembly check](labs/assembly_check) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-**10.15-10.45** [Practical: find_evidence](labs/find_all_evidence) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**10.15-11.20** [Practical: assembly check](labs/assembly_check) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**11.20-11.50** [Practical: find_evidence](labs/find_all_evidence) (Lucile Soler, Jacques Dainat, Nima Rafati)  
 **12.00-13.00** Lunch  
 **13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/)  (Jacques Dainat)  
 **14.00-15.00** [Practical: Abinitio with augustus](labs/augustus) (Lucile Soler, Jacques Dainat, Nima Rafati)  
