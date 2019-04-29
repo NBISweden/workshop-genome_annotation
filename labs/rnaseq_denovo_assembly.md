@@ -1,11 +1,17 @@
 ---
-layout: default
-title:  'Exercise RNAseq assembly'
+layout: default-overview
+title: De-novo Transcriptome Assembly
+exercises: 30
+questions:
+  - How to De-novo assemble my RNAseq?
+  - What should I look in my assembly to go forward
+objectives:
+  - run Trinity
 ---
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
 
-## De-novo Transcriptome Assembly
+## Trinity
 
 [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki) assemblies can be used as complementary evidence, particularly when trying to polish a gene build with Pasa. Before you start, check how big the raw read data is that you wish to assemble to avoid unreasonably long run times.
 

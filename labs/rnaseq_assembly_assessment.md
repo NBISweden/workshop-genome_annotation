@@ -1,11 +1,17 @@
 ---
-layout: default
-title:  'Exercise RNAseq assembly'
+layout: default-overview
+title: Assessing quality of you RNAseq assembly
+exercises: 45
+questions:
+  - How do I check the quality of my assembly?
+objectives:
+  - Run busco on the de-novo and genome-guided assembly
+  - Understand the output
 ---
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
 
-# Assessing quality of you RNAseq assembly
+# Assessing the quality using busco
 
 There are different ways of assessing the quality of your assembly, you will find some of them [here](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Transcriptome-Assembly-Quality-Assessment).
 

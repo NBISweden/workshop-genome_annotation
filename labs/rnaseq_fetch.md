@@ -1,11 +1,17 @@
 ---
-layout: default
-title:  'Exercise RNAseq assembly'
+layout: default-overview
+title: Preparing RNAseq data for assembly
+exercises: 45
+questions:
+  - How do I check the quality of my RNAseq data?
+objectives:
+  - Run fastqc
+  - Understand the output
 ---
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
 
-# Preparing RNAseq data for assembly
+# Introduction
 
 This exercise is meant to get you acquainted with the type of data you would normally encounter in an annotation project. We will for all exercises use data for the fruit fly, Drosophila melanogaster, as that is one of the currently best annotated organisms and there is plenty of high quality data available.
 

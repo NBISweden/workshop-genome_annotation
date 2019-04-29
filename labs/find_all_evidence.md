@@ -1,4 +1,13 @@
-# Find evidence
+---
+layout: default-overview
+title: Find evidence
+exercises: 40
+questions:
+  - What data do I need to run a genome annotation?
+  - How/where to get them?
+objectives:
+  - Navigate in the different database/websites that provide data
+---
 
 ## 1 Obtaining Protein
 

@@ -1,6 +1,18 @@
+---
+layout: default-overview
+title: Assembly Check
+exercises: 35
+questions:
+  - How do I check the quality of my assembly regarding gene contents?
+  - What should I look in my assembly to go forward
+objectives:
+  - run busco and understand the output
+  - have a look at the fasta and its statistics
+---
+
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
 
-# Assembly Check
+# Introduction
 
 Before starting an annotation project, we need to carefully inspect the assembly to identify potential problems before running expensive computes.
 You can look at i) the Fragmentation (N50, N90, how many short contigs); ii) the Sanity of the fasta file (Presence of Ns, presence of ambiguous nucleotides, presence of lowercase nucleotides, single line sequences vs multiline sequences); iii) completeness using BUSCO; iv) presence of organelles; v) Others (GC content, How distant the investigated species is from the others annotated species available).

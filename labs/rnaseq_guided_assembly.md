@@ -1,15 +1,19 @@
 ---
-layout: default
-title:  'Exercise RNAseq assembly'
+layout: default-overview
+title: Genome-Guided Transcriptome Assembly
+exercises: 60
+questions:
+  - How to assemble my RNAseq genome-guided?
+objectives:
+  - Run the different tools
+  - Understand each step of the assembly
 ---
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
 
-## Genome-Guided Transcriptome Assembly
+## Trimmomatic/Hisat2/Stringtie
 
-### Trimmomatic/Hisat2/Stringtie
-
-#### Trimmomatic
+### Trimmomatic
 
 [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
 
@@ -35,7 +39,7 @@ java -jar /sw/apps/bioinfo/trimmomatic/0.36/milou/trimmomatic-0.36.jar PE -threa
 ```
 
 
-#### Hisat2
+### Hisat2
 
 Once the reads have been trimmed, we use [hisat2](https://ccb.jhu.edu/software/hisat2/index.shtml) to align the RNA-seq reads to a genome in order to identify exon-exon splice junctions.
 HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads (whole-genome, transcriptome, and exome sequencing data) against a reference genome.
@@ -69,7 +73,7 @@ samtools sort -o hisat2/accepted_hits.sorted.bam hisat2/accepted_hits.bam
 ```
 
 
-#### Stringtie
+### Stringtie
 
 [StringTie](https://ccb.jhu.edu/software/stringtie/) is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts. It uses a novel network flow algorithm as well as an optional de novo assembly step to assemble and quantitate full-length transcripts representing multiple splice variants for each gene locus.
 You can add as input an annotation from gtf/gff3 file to calculate TPM and FPKM values.
