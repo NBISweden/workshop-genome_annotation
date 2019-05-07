@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Genome-Guided Transcriptome Assembly
-exercises: 60
+exercises: 65
 questions:
   - How to assemble my RNAseq genome-guided?
 objectives:
@@ -34,7 +34,7 @@ The following command line will perform the following:
 UPDATE PATH
 
 ```
-java -jar /sw/apps/bioinfo/trimmomatic/0.36/milou/trimmomatic-0.36.jar PE -threads 5 -phred33 ~/RNAseq_assembly/assembly_annotation/raw_computes/ERR305399_1.fastq.gz ~/RNAseq_assembly_annotation/assembly_annotation/raw_computes/ERR305399_2.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+java -jar /sw/apps/bioinfo/trimmomatic/0.36/milou/trimmomatic-0.36.jar PE -threads 5 -phred33 ~/annotation_course/data/raw_computes/ERR305399_1.fastq.gz ~/annotation_course/data/raw_computes/ERR305399_2.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 
 ```
 
@@ -51,7 +51,7 @@ mkdir index
 
 module load HISAT2
 module load samtools/1.8
-hisat2-build ~/annotation_course/?????/genome.fa index/genome.fa_index
+hisat2-build ~/annotation_course/data/genome/genome.fa index/genome.fa_index
 ```
 
 Then you can run Hisat2 :
@@ -93,7 +93,7 @@ You could now also visualise all this information using a genome browser, such a
 Transfer the gtf files to your computer using scp:
 
 ```
-scp __YOURLOGIN__@rackham.uppmax.uu.se:~/RNAseq_assembly_annotation/RNAseq_assembly/stringtie/transcripts.gtf .
+scp __YOURLOGIN__@rackham.uppmax.uu.se:~/annotation_course/RNAseq_assembly/stringtie/transcripts.gtf .
 ```
 
 Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?

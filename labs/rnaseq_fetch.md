@@ -47,12 +47,12 @@ module load FastQC/0.11.5
 
 mkdir fastqc_reports
 
-fastqc ~/annotation_course/?????/ERR305399_1.fastq.gz -o fastqc_reports/
+fastqc ~/annotation_course/data/raw_computes/ERR305399_1.fastq.gz -o fastqc_reports/
 ```
 scp the html file resulting of fastqc, what kind of result do you have?
 
 ```
-scp login@rackham.uppmax.uu.se:~/annotation_course/???/YOURFILE .
+scp login@rackham.uppmax.uu.se:~/annotation_course/RNAseq_assembly/YOURFILE .
 ```
 Checking the fastq quality score format :
 
