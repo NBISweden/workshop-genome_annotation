@@ -37,8 +37,8 @@ cd busco
 
 TRY : SHOULD WE SET UP AUGUSTUS BEFORE? AUGUSTUS_CONFIG_PATH=PATH/augustus_path??
 
-The [BUSCO website](http://busco.ezlab.org) provides a list of datasets containing the cores genes expected in the different branches of the tree of life. To know in which part/branch of the tree of life is originated your species you can have a look at the [NCBI taxonomy website](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=7227) (Lineage line).
-Then select the proper BUSCO Dataset on the [busco website](http://busco.ezlab.org) to check the completness of your assembly.
+The [BUSCO website](http://busco.ezlab.org) provides a list of datasets containing the cores genes expected in the different branches of the tree of life. To know in which part/branch of the tree of life is originated your species, you can look at the [NCBI taxonomy website](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=7227) (Lineage line).
+Then select the proper BUSCO dataset on the [busco website](http://busco.ezlab.org) to check the completness of your assembly.
 
 Now you are ready to launch BUSCO on our genome (genome.fa).
 
