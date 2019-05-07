@@ -15,7 +15,7 @@ objectives:
 # Introduction
 
 Before starting an annotation project, we need to carefully inspect the assembly to identify potential problems before running expensive computes.
-You can look at i) the Fragmentation (N50, N90, how many short contigs); ii) the Sanity of the fasta file (Presence of Ns, presence of ambiguous nucleotides, presence of lowercase nucleotides, single line sequences vs multiline sequences); iii) completeness using BUSCO; iv) presence of organelles; v) Others (GC content, How distant the investigated species is from the others annotated species available).
+You can look at i) the fragmentation (N50, N90, how many short contigs); ii) the sanity of the fasta file (presence of Ns, presence of ambiguous nucleotides, presence of lowercase nucleotides, single line sequences vs multiline sequences); iii) completeness using BUSCO; iv) presence of organelles; v) others (GC content, how distant the investigated species is from the others annotated species available).
 The two next exercices will perform some of these checks.
 
 ## 1 Checking the gene space of your assembly
@@ -26,7 +26,7 @@ BUSCO provides measures for quantitative assessment of genome assembly, gene set
 
 **_Exercise 1_ - BUSCO -:**
 
-You will run BUSCO on the genome assembly.We will select the lineage set of arthropoda.
+You will run BUSCO on the genome assembly. We will select the lineage set of arthropoda.
 
 First create a busco folder where you work:
 ```
