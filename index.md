@@ -9,7 +9,7 @@ title:  'Introduction to Genome Annotation - May 2019'
 
 **Date and Location:**
 
-The workshop is held at the Uppsala Biomedical Center, Uppsala, Sweden, on May 15-17 2018.
+The workshop is held at the Uppsala Biomedical Center, Uppsala, Sweden, on May 15-17 2019.
 
 ## Course Purpose:
 
