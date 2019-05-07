@@ -57,7 +57,7 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
    
    ```
    source ~/git/GAAS/profiles/activate_rackham_env
-   
+   ```
 
   * **Move into the proper folder to start the exercise**  
   Now move into the **check_assembly** folder and you are ready to start for this morning !
