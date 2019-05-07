@@ -54,7 +54,7 @@ While BUSCO is running, start the exercise 2.
 When done, check the short\_summary\_genome\_dmel\_busco file in the output folder. How many core genes have been searched in you assembly ? How many are reported as complete? Does this sound reasonable?
 **Tips**: the "genome" is here in fact only the chromosome 4 that corresponds to less than 1% of the real size of the genome.
 
-## 2 Various Check of your Assembly
+## 2 Various Checks of your Assembly
 
 **_Exercise 2_ :**
 Launching the following script will provide you some useful information.
