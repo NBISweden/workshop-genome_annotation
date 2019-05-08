@@ -20,7 +20,7 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
   * **Connection to Uppmax**  
   Please connect yourself to Uppmax following those instruction [UPPMAX login instructions](uppmax_login).
 
-  * **install the GAAS repository through dedicated environment**  
+  * **Install the GAAS repository through dedicated environment**  
   Here I will need you to clone and install our github repository indeed this repository contains NBIS annotation team scripts and will be used during this pratical.
 
   ```
