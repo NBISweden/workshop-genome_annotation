@@ -64,6 +64,6 @@ Then you will prepare your general working place.
    Data needed for the exercices have to be copied locally.  
 
    ```bash
-   cp -r /proj/g2019006/data .
+   cp -r /sw/courses/annotation/data .
    ```
 
