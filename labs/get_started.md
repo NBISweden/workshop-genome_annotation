@@ -17,13 +17,13 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
 
 ## Prerequisites
 
-  * **Connection to Uppmax**  
-  Please connect yourself to Uppmax following those instruction [UPPMAX login instructions](uppmax_login).
+### Connection to Uppmax  
+Please connect yourself to Uppmax following those instruction [UPPMAX login instructions](uppmax_login).
 
-  * **Install dependencies (the GAAS repository through dedicated environment)**  
-  Once connected you will need you to clone and install our github repository indeed this repository contains NBIS annotation team scripts and will be used during this pratical.
+### Install dependencies (the GAAS repository through dedicated environment)  
+Once connected you will need you to clone and install our github repository indeed this repository contains NBIS annotation team scripts and will be used during this pratical.
 
-  ```
+  ```bash
   mkdir -p ~/git ; mv ~/git
   git clone https://github.com/NBISweden/GAAS.git
   cd GAAS
@@ -34,36 +34,36 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
    Now the GAAS environment is displayed at the beginnin of each prompt line: `(GAAS)`
    To get out of the nbis environment and restore your previous environment type:
 
-  ```
+  ```bash
   deactivate
   ```
   
    To reactivate he GAAS environment at any time, just type:
    
-   ```
+   ```bash
    source ~/git/GAAS/profiles/activate_rackham_env
-   
    ```
-  * **Setup your general working place**  
-  Then you will prepare your general working place.  
+   
+### Setup your general working place    
+Then you will prepare your general working place.  
 
-     * Move to the place where you will work
+   * Move to the place where you will work  
     
-    ```
-    cd /proj/uppstore2019059/
-    ```
+   ```bash
+   cd /proj/uppstore2019059/
+   ```
   
-     * Create you private place where all the magic will happen.
+   * Create you private place where all the magic will happen.  
     
-    ```
-    mkdir $USER
-    cd $USER
-    ```
+   ```bash
+   mkdir $USER
+   cd $USER
+   ```
 
-    * **get the data**  
-    Data needed for the exercices have to be copied locally.
+   * get the data  
+   Data needed for the exercices have to be copied locally.
 
-    ```
+    ```bash
     cp -r /proj/g2019006/data .
     ```
 
