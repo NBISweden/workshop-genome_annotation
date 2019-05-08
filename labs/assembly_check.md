@@ -18,7 +18,16 @@ Before starting an annotation project, we need to carefully inspect the assembly
 You can look at i) the fragmentation (N50, N90, how many short contigs); ii) the sanity of the fasta file (presence of Ns, presence of ambiguous nucleotides, presence of lowercase nucleotides, single line sequences vs multiline sequences); iii) completeness using BUSCO; iv) presence of organelles; v) others (GC content, how distant the investigated species is from the others annotated species available).
 The two next exercices will perform some of these checks.
 
-## 1 Checking the gene space of your assembly
+# Prerequisites
+
+Setup the folder structure:
+
+```bash
+mkdir -p /proj/uppstore2019059/$USER/assembly_check
+cd /proj/uppstore2019059/$USER/assembly_check
+```
+
+# 1 Checking the gene space of your assembly
 
 BUSCO provides measures for quantitative assessment of genome assembly, gene set, and transcriptome completeness. Genes that make up the BUSCO sets for each major lineage are selected from orthologous groups with genes present as single-copy orthologs in at least 90% of the species.
 
@@ -29,8 +38,7 @@ BUSCO provides measures for quantitative assessment of genome assembly, gene set
 You will run BUSCO on the genome assembly. We will select the lineage set of arthropoda.
 
 First create a busco folder where you work:
-```
-cd ~/annotation_course/
+```bash
 mkdir busco
 cd busco
 ```
@@ -54,7 +62,7 @@ While BUSCO is running, start the exercise 2.
 When done, check the short\_summary\_genome\_dmel\_busco file in the output folder. How many core genes have been searched in you assembly ? How many are reported as complete? Does this sound reasonable?
 **Tips**: the "genome" is here in fact only the chromosome 4 that corresponds to less than 1% of the real size of the genome.
 
-## 2 Various Checks of your Assembly
+# 2 Various Checks of your Assembly
 
 **_Exercise 2_ :**
 Launching the following script will provide you some useful information.
