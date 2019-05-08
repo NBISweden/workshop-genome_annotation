@@ -21,8 +21,10 @@ For this exercise you need to be logged in to Uppmax.
 Setup the folder structure:
 
 ```bash
-mkdir -p /proj/uppstore2019059/nobackup/$USER/assembly_check
-cd /proj/uppstore2019059/nobackup/$USER/assembly_check
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/proj/g2019006/data
+export assembly_check_path=/proj/uppstore2019059/nobackup/$USER/assembly_check 
+mkdir -p $assembly_check_path
 ```
 
 # 1 Checking the gene space of your assembly
@@ -33,30 +35,28 @@ BUSCO provides measures for quantitative assessment of genome assembly, gene set
 
 **_Exercise 1_ - BUSCO -:**
 
-You will run BUSCO on the genome assembly. We will select the lineage set of arthropoda.
+You will run BUSCO on the genome assembly.
 
 First create a busco folder where you work:
 ```bash
+cd $assembly_check_path
 mkdir busco
 cd busco
 ```
 
-TRY : SHOULD WE SET UP AUGUSTUS BEFORE? AUGUSTUS_CONFIG_PATH=PATH/augustus_path??
-
 The [BUSCO website](http://busco.ezlab.org) provides a list of datasets containing the cores genes expected in the different branches of the tree of life. To know in which part/branch of the tree of life is originated your species, you can look at the [NCBI taxonomy website](https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=7227) (Lineage line).
-Then select the proper BUSCO dataset on the [busco website](http://busco.ezlab.org) to check the completness of your assembly.
+You have to chose the most appropriate BUSCO dataset for your species. You may download the latest BUSCO dataset from the [busco website](http://busco.ezlab.org) or use the one already present at uppmax (`ll $BUSCO_LINEAGE_SETS/`).
 
-Now you are ready to launch BUSCO on our genome (genome.fa).
+Now you are ready to launch BUSCO to check the completness of your assembly (genome.fa file).
 
 ```
 module load bioinfo-tools
 module load BUSCO
-
-BUSCO -i ~/annotation_course/data/genome/genome.fa -o genome_dmel_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_odb9
-
+source $BUSCO_SETUP
+run_BUSCO.py -i $data/genome/genome.fa -o genome_dmel_busco -m genome -c 10 -l $BUSCO_LINEAGE_SETS/arthropoda_odb9
 ```
 
-While BUSCO is running, start the exercise 2.
+While BUSCO is running, you may start the exercise 2 (to do so you will need to open another terminal).
 When done, check the short\_summary\_genome\_dmel\_busco file in the output folder. How many core genes have been searched in you assembly ? How many are reported as complete? Does this sound reasonable?
 **Tips**: the "genome" is here in fact only the chromosome 4 that corresponds to less than 1% of the real size of the genome.
 
@@ -66,8 +66,8 @@ When done, check the short\_summary\_genome\_dmel\_busco file in the output fold
 Launching the following script will provide you some useful information.
 
 ```
-cd ~/annotation_course/assembly_check
-fasta_statisticsAndPlot.pl -f ~/annotation_course/data/genome/genome.fa -o fasta_check
+cd $assembly_check_path
+fasta_statisticsAndPlot.pl -f $data/genome/genome.fa -o fasta_checked
 ```
 
 Is your genome very fragmented (number of sequences)? Do you have high GC content ? Do you have lowercase nucleotides ? Do you have N at sequence extremities?
