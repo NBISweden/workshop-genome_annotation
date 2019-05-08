@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Assembly Check
-exercises: 35
+exercises: 20
 questions:
   - How do I check the quality of my assembly regarding gene contents?
   - What should I look in my assembly to go forward
