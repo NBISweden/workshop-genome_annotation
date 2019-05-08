@@ -21,10 +21,10 @@ Genome Annotation Service
 **Wednesday 15th** 
 
 Room: E10:4308  
-**09.00-10.00** [Lecture: Understanding Annotation](lectures/) (Henrik Lantz)  
-**10.00-10.15** [Practical: Get started](labs/get_started) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-**10.00-10.15** Coffee break  
-**10.15-11.20** [Practical: assembly check](labs/assembly_check) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**09.00-09.45** [Lecture: Understanding Annotation](lectures/) (Henrik Lantz)  
+**09.45-10.00** [Practical: Get started](labs/get_started) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**10.00-10.20** Coffee break  
+**10.20-10.40** [Practical: assembly check](labs/assembly_check) (Lucile Soler, Jacques Dainat, Nima Rafati)  
 **11.20-11.55** [Practical: find evidence](labs/find_all_evidence) (Lucile Soler, Jacques Dainat, Nima Rafati)  
 **12.00-13.00** Lunch  
 **13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/)  (Jacques Dainat)  
