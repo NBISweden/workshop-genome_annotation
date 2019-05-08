@@ -50,10 +50,10 @@ Then you will prepare your general working place.
    * Move to the place where you will work  
     
    ```bash
-   cd /proj/uppstore2019059/
+   cd /proj/uppstore2019059/nobackup/
    ```
   
-   * Create you private place where all the magic will happen.  
+   * Create your private place where all the magic will happen.  
     
    ```bash
    mkdir $USER
