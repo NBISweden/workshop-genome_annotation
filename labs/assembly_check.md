@@ -21,8 +21,8 @@ For this exercise you need to be logged in to Uppmax.
 Setup the folder structure:
 
 ```bash
-mkdir -p /proj/uppstore2019059/$USER/assembly_check
-cd /proj/uppstore2019059/$USER/assembly_check
+mkdir -p /proj/uppstore2019059/nobackup/$USER/assembly_check
+cd /proj/uppstore2019059/nobackup/$USER/assembly_check
 ```
 
 # 1 Checking the gene space of your assembly
