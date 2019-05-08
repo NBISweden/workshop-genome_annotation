@@ -10,8 +10,6 @@ objectives:
   - have a look at the fasta and its statistics
 ---
 
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
-
 # Introduction
 
 Before starting an annotation project, we need to carefully inspect the assembly to identify potential problems before running expensive computes.
@@ -19,7 +17,7 @@ You can look at i) the fragmentation (N50, N90, how many short contigs); ii) the
 The two next exercices will perform some of these checks.
 
 # Prerequisites
-
+For this exercise you need to be logged in to Uppmax.
 Setup the folder structure:
 
 ```bash
