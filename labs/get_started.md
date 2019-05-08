@@ -63,7 +63,7 @@ Then you will prepare your general working place.
    * get the data  
    Data needed for the exercices have to be copied locally.  
 
-    ```bash
-    cp -r /proj/g2019006/data .
-    ```
+   ```bash
+   cp -r /proj/g2019006/data .
+   ```
 
