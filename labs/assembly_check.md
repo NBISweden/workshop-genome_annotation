@@ -22,7 +22,7 @@ Setup the folder structure:
 
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
-export data=/proj/g2019006/data
+export data=/sw/courses/annotation/2019/data
 export assembly_check_path=/proj/uppstore2019059/nobackup/$USER/assembly_check 
 mkdir -p $assembly_check_path
 ```
