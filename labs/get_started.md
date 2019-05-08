@@ -20,8 +20,8 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
   * **Connection to Uppmax**  
   Please connect yourself to Uppmax following those instruction [UPPMAX login instructions](uppmax_login).
 
-  * **Install the GAAS repository through dedicated environment**  
-  Here I will need you to clone and install our github repository indeed this repository contains NBIS annotation team scripts and will be used during this pratical.
+  * **Install dependencies (the GAAS repository through dedicated environment)**  
+  Once connected you will need you to clone and install our github repository indeed this repository contains NBIS annotation team scripts and will be used during this pratical.
 
   ```
   mkdir -p ~/git ; mv ~/git
@@ -44,8 +44,8 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
    source ~/git/GAAS/profiles/activate_rackham_env
    
    ```
-  * **Prepare you working environment**  
-  Once connected you will prepare you working environment.  
+  * **Setup your general working place**  
+  Then you will prepare your general working place.  
 
      * Move to the place where you will work
     
