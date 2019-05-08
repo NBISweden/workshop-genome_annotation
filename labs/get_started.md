@@ -20,21 +20,6 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
   * **Connection to Uppmax**  
   Please connect yourself to Uppmax following those instruction [UPPMAX login instructions](uppmax_login).
 
-  * **Create the folder structure**  
-  Once connected you will create and move into the **annotation\_course** folder, where all the magic will happen.
-
-  ```
-  mkdir -p ~/annotation_course/check_assembly
-  cd ~/annotation_course
-  ```
-
-  * **get the data**  
-  Data that will be needed for the annotation course can be found THERE
-
-  ```
-  cp /proj/uppstore2019059/nobackup/data .
-  ```
-
   * **install the GAAS repository through dedicated environment**  
   Here I will need you to clone and install our github repository indeed this repository contains NBIS annotation team scripts and will be used during this pratical.
 
@@ -57,11 +42,29 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
    
    ```
    source ~/git/GAAS/profiles/activate_rackham_env
+   
    ```
+  * **Prepare you working environment**  
+  Once connected you will prepare you working environment.  
 
-  * **Move into the proper folder to start the exercise**  
-  Now move into the **check_assembly** folder and you are ready to start for this morning !
+     * Move to the place where you will work
+    
+    ```
+    cd /proj/uppstore2019059/
+    ```
   
-  ```
-  cd ~/annotation_course/check_assembly
-  ```
+     * Create you private place where all the magic will happen.
+    
+    ```
+    mkdir $USER
+    cd $USER
+    ```
+
+    * **get the data**  
+    Data needed for the exercices have to be copied locally.
+
+    ```
+    cp -r /proj/g2019006/data .
+    ```
+
+
