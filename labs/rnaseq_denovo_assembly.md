@@ -40,13 +40,18 @@ Trinity --seqType fq --max_memory 32G --left $data/raw_computes/ERR305399_1.fast
 
 Trinity takes a long time to run (several hours), you can stop the program when you start it and have a look at the results, look in $data/RNAseq/trinity the output is Trinity.fasta
 
-:bulb: **Tips**: Using Trinity
+:bulb: **Tips**: Using Trinity in genome annotation
 
-Advantages : really easy to run
-many manual an tutorial
-out can be annotated directly with trinotate
+Some advantages :
+- Really easy to run.
+- Many manual an tutorial available on internet eg : [here](https://github.com/trinityrnaseq/trinityrnaseq/wiki).
+- Output can be annotated directly with [Trinotate](https://github.com/Trinotate/Trinotate.github.io/wiki).
+- Widely use in the community.
+- One can concatenate several read files/libraries or run them separately.
 
-
-take several hours
-take a lot of ressources to run and create a lot of data
-results tend to be noisy with many shorts transcripts
+Some disadvantage :
+- Can take several hours to run.
+- Can take a lot of resources to run and create a lot of data.
+- Input data are often really big files :
+As a "rule" in our team, if read files are >10Gb compressed, one should consider normalizing the data. If you have such big file, it is recommended to normalize them prior to assembly to avoid very long run times.
+- Results tend to be noisy with many shorts transcripts, might need to be filtered.

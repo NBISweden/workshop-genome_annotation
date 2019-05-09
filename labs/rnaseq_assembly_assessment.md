@@ -51,22 +51,33 @@ For the guided assembly results
 You need first to extract the transcript sequences from the gtf transcript file :
 
 ```
-ln -s $RNAseq_assembly_path/guided_assembly/stringtie/transcripts.gtf .
-
-gff3_sp_extract_sequences.pl --cdna -g transcripts.gtf -f $data/genome/genome.fa -o transcripts_stringtie.fa
+gff3_sp_extract_sequences.pl --cdna -g $RNAseq_assembly_path/guided_assembly/stringtie/transcripts.gtf -f $data/genome/genome.fa -o $RNAseq_assembly_path/guided_assembly/stringtie/transcripts_stringtie.fa
 ```
 Then you can run busco again :
 
 ```
-run_BUSCO.py -i stringtie/transcripts_stringtie.fa -o busco_stringtie -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
+run_BUSCO.py -i $RNAseq_assembly_path/guided_assembly/stringtie/transcripts_stringtie.fa -o busco_stringtie -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
 ```
 
-Compare the two busco, what do you think happened for stringtie?
+:question:Compare the two busco, what do you think happened for stringtie?
 
+<details>
+<summary>:key: Click to see the solution .</summary>
+We only used the chromosome 4 of the Drosophila as genome to do the assembly with stringtie while Trinity is not mapped to any chromosome and so contain all the transcripts for the complete genome. BUSCO compares a set of genes of a complete genome and not only a part of it.
+It makes no sense to use BUSCO on only 1 chromosome of a genome! :)
+
+:bulb:Also if you notice there are many duplicates in the BUSCO results, In this case it is due to the fact that all isoforms have been kept so each isoform is consider as 1 gene. You need to select one of them (like the longest for instance with the script gff3_sp_keep_longest_isoform.pl or the one you prefer) and you will have a more accurate results of BUSCO.
+</details>
 
 # What's next?
 
-Now you are ready either to annotate your RNAseq or you can use then to do the genome annotation.
+Now you are ready use the results of your De-novo assembly and guided assembly to do the genome annotation.
 
 For the de-novo assembly you can use the Trinity.fasta file obtained.
 For the genome-guided assembly you can either use the Stringtie results transcripts.gtf but you will often need to reformat it into a gff file.
+If you have not done it please do :
+```
+gxf_to_gff3.pl -g $RNAseq_assembly_path/guided_assembly/stringtie/transcripts.gtf -o $RNAseq_assembly_path/guided_assembly/stringtie/transcript_stringtie.gff3
+```
+
+You are now ready to use the genome-guided assembly for your annotation.
