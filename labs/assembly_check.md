@@ -16,10 +16,10 @@ Before starting an annotation project, we need to carefully inspect the assembly
 You can look at i) the fragmentation (N50, N90, how many short contigs); ii) the sanity of the fasta file (presence of Ns, presence of ambiguous nucleotides, presence of lowercase nucleotides, single line sequences vs multiline sequences); iii) completeness using BUSCO; iv) presence of organelles; v) others (GC content, how distant the investigated species is from the others annotated species available).
 The two next exercices will perform some of these checks.
 
-# Prerequisites
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+# Prerequisites  
+For this exercise you need to be logged in to Uppmax.
 
-Setup the folder structure:
+Setup the environment:
 
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
