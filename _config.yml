@@ -19,13 +19,19 @@ menu:
     url: index
   - title: Location
     url: location
-  - title: Uppmax Login
+  - title: Uppmax login
     url: uppmax_login
+  - title: Cheat sheets
+    submenus:
+      - title: Bash level1
+      url: files/cheat_sheet/bash_cheat_sheet_level1.pdf
+      - title: Bash level2
+      url: files/cheat_sheet/bash_cheat_sheet_level2.pdf
+      - title: Bash level3
+      url: files/cheat_sheet/bash_cheat_sheet_level3.pdf
+      - title: Uppmax
+      url: files/cheat_sheet/uppmax-cheat-sheet.png
+      - title: GFF/GTF
+      url: https://github.com/NBISweden/GAAS/blob/master/annotation/CheatSheet/gxf.md
   - title: Schedule
     url: schedule
-  - title: Workshop&nbsp;Materials
-    submenus:
-      - title: Lab 1
-        url: labs/lab1
-      - title: Lab 2
-        url: labs/lab2
