@@ -23,7 +23,7 @@ menu:
     url: uppmax_login
   - title: Cheat&nbsp;sheets
     submenus:
-      - title: Bash&nbsp;level1
-      url: files/cheat_sheet/bash_cheat_sheet_level1.pdf
+      - title: Uppmax
+      url: files/cheat_sheet/uppmax-cheat-sheet.png
   - title: Schedule
     url: schedule
