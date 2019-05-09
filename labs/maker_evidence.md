@@ -2,13 +2,16 @@
 
 ## Prerequisites
 
-  * **Connection to Uppmax**  
-Please connect yourself to Uppmax following those instruction[UPPMAX login instructions](uppmax_login).
-* **GAAS repository path**  
-As yesterday, make sure that the GAAS scripts are in your path or do the following command line :
+# Prerequisites
+For this exercise you need to be logged in to Uppmax.
 
-```
-export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/proj/g2019006/nobackup/$USER/data
+export structural_annotation_path=/proj/g2019006/nobackup/$USER/structural_annotation
+mkdir -p $structural_annotation_path
 ```
 
 ## Overview
@@ -22,8 +25,9 @@ Let's do this step-by-step:
 Create the folder where we will launch this maker run.
 
 ```
-mkdir -p ~/annotation_course/maker
-cd ~/annotation_course/maker
+cd $structural_annotation_path
+mkdir maker
+cd maker
 ```
 
 Link the raw computes you want to use into your folder. The files you will need are:

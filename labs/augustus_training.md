@@ -1,44 +1,49 @@
 ---
-layout: default
-title:  'Training Ab-initio'
+layout: default-overview
+title: Training ab-initio predictor
+exercises: 60
+questions:
+  -
+  -
+objectives:
+  -
 ---
 
-# Training ab-initio predictor
+# Prerequisites
+For this exercise you need to be logged in to Uppmax.
 
-From this maker run evidence based, we can train our ab-initio predictors and then use them for the second run of annotation. 
-You will need a set of genomic sequences with gene structures (sequence coordinates of starts and ends of exons and genes) and the most important part is selected the right set of genes. 
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/proj/g2019006/nobackup/$USER/data
+export augustus_training_path=/proj/g2019006/nobackup/$USER/structural_annotation/augustus_training
+mkdir -p $augustus_training_path
+```
+
+
+# Introduction
+
+From this maker run evidence based, we can train our ab-initio predictors and then use them for the second run of annotation.
+You will need a set of genomic sequences with gene structures (sequence coordinates of starts and ends of exons and genes) and the most important part is selected the right set of genes.
 In many cases, or as a first step towards modeling complete genes, it is sufficient to have only the coding parts of the gene structure (CDS).
 We will only train augustus today as it is one the best ab-initio predictor and one of the hardest to train.
-Maker also support SNAP (Works good, easy to train, not as good as others ab-initio especially on longer intron genomes), GeneMark (Self training, no hints, buggy, not good for fragmented genomes or long introns).
-FGENESH (Works great, costs money even for training) and now EVM.
+Maker also support SNAP (Works good, easy to train, not as good as others ab-initio especially on longer intron genomes), GeneMark (Self training, no hints, buggy, not good for fragmented genomes or long introns), FGENESH (Works great, costs money even for training) and now EVM.
 
 
 ## Training Augustus
 
-First you need to write the libraries path you will need in .bash_profile to perform the following analyses.
+cd into the folder and then load all modules that we will need to train Augustus
 ```
-/home/login/annotation_course/course_material/lib/install_perllib_missing.sh
+cd $augustus_training_path
 
-source ~/.bash_profile
-```
-Then load all modules that we will need to train Augustus
-```
 module load bioinfo-tools   
-module load perl  
-module load perl_modules  
-module load BioPerl/1.6.924_Perl5.18.4   
 module load cufflinks/2.2.1
 ```
-Create project folder
 
-We create a new folder in which we will store all the configuration files and input files we will need/create. To do so, type:
-```
-mkdir train_augustus
-cd train_augustus
-```
 You will need to symlink all data you will need such as the gff files from the first run of maker and the chromosome 4 fasta sequence.
 ```
-ln -s ~/annotation_course/practical3/maker_no_abinitio/annotationByType/maker.gff dmel_results_noAbinitio.gff
+ln -s $structural_annotation_path/maker_evidence/annotationByType/maker.gff dmel_results_noAbinitio.gff
 ```
 ## Compile a set of training and test genes
 
@@ -88,12 +93,12 @@ Sequences need to be converted in a simple genbank format.
 ```
 gff2gbSmallDNA.pl nonredundant/codingGeneFeatures.nr.gff 4.fa 500 gff2genbank/codingGeneFeatures.nr.gbk
 ```
-In order for the test accuracy to be statistically meaningful the test set should also be large enough (100-200 genes). 
+In order for the test accuracy to be statistically meaningful the test set should also be large enough (100-200 genes).
 You should split the set of gene structures randomly.
 ```
 randomSplit.pl gff2genbank/codingGeneFeatures.nr.gbk 100
 ```
-- What happened? how can you solve it? what might be the consequences of it? 
+- What happened? how can you solve it? what might be the consequences of it?
 
 
 ## Train Augustus

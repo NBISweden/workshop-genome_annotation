@@ -16,7 +16,7 @@ Setup the folder structure:
 
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
-export data=/sw/courses/annotation/2019/data
+export data=/proj/g2019006/nobackup/$USER/data
 export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
 mkdir -p $RNAseq_assembly_path
 ```
