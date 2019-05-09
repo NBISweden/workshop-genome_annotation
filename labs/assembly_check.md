@@ -34,7 +34,7 @@ BUSCO provides measures for quantitative assessment of genome assembly, gene set
 
 ***Note:*** In a real-world scenario, this step should come first and foremost. Indeed, if the result is under your expectation you might be required to enhance your assembly before to go further.
 
-**_Exercise 1_ - BUSCO -:**
+:mortar_board: **_Exercise 1_ - BUSCO -:**
 
 You will run BUSCO on the genome assembly.
 
@@ -58,12 +58,14 @@ run_BUSCO.py -i $data/genome/genome.fa -o genome_dmel_busco -m genome -c 10 -l $
 ```
 
 While BUSCO is running, you may start the exercise 2 (to do so you will need to open another terminal).
-When done, check the short\_summary\_genome\_dmel\_busco file in the output folder. How many core genes have been searched in you assembly ? How many are reported as complete? Does this sound reasonable?
-**Tips**: the "genome" is here in fact only the chromosome 4 that corresponds to less than 1% of the real size of the genome.
+When done, check the short\_summary\_genome\_dmel\_busco file in the output folder. 
+
+:question: How many core genes have been searched in your assembly ? How many are reported as complete? Does this sound reasonable?  
+:bulb: **Tips**: the "genome" is here in fact only the chromosome 4 that corresponds to less than 1% of the real size of the genome.
 
 # 2 Various Checks of your Assembly
 
-**_Exercise 2_ :**
+:mortar_board: **_Exercise 2_ :**
 Launching the following script will provide you some useful information.
 
 ```
