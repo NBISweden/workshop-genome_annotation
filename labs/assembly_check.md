@@ -71,5 +71,6 @@ cd $assembly_check_path
 fasta_statisticsAndPlot.pl -f $data/genome/genome.fa -o fasta_checked
 ```
 
-Is your genome very fragmented (number of sequences)? Do you have high GC content ? Do you have lowercase nucleotides ? Do you have N at sequence extremities?
+:question: Is your genome very fragmented (number of sequences)? Do you have high GC content ? Do you have lowercase nucleotides ? Do you have N at sequence extremities?
+
 If you don't see any peculiarities, you can then decide to go forward and start to perform your first wonderful annotation.
