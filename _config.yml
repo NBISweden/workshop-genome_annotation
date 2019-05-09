@@ -24,5 +24,6 @@ menu:
   - title: Cheat&nbsp;sheets
     submenus:
       - title: Bash&nbsp;level1
+      url: files/cheat_sheet/bash_cheat_sheet_level1.pdf
   - title: Schedule
     url: schedule
