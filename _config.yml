@@ -21,7 +21,7 @@ menu:
     url: location
   - title: Uppmax login
     url: uppmax_login
-  - title: Cheat sheets
+  - title: Cheat&nbsp;sheets
     submenus:
       - title: Bash level1
       url: files/cheat_sheet/bash_cheat_sheet_level1.pdf
@@ -31,7 +31,5 @@ menu:
       url: files/cheat_sheet/bash_cheat_sheet_level3.pdf
       - title: Uppmax
       url: files/cheat_sheet/uppmax-cheat-sheet.png
-      - title: GFF/GTF
-      url: https://github.com/NBISweden/GAAS/blob/master/annotation/CheatSheet/gxf.md
   - title: Schedule
     url: schedule
