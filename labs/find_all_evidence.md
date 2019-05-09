@@ -60,7 +60,7 @@ click on the &lt;<strong>search and browse</strong>&gt; tab, then under the &lt;
    <li>Select <strong>Paired</strong> from the &lt;<strong>Librairy layout</strong>&gt; field.</li>
    <li>Select <strong>Illumina HiSeq 4000</strong> from the &lt;<strong>Instrument model</strong>&gt; field.</li>
    <li>Click on search.</li>
-   <li>Write directly into the &lt;<strong>Search query</strong>&gt; box the following comand:  
-       <code>library_layout="PAIRED" AND tax_eq(7227) AND instrument_model="Illumina HiSeq 4000"</code></li>
   </ol>
+The <strong>search query</strong> corresponding to this task is the following:  
+       <code>library_layout="PAIRED" AND tax_eq(7227) AND instrument_model="Illumina HiSeq 4000"</code>
 </details>
