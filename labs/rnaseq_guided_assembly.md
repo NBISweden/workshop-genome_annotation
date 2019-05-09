@@ -64,9 +64,9 @@ hisat2-build $data/genome/genome.fa index/genome_index
 Then you can run Hisat2 :
 
 **--phred33** Input qualities are ASCII chars equal to the Phred quality plus 33. This is also called the "Phred+33" encoding, which is used by the very latest Illumina pipelines (you checked it with the script fastq_guessMyFormat.pl)
-<br>**--rna-strandness** string For single-end reads, use F or R. 'F' means a read corresponds to a transcript. 'R' means a read corresponds to the reverse complemented counterpart of a transcript. For paired-end reads, use either FR or RF. (RF means fr-firststrand see [here](https://github.com/NBISweden/GAAS/blob/master/annotation/CheatSheet/rnaseq_library_types.md) for more explanation).
-<br>**--novel-splicesite-outfile** path In this mode, HISAT2 reports a list of splice sites in the file :
-chromosome name tab genomic position of the flanking base on the left side of an intron <tab> genomic position of the flanking base on the right tab strand (+, -, and .) '.' indicates an unknown strand for non-canonical splice sites.
+<br>**--rna-strandness** For single-end reads, use F or R. 'F' means a read corresponds to a transcript. 'R' means a read corresponds to the reverse complemented counterpart of a transcript. For paired-end reads, use either FR or RF. (RF means fr-firststrand see [here](https://github.com/NBISweden/GAAS/blob/master/annotation/CheatSheet/rnaseq_library_types.md) for more explanation).
+<br>**--novel-splicesite-outfile** In this mode, HISAT2 reports a list of splice sites in the file :
+chromosome name tab genomic position of the flanking base on the left side of an intron tab genomic position of the flanking base on the right tab strand (+, -, and .) '.' indicates an unknown strand for non-canonical splice sites.
 
 ```
 mkdir hisat2
@@ -124,7 +124,7 @@ To have all the parameters available.
 <ul>You can decide if you want to keep only reads with high coverage and set the minimum read coverage higher than the default parameter (2.5) -c </ul>
 <br>There are many parameters to play with depending on your question.
 
-check the <a href="https://ccb.jhu.edu/software/stringtie/index.shtml?t=manual/">Stringtie manual</a> for more information.
+Check the <a href="https://ccb.jhu.edu/software/stringtie/index.shtml?t=manual/">Stringtie manual</a> for more information.
 
 </details>
 
@@ -157,5 +157,5 @@ gxf_to_gff3.pl -g stringtie/transcripts.gtf -o transcript_stringtie.gff3
 
 <details>
 <summary>:key: Click to see the solution .</summary>
-You can choose 6722, 6500 if you think the introns size is over estimate or 7000 if you think it is possible to have bigger introns and you do not want to miss them.
+You can choose 6722, 6500 if you think the introns size is overestimate or 7000 if you think it is possible to have bigger introns and you do not want to miss them.
 </details>
