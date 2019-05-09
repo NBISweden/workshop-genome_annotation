@@ -17,12 +17,12 @@ defaults:
 menu:
   - title: Overview
     url: index
+  - title: Location
+    url: location
   - title: Uppmax Login
     url: uppmax_login
   - title: Schedule
     url: schedule
-  - title: Travel info
-    url: travel
   - title: Workshop&nbsp;Materials
     submenus:
       - title: Lab 1
