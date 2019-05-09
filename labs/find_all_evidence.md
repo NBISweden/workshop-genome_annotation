@@ -98,7 +98,7 @@ All menbers of the INSDC consortium (NCBI, EMBL-EBI and DDBJ) operate an instanc
 :mortar_board: **ENA:**  
 In Europe, EMBL-EBI provides access to SRA through the European Nucleotide Archive (ENA). Go to [ENA website](https://www.ebi.ac.uk/ena).  
 
-:question: How many paired illumina HiSeq 4000 runs are available.
+:question: How many paired illumina HiSeq 4000 runs are available?
 
 <details>
 <summary>:key: Click to see how to get the answer.</summary>
