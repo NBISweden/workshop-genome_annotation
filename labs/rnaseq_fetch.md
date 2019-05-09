@@ -57,7 +57,7 @@ mkdir fastqc_reports
 
 fastqc $data/raw_computes/ERR305399_1.fastq.gz -o fastqc_reports/
 ```
-scp the html file resulting of fastqc, what kind of result do you have?
+:question: scp the html file resulting of fastqc, what kind of result do you have?
 
 ```
 scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNAseq_assembly/fastqc_reports/YOURFILE .
@@ -76,5 +76,3 @@ In the normal mode, it differentiates between Sanger/Illumina1.8+ and Solexa/Ill
 In the advanced mode, it will try to pinpoint exactly which scoring system is used.
 
 More test can be made and should be made on RNA-seq data before doing the assembly, we have not time to do all of them during this course. have a look [here](https://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools)
-
-ADD JACQUES/MASTER STUDENTS SCRIPT TO CHECK RNA?

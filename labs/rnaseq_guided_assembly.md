@@ -105,7 +105,33 @@ You could now also visualise all this information using a genome browser, such a
 Transfer the gtf files to your computer using scp:
 
 ```
-scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNAseq_assembly/stringtie/transcripts.gtf .
+scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNAseq_assembly/guided_assembly/stringtie/transcripts.gtf .
 ```
 
-Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
+:question: Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
+
+##Check the intron size of your genes (Optional)
+
+From the gtf file, you can now know the size of introns in your genes.
+
+:bulb: **Tips**: This can be an important step later when you are running the structural annotation and you need to write in the parameters what introns size the tool should be expecting (this parameter for Maker, augustus and genemark exists).
+
+To do so, first you need to convert your gtf into a proper gff3 (You have done it in the Practical: Abinitio with augustus) and then run the script gff3_sp_manage_introns.pl
+
+:bulb: **Tips**:
+Do
+```
+gxf_to_gff3.pl --help
+gff3_sp_manage_introns.pl --help
+```
+
+<details>
+<summary>:key: Click to see how to get the solution .</summary>
+```
+gxf_to_gff3.pl -g stringtie/transcripts.gtf -o transcript_stringtie.gff3
+gff3_sp_manage_introns.pl --gff transcript_stringtie.gff3 -o introns_information
+
+```
+</details>
+
+:question: What is the value you should choose?
