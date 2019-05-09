@@ -55,8 +55,9 @@ Go to [ENA website](https://www.ebi.ac.uk/ena) and find how many paired illumina
 click on the &lt;<strong>search and browse</strong>&gt; tab, then under the &lt;<strong>Free text search</strong>&gt; paragraph click on the &lt;<strong>ENA Advanced Search</strong>&gt; link. You should end up on this page: <i>https://www.ebi.ac.uk/ena/data/warehouse/search</i>.  
   From here two solutions:
   <ol>
-   <li>Select <strong>Read</strong> from the &lt;select domain&gt; list; Type <strong>Drosophila melanogaster</strong> into the &lt;Drosophila melanogaster&gt; field;  Select <strong>Paired</strong> from the &lt;Librairy layout&gt; field; select <strong>Illumina HiSeq 4000</strong> from the &lt;Instrument model&gt; field; and click on search.</li>
-   <li>Write directly into the &lt;Search query&gt; box the following comand:  
+   <li>Select <strong>Read</strong> from the &lt;<strong>select domain</strong>&gt; list; Type <strong>Drosophila melanogaster</strong> into the &lt;<strong>Drosophila melanogaster</strong>&gt; field;</li>
+   <li>Select <strong>Paired</strong> from the &lt;<strong>Librairy layout</strong>&gt; field; select <strong>Illumina HiSeq 4000</strong> from the &lt;Instrument model&gt; field; and click on search.</li>
+   <li>Write directly into the &lt;<strong>Search query</strong>&gt; box the following comand:  
        <code>library_layout="PAIRED" AND tax_eq(7227) AND instrument_model="Illumina HiSeq 4000"</code></li>
   </ol>
 </details>
