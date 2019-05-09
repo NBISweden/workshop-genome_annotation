@@ -1,3 +1,8 @@
+---
+layout: default
+title:  'Schedule'
+---
+
 # Introduction to genome annotation
 
 **Teachers:**  
