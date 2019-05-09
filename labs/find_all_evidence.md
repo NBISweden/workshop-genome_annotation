@@ -17,12 +17,12 @@ The mission of UniProt is to provide the scientific community with a comprehensi
 The site can be found at [http://www.uniprot.org](http://www.uniprot.org).
 Statistics about the different DB holded by Uniprot can be found on this page [https://www.uniprot.org/statistics/](https://www.uniprot.org/statistics/)
 
-**UniProtKB/Swiss-prot:**  
+:mortar_board: **UniProtKB/Swiss-prot:**  
 Swiss-Prot (created in 1986) is the manually annotated and reviewed section of the UniProt Knowledgebase (UniProtKB). It is a high quality annotated and non-redundant protein sequence database, which brings together experimental results, computed features and scientific conclusions. Since 2002, it is maintained by the UniProt consortium and is accessible via the UniProt website.  
 
 :question: How many proteins Hare there in UniProtKB/Swiss-prot? Navigate the Uniprot site to find the download location for Swissprot in fasta-format. You do not need to download the file, just find it.
 
-**UniProtKB/TrEMBL**  
+:mortar_board: **UniProtKB/TrEMBL**  
 UniProtKB/TrEMBL contains the translations of all coding sequences (CDS) present in the EMBL/GenBank/DDBJ Nucleotide Sequence Databases (INSDC consortium) and also protein sequences extracted from the literature or submitted to UniProtKB/Swiss-Prot.  
 
 Even with UniProtKB/Swiss-prot available, you also often want to include protein sequences from organisms closely related to your study organism. An approach we often use is to concatenate Swissprot with a few protein fasta-files from closely related organisms and use this in our annotation pipeline.
@@ -42,13 +42,13 @@ The <strong>search query</strong> corresponding to this task is the following:
        <code>taxonomy:drosophilidae existence:"Evidence at transcript level [2]" AND reviewed:no</code>
 </details>
 
-**UniParc**
+:mortar_board: **UniParc**
 UniParc is a comprehensive and non-redundant database that contains most of the publicly available protein sequences in the world. UniParc avoids redundancy by storing each unique sequence only once.
 If you wish to use a massive database Uniparc will be your best choice. But remember that it probably contains more redundant and spurious data!
 
 :question: How many proteins are there in UniParc?
 
-**Proteomes**
+:mortar_board: **Proteomes**
 This section contains protein sets from fully sequenced genomes.
 
 :question: How many reference proteomes are there in Proteomes? How many are from eukaryota? What is the size of Drosophila melanogaste proteome? How many of its proteins are reviewed?
@@ -57,7 +57,7 @@ This section contains protein sets from fully sequenced genomes.
 
 The European Ensembl project makes data available for a number of genome projects, in particular vertebrate animals, through their excellent webinterface. This is a good place to find annotations for model organisms as well as download protein sequences and other types of data. They also supply the Biomart interface, which is excellent if you want to download data for a specific region, a specific gene, or create easily parsable file with gene names etc.
 
-**_Exercise 4_ - Ensembl Biomart:** 
+:mortar_board: **Ensembl Biomart:** 
 Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.org/biomart/martview) and use it to download all protein sequences for chromosome 4 in Drosophila melanogaster. Once you have downloaded the file, use some command line magic to figure out how many sequences are included in the file. Please ask the teachers if you are having problems here.
 
 # 2 Obtaining EST
