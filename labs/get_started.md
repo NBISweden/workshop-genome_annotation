@@ -24,7 +24,7 @@ Please connect yourself to Uppmax following those instruction [UPPMAX login inst
 Once connected you will need you to clone and install our github repository indeed this repository contains NBIS annotation team scripts and will be used during this pratical.
 
   ```bash
-  mkdir -p ~/git ; mv ~/git
+  mkdir -p ~/git ; cd ~/git
   git clone https://github.com/NBISweden/GAAS.git
   cd GAAS
   make install 
