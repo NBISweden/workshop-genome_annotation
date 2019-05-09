@@ -21,7 +21,9 @@ Genome Annotation Service
 
 <hr>
 
-#### This course is given at Navet (E10) at BMC. Click the heading of a topic to see the lecture slides or lab instructions.
+#### Click the heading of a topic to see the lecture slides or lab instructions.
+
+### Day 1  
 
 **Wednesday 15th** 
 
@@ -43,6 +45,8 @@ Room: E10:4308
    *   **16.15-17.00** [quality assessment ](labs/rnaseq_assembly_assessment)  
 <hr>
 
+### Day 2  
+
 **Thursday 16th**  
 
 Room: E10:4308  
@@ -57,6 +61,8 @@ Room: E10:4308
 **15.45-17.00** [Practical: Annotation_assessment](labs/annotation_assessment)  
 
 <hr>
+
+### Day 3  
 
 **Friday 17th**  
 
