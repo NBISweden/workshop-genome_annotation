@@ -20,7 +20,6 @@ The two next exercices will perform some of these checks.
 For this exercise you need to be logged in to Uppmax.
 
 Setup the environment:
-
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
 export data=/sw/courses/annotation/2019/data
