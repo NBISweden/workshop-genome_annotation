@@ -9,7 +9,17 @@ objectives:
   - run Trinity
 ---
 
+# Prerequisites
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/sw/courses/annotation/2019/data
+export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
+
+```
 
 ## Trinity
 
@@ -19,7 +29,7 @@ objectives:
 PATH
 
 ```
-cd ~/annotation_course/RNAseq_assembly
+cd $RNAseq_assembly_path
 
 mkdir trinity
 
@@ -29,7 +39,7 @@ module load bioinfo-tools
 module load trinity/2.4.0
 module load samtools
 
-Trinity --seqType fq --max_memory 32G --left ~/annotation_course/data/raw_computes/ERR305399_1.fastq.gz --right ~/annotation_course/data/raw_computes/ERR305399_2.fastq.gz --CPU 5 --output trinity --SS_lib_type RF
+Trinity --seqType fq --max_memory 32G --left $data/raw_computes/ERR305399_1.fastq.gz --right $data/raw_computes/ERR305399_2.fastq.gz --CPU 5 --output trinity --SS_lib_type RF
 ```
 
 Trinity takes a long time to run (like hours), you can stop the program when you start it and have a look at the results, look in ~/RNAseq_assembly_annotation/assembly_annotation/RNAseq/trinity the output is Trinity.fasta

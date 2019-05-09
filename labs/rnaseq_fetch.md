@@ -9,7 +9,17 @@ objectives:
   - Understand the output
 ---
 
+# Prerequisites
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/sw/courses/annotation/2019/data
+export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
+mkdir -p $RNAseq_assembly_path
+```
 
 # Introduction
 
@@ -18,9 +28,7 @@ This exercise is meant to get you acquainted with the type of data you would nor
 You can create the folders where you want but I would suggest a folder organisation, if you do not follow this organisation remember to put the correct path to your data
 
 ```
-cd ~/annotation_course/
-mkdir RNAseq_assembly
-cd RNAseq_assembly
+cd $RNAseq_assembly_path
 
 ```
 
@@ -52,18 +60,15 @@ fastqc ~/annotation_course/data/raw_computes/ERR305399_1.fastq.gz -o fastqc_repo
 scp the html file resulting of fastqc, what kind of result do you have?
 
 ```
-scp login@rackham.uppmax.uu.se:~/annotation_course/RNAseq_assembly/YOURFILE .
+scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/$USER/RNAseq_assembly/YOURFILE .
 ```
 Checking the fastq quality score format :
 
 As we will be using the scripts libraries available in the git gaas you need first to export the libraries (if you were logged off):
 
-```
-export PERL5LIB=$PERL5LIB:~/RNAseq_assembly_annotation/GAAS/annotation/
-```
 Then :
 ```
-~/annotation_course/GAAS/annotation/Tools/bin/fastq_guessMyFormat.pl -i ~/annotation_course/assembly_annotation/?????/ERR305399_1.fastq.gz
+fastq_guessMyFormat.pl -i ~/annotation_course/assembly_annotation/?????/ERR305399_1.fastq.gz
 
 ```
 

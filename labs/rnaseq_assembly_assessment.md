@@ -9,7 +9,17 @@ objectives:
   - Understand the output
 ---
 
+# Prerequisites
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/sw/courses/annotation/2019/data
+export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
+
+```
 
 # Assessing the quality using busco
 
@@ -21,15 +31,17 @@ We will run busco to check the the quality of the assembly.
 For the trinity results :
 
 ```
-cd ~/annotation_course/RNAseq_assembly
+cd $RNAseq_assembly_path
 
 mkdir busco
 
 cd busco
 
-module load BUSCO/3.0.2b
+module load bioinfo-tools
+module load BUSCO
+source $BUSCO_SETUP
 
-/sw/apps/bioinfo/BUSCO/3.0.2b/rackham/bin/run_BUSCO.py -i ~/annotation_course/RNAseq_assembly/trinity/Trinity.fasta -o busco_trinity -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
+run_BUSCO.py -i ~/annotation_course/RNAseq_assembly/trinity/Trinity.fasta -o busco_trinity -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
 ```
 
 Busco will take 30 to run so you can check the results in ~/annotation_course/????/RNAseq/busco_trinity
@@ -41,14 +53,13 @@ You need first to extract the transcript sequences from the gtf transcript file 
 
 ```
 module load BioPerl
-export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
-~/annotation_course/annotation/Tools/bin/gff3_sp_extract_sequences.pl --cdna -g transcripts.gtf -f ~/annotation_course/data/genome/genome.fa -o transcripts_stringtie.fa
+gff3_sp_extract_sequences.pl --cdna -g transcripts.gtf -f ~/annotation_course/data/genome/genome.fa -o transcripts_stringtie.fa
 
 ```
 Then you can run busco again :
 
 ```
-/sw/apps/bioinfo/BUSCO/3.0.2b/rackham/bin/run_BUSCO.py -i stringtie/transcripts_stringtie.fa -o busco_stringtie -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
+run_BUSCO.py -i stringtie/transcripts_stringtie.fa -o busco_stringtie -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
 
 ```
 

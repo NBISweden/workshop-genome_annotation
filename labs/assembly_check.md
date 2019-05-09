@@ -17,13 +17,14 @@ You can look at i) the fragmentation (N50, N90, how many short contigs); ii) the
 The two next exercices will perform some of these checks.
 
 # Prerequisites
-For this exercise you need to be logged in to Uppmax.
+<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
 Setup the folder structure:
 
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
 export data=/sw/courses/annotation/2019/data
-export assembly_check_path=/proj/uppstore2019059/nobackup/$USER/assembly_check 
+export assembly_check_path=/proj/g2019006/nobackup/$USER/assembly_check
 mkdir -p $assembly_check_path
 ```
 

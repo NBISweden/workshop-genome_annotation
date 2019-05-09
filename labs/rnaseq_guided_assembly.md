@@ -9,7 +9,17 @@ objectives:
   - Understand each step of the assembly
 ---
 
+# Prerequisites
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/sw/courses/annotation/2019/data
+export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
+
+```
 
 ## Trimmomatic/Hisat2/Stringtie
 
@@ -18,7 +28,7 @@ objectives:
 [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) performs a variety of useful trimming tasks for illumina paired-end and single ended data.The selection of trimming steps and their associated parameters are supplied on the command line.
 
 ```
-cd ~/annotation_course/RNAseq_assembly
+cd $RNAseq_assembly_path
 mkdir -p guided_assembly/trimmomatic
 module load bioinfo-tools
 module load trimmomatic/0.36
@@ -34,7 +44,7 @@ The following command line will perform the following:
 UPDATE PATH
 
 ```
-java -jar /sw/apps/bioinfo/trimmomatic/0.36/milou/trimmomatic-0.36.jar PE -threads 5 -phred33 ~/annotation_course/data/raw_computes/ERR305399_1.fastq.gz ~/annotation_course/data/raw_computes/ERR305399_2.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+java -jar /sw/apps/bioinfo/trimmomatic/0.36/milou/trimmomatic-0.36.jar PE -threads 5 -phred33 $data/raw_computes/ERR305399_1.fastq.gz $data/raw_computes/ERR305399_2.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/milou/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
 
 ```
 
@@ -51,7 +61,7 @@ mkdir index
 
 module load HISAT2
 module load samtools/1.8
-hisat2-build ~/annotation_course/data/genome/genome.fa index/genome.fa_index
+hisat2-build $data/genome/genome.fa index/genome.fa_index
 ```
 
 Then you can run Hisat2 :
@@ -93,7 +103,7 @@ You could now also visualise all this information using a genome browser, such a
 Transfer the gtf files to your computer using scp:
 
 ```
-scp __YOURLOGIN__@rackham.uppmax.uu.se:~/annotation_course/RNAseq_assembly/stringtie/transcripts.gtf .
+scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/$USER/RNAseq_assembly/stringtie/transcripts.gtf .
 ```
 
 Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?

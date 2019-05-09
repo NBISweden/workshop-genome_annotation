@@ -1,15 +1,22 @@
+
+# Prerequisites
+
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/sw/courses/annotation/2019/data
+export abinitio_augustus_path=/proj/g2019006/nobackup/$USER/abinitio_augustus
+mkdir -p $abinitio_augustus_path
+```
 
 # Running an ab initio gene finder
 
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](LoginInstructions).
-
 ```
-cd ~/annotation_course/
+cd $abinitio_augustus_path
 
-mkdir abinitio_augustus
-
-cd abinitio_augustus
 ```
 
 We have made a genome browser called Webapollo available for you on the address [http://annotation-prod.scilifelab.se:8080/NBIS_gp1/](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/)  called drosophila\_melanogaster\_course.

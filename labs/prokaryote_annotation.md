@@ -34,16 +34,12 @@ You will run BUSCO on 3 bacterial assemblies provided (one E coli, one chlamydia
 BUSCO2 is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up the environment.
 
 ```
-cp -r ~/annotation_course/course_material/augustus_path .*
-
-chmod ug+w -R augustus_path
-
 module load bioinfo-tools
 module load BUSCO
 
-AUGUSTUS_CONFIG_PATH=augustus_path*
+source $BUSCO_SETUP
 
-BUSCO -i /home/__login__/annotation\_course/course\_material/data/prokka/Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
+run_BUSCO.py -i /home/__login__/annotation\_course/course\_material/data/prokka/Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
 ```
 look at the results of busco in short_summary_chlamydia_busco.txt
 
