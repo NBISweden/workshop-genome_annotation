@@ -65,7 +65,7 @@ Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.or
 EST data is not commonly generated anymore, but may become useful for some projects where such data is still available. Examples may include older genomes targeted for re-annotation or genomes with available EST data for closely related species.
 
 :mortar_board: **NCBI:**  
-The National Center for Biotechnology Information advances science and health by providing access to biomedical and genomic information.
+The National Center for Biotechnology Information advances science and health by providing access to biomedical and genomic information.  
 :question: Go to the [NCBI website](https://www.ncbi.nlm.nih.gov) and find how many ESTs are available for the drosophila melanogaster species.
 
 <details>
