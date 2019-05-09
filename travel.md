@@ -21,7 +21,3 @@ Please see [www.ul.se](http://www.ul.se) for timetables. Use the UL journey plan
 From **Uppsala central station** to **Uppsala Science Park** (BMC) 5-7 min  
 From **Slottsbacken** (a few minutes walk from Akademihotellet) – **Uppsala Science Park** (BMC) 7 min  
 From **Kungsgärdets** center (close to Hotel Charlotte) – **Uppsala Science Park** (BMC) 20-25 min  
-
-## Activities and Restaurants
-
-Check out [Destination Uppsala](http://www.destinationuppsala.se/en/) for some suggestions.
