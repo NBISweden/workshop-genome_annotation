@@ -23,7 +23,7 @@ menu:
     url: schedule
   - title: Travel info
     url: travel
-  - title: Workshop Material
+  - title: Workshop&nbsp;Materials
     submenus:
       - title: Lab 1
         url: labs/lab1
