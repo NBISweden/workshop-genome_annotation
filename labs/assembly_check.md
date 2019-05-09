@@ -22,7 +22,7 @@ For this exercise you need to be logged in to Uppmax.
 Setup the environment:
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
-export data=/sw/courses/annotation/2019/data
+export data=/proj/g2019006/nobackup/$USER/data
 export assembly_check_path=/proj/g2019006/nobackup/$USER/assembly_check
 mkdir -p $assembly_check_path
 ```

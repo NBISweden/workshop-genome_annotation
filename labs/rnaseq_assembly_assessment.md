@@ -16,9 +16,8 @@ Setup the folder structure:
 
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
-export data=/sw/courses/annotation/2019/data
+export data=/proj/g2019006/nobackup/$USER/data
 export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
-
 ```
 
 # Assessing the quality using busco
@@ -33,18 +32,18 @@ For the trinity results :
 ```
 cd $RNAseq_assembly_path
 
-mkdir busco
+mkdir assembly_assessment
 
-cd busco
+cd assembly_assessment
 
 module load bioinfo-tools
 module load BUSCO
 source $BUSCO_SETUP
 
-run_BUSCO.py -i ~/annotation_course/RNAseq_assembly/trinity/Trinity.fasta -o busco_trinity -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
+run_BUSCO.py -i $data/RNAseq/trinity/Trinity.fasta -o busco_trinity -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
 ```
 
-Busco will take 30 to run so you can check the results in ~/annotation_course/????/RNAseq/busco_trinity
+Busco will take 30 min to run so you can check the results in $data/RNAseq/busco_trinity
 
 
 For the guided assembly results
@@ -52,15 +51,14 @@ For the guided assembly results
 You need first to extract the transcript sequences from the gtf transcript file :
 
 ```
-module load BioPerl
-gff3_sp_extract_sequences.pl --cdna -g transcripts.gtf -f ~/annotation_course/data/genome/genome.fa -o transcripts_stringtie.fa
+ln -s $RNAseq_assembly_path/guided_assembly/stringtie/transcripts.gtf .
 
+gff3_sp_extract_sequences.pl --cdna -g transcripts.gtf -f $data/genome/genome.fa -o transcripts_stringtie.fa
 ```
 Then you can run busco again :
 
 ```
 run_BUSCO.py -i stringtie/transcripts_stringtie.fa -o busco_stringtie -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5
-
 ```
 
 Compare the two busco, what do you think happened for stringtie?

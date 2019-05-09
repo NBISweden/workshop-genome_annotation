@@ -16,9 +16,8 @@ Setup the folder structure:
 
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
-export data=/sw/courses/annotation/2019/data
+export data=/proj/g2019006/nobackup/$USER/data
 export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
-
 ```
 
 ## Trinity
@@ -40,3 +39,14 @@ Trinity --seqType fq --max_memory 32G --left $data/raw_computes/ERR305399_1.fast
 ```
 
 Trinity takes a long time to run (several hours), you can stop the program when you start it and have a look at the results, look in $data/RNAseq/trinity the output is Trinity.fasta
+
+:bulb: **Tips**: Using Trinity
+
+Advantages : really easy to run
+many manual an tutorial
+out can be annotated directly with trinotate
+
+
+take several hours
+take a lot of ressources to run and create a lot of data
+results tend to be noisy with many shorts transcripts
