@@ -39,4 +39,4 @@ module load samtools
 Trinity --seqType fq --max_memory 32G --left $data/raw_computes/ERR305399_1.fastq.gz --right $data/raw_computes/ERR305399_2.fastq.gz --CPU 5 --output trinity --SS_lib_type RF
 ```
 
-Trinity takes a long time to run (like hours), you can stop the program when you start it and have a look at the results, look in ~/RNAseq_assembly_annotation/assembly_annotation/RNAseq/trinity the output is Trinity.fasta
+Trinity takes a long time to run (several hours), you can stop the program when you start it and have a look at the results, look in $data/RNAseq/trinity the output is Trinity.fasta

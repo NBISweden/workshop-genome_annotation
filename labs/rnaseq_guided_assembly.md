@@ -18,7 +18,6 @@ Setup the folder structure:
 source ~/git/GAAS/profiles/activate_rackham_env
 export data=/sw/courses/annotation/2019/data
 export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
-
 ```
 
 ## Trimmomatic/Hisat2/Stringtie
@@ -36,15 +35,14 @@ module load trimmomatic/0.36
 ```
 
 The following command line will perform the following:
-	• Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)
-	• Remove leading low quality or N bases (below quality 3) (LEADING:3)
-	• Remove trailing low quality or N bases (below quality 3) (TRAILING:3)
-	• Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)
-	• Drop reads below the 36 bases long (MINLEN:36)
+	<br>• Remove adapters (ILLUMINACLIP:TruSeq3-PE.fa:2:30:10)
+	<br>• Remove leading low quality or N bases (below quality 3) (LEADING:3)
+	<br>• Remove trailing low quality or N bases (below quality 3) (TRAILING:3)
+	<br>• Scan the read with a 4-base wide sliding window, cutting when the average quality per base drops below 15 (SLIDINGWINDOW:4:15)
+	<br>• Drop reads below the 36 bases long (MINLEN:36)
 
 ```
 java -jar /sw/apps/bioinfo/trimmomatic/0.36/milou/trimmomatic-0.36.jar PE -threads 5 -phred33 $data/raw_computes/ERR305399_1.fastq.gz $data/raw_computes/ERR305399_2.fastq.gz trimmomatic/ERR305399.left_paired.fastq.gz trimmomatic/ERR305399.left_unpaired.fastq.gz trimmomatic/ERR305399.right_paired.fastq.gz trimmomatic/ERR305399.right_unpaired.fastq.gz ILLUMINACLIP:/sw/apps/bioinfo/trimmomatic/0.36/rackham/adapters/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
-
 ```
 
 
@@ -66,8 +64,8 @@ hisat2-build $data/genome/genome.fa index/genome_index
 Then you can run Hisat2 :
 
 --phred33 Input qualities are ASCII chars equal to the Phred quality plus 33. This is also called the "Phred+33" encoding, which is used by the very latest Illumina pipelines (you checked it with the script fastq_guessMyFormat.pl)
---rna-strandness <string> For single-end reads, use F or R. 'F' means a read corresponds to a transcript. 'R' means a read corresponds to the reverse complemented counterpart of a transcript. For paired-end reads, use either FR or RF. (RF means fr-firststrand see [here](https://github.com/NBISweden/GAAS/blob/master/annotation/CheatSheet/rnaseq_library_types.md) for more explanation).
---novel-splicesite-outfile <path> In this mode, HISAT2 reports a list of splice sites in the file :
+<br>--rna-strandness <string> For single-end reads, use F or R. 'F' means a read corresponds to a transcript. 'R' means a read corresponds to the reverse complemented counterpart of a transcript. For paired-end reads, use either FR or RF. (RF means fr-firststrand see [here](https://github.com/NBISweden/GAAS/blob/master/annotation/CheatSheet/rnaseq_library_types.md) for more explanation).
+<br>--novel-splicesite-outfile <path> In this mode, HISAT2 reports a list of splice sites in the file :
 chromosome name <tab> genomic position of the flanking base on the left side of an intron <tab> genomic position of the flanking base on the right <tab> strand (+, -, and .) '.' indicates an unknown strand for non-canonical splice sites.
 
 ```
@@ -98,9 +96,9 @@ module load StringTie
 stringtie hisat2/accepted_hits.sorted.bam -o stringtie/transcripts.gtf
 ```
 
-When done you can find your results in the directory ‘outdir’. The file transcripts.gtf includes your assembled transcripts.
+When done you can find your results in the directory ‘stringtie’. The file transcripts.gtf includes your assembled transcripts.
 
-You could now also visualise all this information using a genome browser, such as IGV. IGV requires a genome fasta file and any number of annotation files in GTF or GFF3 format (note that GFF3 formatted file tend to look a bit weird in IGV sometimes).
+:bulb: **Tips**: You could now also visualise all this information using a genome browser, such as IGV. IGV requires a genome fasta file and any number of annotation files in GTF or GFF3 format (note that GFF3 formatted file tend to look a bit weird in IGV sometimes).
 
 Transfer the gtf files to your computer using scp:
 
@@ -109,6 +107,27 @@ scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNA
 ```
 
 :question: Looking at your results, are you happy with the default values of Stringtie (which we used in this exercise) or is there something you would like to change?
+
+:bulb: **Tips**: Maybe some statistics about the results would be nice, run the command
+
+```
+stringtie
+```
+To have all the parameters available.
+
+<details>
+<summary>:key: Click to see the solution .</summary>
+
+<br>If you want to have the gene abundance information for instance you should use the parameters -A
+<br>You can also use a reference annotation file if your genome has been annotated already and you want to use this annotation in your assembly -G
+<br>You can be more or less selective on the isoform abundance and keep really low abundant isoform or discard them -f
+<br>You can decide if you want to keep only reads with high coverage and set the minimum read coverage higher than the default parameter (2.5) -c
+<br>There are many parameters to play with depending on your question.
+
+check the <a href="https://ccb.jhu.edu/software/stringtie/index.shtml?t=manual/">Stringtie manual</a> for more information.
+
+<details>
+
 
 ##Check the intron size of your genes (Optional)
 

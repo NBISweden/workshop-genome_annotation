@@ -61,7 +61,7 @@ Copy the html file resulting of fastqc in your local machine
 ```
 scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNAseq_assembly/fastqc_reports/YOURFILE .
 ```
-:question: what kind of result do you have?
+:question: what kind of results do you have?
 
 <details>
 <summary>:key: Click to see the solution .</summary>
@@ -73,7 +73,7 @@ Next to each categories, there is color code to tell you when data is good (gree
 
 </details>
 
-
+<br>
 Checking the fastq quality score format :
 
 ```
