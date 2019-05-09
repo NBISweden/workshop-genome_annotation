@@ -57,8 +57,8 @@ click on the &lt;<strong>search and browse</strong>&gt; tab, then under the &lt;
   <ol>
    <li>Select <strong>Read</strong> from the &lt;select domain&gt; list; Type <strong>Drosophila melanogaster</strong> into the &lt;Drosophila melanogaster&gt; field;  Select <strong>Paired</strong> from the &lt;Librairy layout&gt; field; select <strong>Illumina HiSeq 4000</strong> from the &lt;Instrument model&gt; field; and click on search.
    <li>Write directly into the &lt;Search query&gt; box the following comand:  
-  ```
+  <code>
   library_layout="PAIRED" AND tax_eq(7227) AND instrument_model="Illumina HiSeq 4000"
-  ```
+  </code>
   </ol>
 </details>  
