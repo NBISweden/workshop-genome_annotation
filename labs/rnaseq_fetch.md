@@ -69,7 +69,6 @@ As we will be using the scripts libraries available in the git gaas you need fir
 Then :
 ```
 fastq_guessMyFormat.pl -i $data/raw_computes/ERR305399_1.fastq.gz
-
 ```
 
 In the normal mode, it differentiates between Sanger/Illumina1.8+ and Solexa/Illumina1.3+/Illumina1.5+.

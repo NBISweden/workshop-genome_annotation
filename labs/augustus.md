@@ -67,5 +67,5 @@ Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/
 :mortar_board: **_Exercise 2 -_ Augustus with yeast models:**  
 Run augustus on the same genome file but using settings for yeast instead (change species to Saccharomyces).
 
-Load this result file into Webapollo and compare with your earlier results.
+Load this result file into Webapollo and compare with your earlier results. 
 :question: Can you based on this draw any conclusions about how a typical yeast gene differs from a typical Drosophila gene?
