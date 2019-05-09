@@ -9,7 +9,10 @@ objectives:
   - Navigate in the different database/websites that provide data
 ---
 
-## 1 Obtaining Protein (Uniprot)
+# 1 Obtaining Protein 
+
+## Uniprot  
+
 The mission of UniProt is to provide the scientific community with a comprehensive, high-quality and freely accessible resource of protein sequence and functional information.  
 The site can be found at [http://www.uniprot.org](http://www.uniprot.org).
 Statistics about the different DB holded by Uniprot can be found on this page [https://www.uniprot.org/statistics/](https://www.uniprot.org/statistics/)
@@ -50,27 +53,38 @@ This section contains protein sets from fully sequenced genomes.
 
 :question: How many reference proteomes are there in Proteomes? How many are from eukaryota? What is the size of Drosophila melanogaste proteome? How many of its proteins are reviewed?
 
-**Ensembl:**  
+## Ensembl  
+
 The European Ensembl project makes data available for a number of genome projects, in particular vertebrate animals, through their excellent webinterface. This is a good place to find annotations for model organisms as well as download protein sequences and other types of data. They also supply the Biomart interface, which is excellent if you want to download data for a specific region, a specific gene, or create easily parsable file with gene names etc.
 
 **_Exercise 4_ - Ensembl Biomart:** 
 Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.org/biomart/martview) and use it to download all protein sequences for chromosome 4 in Drosophila melanogaster. Once you have downloaded the file, use some command line magic to figure out how many sequences are included in the file. Please ask the teachers if you are having problems here.
 
-## 2 Obtaining EST
+# 2 Obtaining EST
 
 EST data is not commonly generated anymore, but may become useful for some projects where such data is still available. Examples may include older genomes targeted for re-annotation or genomes with available EST data for closely related species.
 
-The NCBI or EBI websites are the most appropriate places to retrieve such kind of data.
+:mortar_board: **NCBI:**  
+The National Center for Biotechnology Information advances science and health by providing access to biomedical and genomic information.
+:question: Go to the [NCBI website](https://www.ncbi.nlm.nih.gov) and find how many ESTs are available for the drosophila melanogaster species.
 
-**_Exercise 5_ - NCBI:**  
-Go to the NCBI website and find how many ESTs are available for the drosophila melanogaster species.
+<details>
+<summary>:key: Click to see how to get the answer.</summary>
+On the NCBI main page:  
+  <ol>
+   <li>Type <strong>Drosophila melanogaster</strong> in the &lt;<strong>search</strong>&gt; bar.</li>
+   <li>Under the &lt;<strong>Genomes</strong>&gt; database click on &lt;<strong>Nucleotide</strong>&gt;.</li>
+   <li>On the left side of the newly opened page you should find the information under the &lt;<strong>Sequence Type</strong>&gt; section.</li>
+  </ol>
+</details>
 
-## 3 Obtaining RNA-seq
+# 3 Obtaining RNA-seq (SRA)
 
-Commonly, such data are produced within the project you are working on. Otherwise the most appropriate data could be retrieved on the Sequence Read Archive (SRA) website from the NCBI or the European Nucleotide Archive (ENA) from the EBI.
+Commonly, such data are produced within the project you are working on. Otherwise the most appropriate data could be retrieved on the Sequence Read Archive (SRA) database. SRA is a database which stores sequence data obtained from next generation sequence (NGS) technology.  
+All menbers of the INSDC consortium (NCBI, EMBL-EBI and DDBJ) operate an instance of the Sequence Read Archive (SRA).  
 
-:mortar_board: **_Exercise 6_ - EBI:**  
-Go to [ENA website](https://www.ebi.ac.uk/ena).  
+:mortar_board: **ENA:**  
+In Europe, EMBL-EBI provides access to SRA through the European Nucleotide Archive (ENA). Go to [ENA website](https://www.ebi.ac.uk/ena).  
 
 :question: How many paired illumina HiSeq 4000 runs are available.
 
