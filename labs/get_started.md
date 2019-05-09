@@ -50,7 +50,7 @@ Then you will prepare your general working place.
    * Move to the place where you will work  
     
    ```bash
-   cd /proj/uppstore2019059/nobackup/
+   cd /proj/g2019006/nobackup/
    ```
   
    * Create your private place where all the magic will happen.  

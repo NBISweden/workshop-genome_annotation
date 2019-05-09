@@ -52,10 +52,15 @@ Commonly, such data are produced within the project you are working on. Otherwis
 Go to [ENA website](https://www.ebi.ac.uk/ena) and find how many paired illumina HiSeq 4000 runs are available.
 <details>
 <summary>:key: Click to see how to get the answer.</summary>
-{% highlight lang-none %}
-click on the <search and browse> tab, then under the <Free text search> paragraph click on the <ENA Advanced Search> link. You should end up on this page: https://www.ebi.ac.uk/ena/data/warehouse/search .  
-From here two solution:  
-1 - Select **Read** from the <select domain> list; Type **Drosophila melanogaster** into the <Drosophila melanogaster> field;  Select **Paired** from the <Librairy layout> field; select **Illumina HiSeq 4000** from the <Instrument model> field; and click on search.
-2 - Write directly into the <Search query> box the following comand: library_layout="PAIRED" AND tax_eq(7227) AND instrument_model="Illumina HiSeq 4000"
-{% endhighlight %}
-</details>  
+click on the &lt;<strong>search and browse</strong>&gt; tab, then under the &lt;<strong>Free text search</strong>&gt; paragraph click on the &lt;<strong>ENA Advanced Search</strong>&gt; link. You should end up on this page: <i>https://www.ebi.ac.uk/ena/data/warehouse/search</i>.  
+  From here two solutions:
+  <ol>
+   <li>Select <strong>Read</strong> from the &lt;<strong>select domain</strong>&gt; list.</li>
+   <li>Type <strong>Drosophila melanogaster</strong> into the &lt;<strong>Taxon name</strong>&gt; field.</li>
+   <li>Select <strong>Paired</strong> from the &lt;<strong>Librairy layout</strong>&gt; field.</li>
+   <li>Select <strong>Illumina HiSeq 4000</strong> from the &lt;<strong>Instrument model</strong>&gt; field.</li>
+   <li>Click on search.</li>
+  </ol>
+The <strong>search query</strong> corresponding to this task is the following:  
+       <code>library_layout="PAIRED" AND tax_eq(7227) AND instrument_model="Illumina HiSeq 4000"</code>
+</details>
