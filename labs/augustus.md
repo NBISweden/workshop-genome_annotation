@@ -1,7 +1,18 @@
+---
+layout: default-overview
+title:
+exercises:
+questions:
+  -
+objectives:
+  -
+  - 
+---
+
 
 # Prerequisites
 
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+For this exercise you need to be logged in to Uppmax.
 
 Setup the folder structure:
 
@@ -28,11 +39,6 @@ This browser can already has a number of tracks preloaded for you, but you can a
 
 First you need to be sure that you have access to the libraries required to run tools (you need to redo this if you have been logged off).
 
-```
-export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
-```
-
-
 Second load the needed modules using:  
 ```
 module load bioinfo-tools  
@@ -40,25 +46,19 @@ module load augustus
 ```
 Run Augustus on your genome file using:  
 ```
-augustus --species=fly ~/annotation_course/data/genome.fa > augustus_drosophila.gtf
+augustus --species=fly $data/genome/genome.fa --gff3=on > augustus_drosophila.gff
 ```
 
-Take a look at the result file using ‘less augustus\_drosophila.gtf’. What kinds of features have been annotated? Does it tell you anything about UTRs?
+Take a look at the result file using ‘less augustus\_drosophila.gff’. What kinds of features have been annotated? Does it tell you anything about UTRs?
 
-The gff-format of Augustus is non-standard (looks like gtf) so to view it in a genome browser you need to convert it. You can do this using genometools which is available on Uppmax.
-
-Do this to convert your Augustus-file:
+The gff-format of Augustus is non-standard (looks like gtf) so to view it in a genome browser you need to convert it. You can do this using the following command line:
 
 ```
-module load perl  
-module load perl_modules  
-module load BioPerl/1.6.924_Perl5.18.4
-
-~/annotation\_course/course\_material/git/GAAS/annotation/Tools/Converter/gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3 --gff_version 2
+gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3
 ```
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
 ```
-scp __login__@rackham.uppmax.uu.se:~/annotation_course/practical2/augustus_drosophila.gff3 .  
+scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/abinitio_augustus/augustus_drosophila.gff3 .  
 ```
 Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). [Here find the WebApollo instruction](webapollo_usage)
 <br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/data/dmel/chromosome\_4/annotation
