@@ -22,47 +22,49 @@ Genome Annotation Service
 
 Room: E10:4308  
 **09.00-09.45** [Lecture: Understanding Annotation](lectures/) (Henrik Lantz)  
-**09.45-10.00** [Practical: Get started](labs/get_started) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-**10.00-10.20** Coffee break  
-**10.20-10.40** [Practical: assembly check](labs/assembly_check) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-**11.20-11.55** [Practical: find evidence](labs/find_all_evidence) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**09.45-10.00** [Practical: Get started](labs/get_started)
+**10.00-10.15** Coffee break  
+**10.15-10.45** [Practical: assembly check](labs/assembly_check) 
+**10.45-11.15** [Practical: find evidence](labs/find_all_evidence) 
+**10.45-11.15** [Practical: work with gff](labs/gff) 
 **12.00-13.00** Lunch  
 **13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/)  (Jacques Dainat)  
-**14.00-15.00** [Practical: Abinitio with augustus](labs/augustus) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**14.00-15.00** [Practical: Abinitio with augustus](labs/augustus)
 **15.00-15.15** Coffee break  
 **14.00-17.00** Practical: Evidence based annotation - How to prepare RNAseq (short reads)  
-   *   **14.00-14.45** [fetch](labs/rnaseq_fetch) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-   *   **14.45-15.45** [guided assembly](labs/rnaseq_guided_assembly) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-   *   **15.45-16.15** [denovo assembly](labs/rnaseq_denovo_assembly) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-   *   **16.15-17.00** [quality assessment ](labs/rnaseq_assembly_assessment) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+   *   **14.00-14.45** [fetch](labs/rnaseq_fetch)
+   *   **14.45-15.45** [guided assembly](labs/rnaseq_guided_assembly)  
+   *   **15.45-16.15** [denovo assembly](labs/rnaseq_denovo_assembly)  
+   *   **16.15-17.00** [quality assessment ](labs/rnaseq_assembly_assessment)  
 <hr>
 
 **Thursday 16th**  
 
 Room: E10:4308  
-**09.00-9.15** Summary of yesterday’s exercise (Lucile Soler, Jacques Dainat)  
+**09.00-9.15** Summary of yesterday’s exercise 
 **09.15-10.00** [Lecture: Structural annotation - Maker](slides/) (Jacques Dainat)  
 **10.00-10.15** Coffee break  
-**10.15-12.00** [Practical: Evidence based annotation - MAKER](labs/maker_evidence) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-**12.00-13.00** Lunch   
-**13.00-15.00** [Practical: Abinitio evidence-driven annotation - MAKER](labs/maker_abinitio_evidence_driven) (Lucile Soler, Jacques Dainat, Nima Rafati)  
-**15.00-15.15** Coffee break  
-**15.15-16.00** [Practical: Annotation_assessment](labs/annotation_assessment)(Lucile Soler, Jacques Dainat, Nima Rafati)  
-**16.00-17.00** [Lecture/Practical: Manual curation](labs/manual_curation)(Lucile Soler, Jacques Dainat, Nima Rafati)  
+**10.15-12.00** [Practical: Evidence based annotation - MAKER](labs/maker_evidence)
+**12.00-13.00** Lunch
+**13.00-14.00** [Practical: Abinitio training - Augustus](labs/augustus_training)
+**14.00-14.15** Coffee break  
+**14.15-15.45** [Practical: Abinitio evidence-driven annotation - MAKER](labs/maker_abinitio_evidence_driven) 
+**15.45-17.00** [Practical: Annotation_assessment](labs/annotation_assessment)
 
 <hr>
 
 **Friday 17th**  
 
 Room: E10:4308 
-**09.00-9.15** Summary of yesterday’s exercise (Lucile Soler, Jacques Dainat)  
+**09.00-9.15** Summary of yesterday’s exercise 
+**09.15-17.00** [Practical: Manual curation](labs/manual_curation)  
 **09.15-10.00** [Lecture: Functional annotation](slides/) (Lucile Soler)  
 **10.00-10.15** Coffee break  
-**10.15-12.00** [Practical: Functional annotation](labs/functional_annotation) (Lucile Soler, Jacques Dainat, Nima Rafati)   
+**10.15-12.00** [Practical: Functional annotation](labs/functional_annotation)  
 **12.00-13.00** Lunch  
-**13.00-13.30** [Practical: Submission to DB](labs/submission) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**13.00-13.30** [Practical: Submission to DB](labs/submission) 
 **13.30-14.00** [Lecture: Prokaryote annotation](slides/) (Lucile Soler)  
-**14.00-15.45** [Practical: Prokaryote annotation and visualization](labs/prokaryote_annotation) (incl. coffee break) (Lucile Soler, Jacques Dainat, Nima Rafati)  
+**14.00-15.45** [Practical: Prokaryote annotation and visualization](labs/prokaryote_annotation) (incl. coffee break)
 **16.00-17.00** Wrap-up  
 
 <hr>
