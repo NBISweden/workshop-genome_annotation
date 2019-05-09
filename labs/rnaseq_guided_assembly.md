@@ -63,10 +63,10 @@ hisat2-build $data/genome/genome.fa index/genome_index
 
 Then you can run Hisat2 :
 
---phred33 Input qualities are ASCII chars equal to the Phred quality plus 33. This is also called the "Phred+33" encoding, which is used by the very latest Illumina pipelines (you checked it with the script fastq_guessMyFormat.pl)
-<br>--rna-strandness <string> For single-end reads, use F or R. 'F' means a read corresponds to a transcript. 'R' means a read corresponds to the reverse complemented counterpart of a transcript. For paired-end reads, use either FR or RF. (RF means fr-firststrand see [here](https://github.com/NBISweden/GAAS/blob/master/annotation/CheatSheet/rnaseq_library_types.md) for more explanation).
-<br>--novel-splicesite-outfile <path> In this mode, HISAT2 reports a list of splice sites in the file :
-chromosome name <tab> genomic position of the flanking base on the left side of an intron <tab> genomic position of the flanking base on the right <tab> strand (+, -, and .) '.' indicates an unknown strand for non-canonical splice sites.
+**--phred33** Input qualities are ASCII chars equal to the Phred quality plus 33. This is also called the "Phred+33" encoding, which is used by the very latest Illumina pipelines (you checked it with the script fastq_guessMyFormat.pl)
+<br>**--rna-strandness** string For single-end reads, use F or R. 'F' means a read corresponds to a transcript. 'R' means a read corresponds to the reverse complemented counterpart of a transcript. For paired-end reads, use either FR or RF. (RF means fr-firststrand see [here](https://github.com/NBISweden/GAAS/blob/master/annotation/CheatSheet/rnaseq_library_types.md) for more explanation).
+<br>**--novel-splicesite-outfile** path In this mode, HISAT2 reports a list of splice sites in the file :
+chromosome name tab genomic position of the flanking base on the left side of an intron <tab> genomic position of the flanking base on the right tab strand (+, -, and .) '.' indicates an unknown strand for non-canonical splice sites.
 
 ```
 mkdir hisat2
@@ -118,16 +118,15 @@ To have all the parameters available.
 <details>
 <summary>:key: Click to see the solution .</summary>
 
-<br>If you want to have the gene abundance information for instance you should use the parameters -A
-<br>You can also use a reference annotation file if your genome has been annotated already and you want to use this annotation in your assembly -G
-<br>You can be more or less selective on the isoform abundance and keep really low abundant isoform or discard them -f
-<br>You can decide if you want to keep only reads with high coverage and set the minimum read coverage higher than the default parameter (2.5) -c
+<ul>If you want to have the gene abundance information for instance you should use the parameters -A </ul>
+<ul>You can also use a reference annotation file if your genome has been annotated already and you want to use this annotation in your assembly -G </ul>
+<ul>You can be more or less selective on the isoform abundance and keep really low abundant isoform or discard them -f </ul>
+<ul>You can decide if you want to keep only reads with high coverage and set the minimum read coverage higher than the default parameter (2.5) -c </ul>
 <br>There are many parameters to play with depending on your question.
 
 check the <a href="https://ccb.jhu.edu/software/stringtie/index.shtml?t=manual/">Stringtie manual</a> for more information.
 
-<details>
-
+</details>
 
 ##Check the intron size of your genes (Optional)
 
