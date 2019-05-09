@@ -21,5 +21,8 @@ menu:
     url: location
   - title: Uppmax login
     url: uppmax_login
+    - title: Cheat&nbsp;sheets
+    submenus:
+      - title: Bash level1
   - title: Schedule
     url: schedule
