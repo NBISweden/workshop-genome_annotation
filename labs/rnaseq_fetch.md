@@ -65,12 +65,11 @@ scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNA
 
 <details>
 <summary>:key: Click to see the solution .</summary>
-
+<br>
 Fastqc reports give you different statistics about your RNAseq data before assembly.
-Next to each categories, there is color code to tell you when data is good (green), bad or missing information (red) and questionable results (orange).
+Next to each categories, there is color code to tell you when data is good (green), bad or missing information (red) and questionable results (orange).  
 
-You can find more details about the results <a href="https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/">here</a>.
-
+<br>You can find more details about the results <a href="https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/">here</a>.
 
 </details>
 
