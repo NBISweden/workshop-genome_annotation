@@ -148,7 +148,7 @@ gff3_sp_manage_introns.pl --help
 <code>
 
 gxf_to_gff3.pl -g stringtie/transcripts.gtf -o transcript_stringtie.gff3
-gff3_sp_manage_introns.pl --gff transcript_stringtie.gff3 -o introns_information
+<br>gff3_sp_manage_introns.pl --gff transcript_stringtie.gff3 -o introns_information
 
 </code>
 </details>

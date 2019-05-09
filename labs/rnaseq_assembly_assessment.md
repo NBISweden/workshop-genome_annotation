@@ -10,7 +10,7 @@ objectives:
 ---
 
 # Prerequisites
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+For this exercise you need to be logged in to Uppmax.
 
 Setup the folder structure:
 
