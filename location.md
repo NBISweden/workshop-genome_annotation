@@ -1,10 +1,9 @@
 # Location & Travel Info
 
-The workshop will take place in the SciLifeLab building at Uppsala Biomedical Center (BMC), Husargatan 3, Uppsala.
+The workshop will take place in the SciLifeLab building at Uppsala Biomedical Center (BMC), Husargatan 3, Uppsala.  
+[Map to BMC](https://goo.gl/maps/YQSdtGx2paD2)
 
 ## Uppsala Biomedical Center (BMC)
-
-[Map to BMC](https://goo.gl/maps/YQSdtGx2paD2)
 
 Enter through the C11 entrance, now also called the SciLife entrance. Forward and and to the right 
 from the C11 entrance is the door to the new SciLife building ("the Hub"; E10 on the map) built on 
