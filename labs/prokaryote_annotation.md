@@ -1,6 +1,12 @@
 ---
-layout: default
-title:  'Prokka exercise'
+layout: default-overview
+title: Prokaryote annotation
+exercises: 45
+questions:
+  - How to De-novo assemble my RNAseq?
+  - What should I look in my assembly to go forward
+objectives:
+  - run Trinity
 ---
 
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
@@ -11,8 +17,8 @@ title:  'Prokka exercise'
 Before going into the exercises below, you should create in your home folder a specific folder for this practical session and copy a folder with the course data using:  
 
 ```
-mkdir -p ~/annotation_course/practical4
-cd ~/annotation_course
+mkdir -p ~/annotation_course/prokaryote_annotation
+cd ~/annotation_course/prokaryote_annotation
 ```
 
 # Bacterial annotation using Prokka
@@ -32,8 +38,8 @@ cp -r ~/annotation_course/course_material/augustus_path .*
 
 chmod ug+w -R augustus_path
 
-module load bioinfo-tools 
-module load BUSCO 
+module load bioinfo-tools
+module load BUSCO
 
 AUGUSTUS_CONFIG_PATH=augustus_path*
 
@@ -41,7 +47,7 @@ BUSCO -i /home/__login__/annotation\_course/course\_material/data/prokka/Chlamyd
 ```
 look at the results of busco in short_summary_chlamydia_busco.txt
 
-- what do you see? 
+- what do you see?
 - what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
 - how do you expect the annotation will be?
 
@@ -70,12 +76,11 @@ Look at the different results obtained :
 - Do you see any differences with the different options and no options you used?
 - Did you get the annotation you expected after the busco results?
 
-You could now also visualise all this information using a genome browser, such as [IGV](http://software.broadinstitute.org/software/igv/). 
+You could now also visualise all this information using a genome browser, such as [IGV](http://software.broadinstitute.org/software/igv/).
 IGV requires a genome fasta file and any number of annotation files in GTF or GFF3 format (note that GFF3 formatted file tend to look a bit weird in IGV sometimes).
 
 Transfer the gff3 files to your computer using scp:    
 ```
-scp __login__@milou.uppmax.uu.se:/home/__login__/annotation\_course/practical1/prokka/YOURFILE .
+scp __login__@rackham.uppmax.uu.se:/home/__login__/annotation\_course/practical1/prokka/YOURFILE .
 ```
 - Do you see any differences with the different options and no option you used?
-
