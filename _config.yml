@@ -19,10 +19,10 @@ menu:
     url: index
   - title: Location
     url: location
-  - title: Uppmax login
+  - title: Uppmax&nbsp;login
     url: uppmax_login
-    - title: Cheat&nbsp;sheets
+  - title: Cheat&nbsp;sheets
     submenus:
-      - title: Bash level1
+      - title: Bash&nbsp;level1
   - title: Schedule
     url: schedule
