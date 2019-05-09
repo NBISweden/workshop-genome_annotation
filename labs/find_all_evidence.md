@@ -58,7 +58,19 @@ This section contains protein sets from fully sequenced genomes.
 The European Ensembl project makes data available for a number of genome projects, in particular vertebrate animals, through their excellent webinterface. This is a good place to find annotations for model organisms as well as download protein sequences and other types of data. They also supply the Biomart interface, which is excellent if you want to download data for a specific region, a specific gene, or create easily parsable file with gene names etc.
 
 :mortar_board: **Ensembl Biomart:** 
-Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.org/biomart/martview) and use it to download all protein sequences for chromosome 4 in Drosophila melanogaster. Once you have downloaded the file, use some command line magic to figure out how many sequences are included in the file. Please ask the teachers if you are having problems here.
+Go to Biomart at [http://www.ensembl.org/biomart/martview](http://www.ensembl.org/biomart/martview).  
+:question: Find a way to select all protein sequences for chromosome 4 in Drosophila melanogaster. 
+
+<details>
+<summary>:key: Click to see how to get the answer.</summary>
+From the ensembl biomart web page at [http://www.ensembl.org/biomart/martview](http://www.ensembl.org/biomart/martview):
+  <ol>
+   <li>On the left menu click on &lt;<strong>Dataset</strong>&gt;, then select the &lt;<strong>Ensembl Genes</strong>&gt; database and the &lt;<strong>Drosophila melanogaster</strong>&gt; dataset.</li>
+   <li>On the left menu click on &lt;<strong>Filters</strong>&gt;, then select the &lt;<strong>REGION</strong>&gt; paragraph, tick the checkbox &lt;<strong>Chromosome/scaffold</strong>&gt; and select the chromosome number &lt;<strong>4</strong>&gt;.</li>
+   <li>On the left menu click on &lt;<strong>Attributes</strong>&gt;, then tick the checkbox &lt;<strong>Sequences</strong>&gt; and tick the checkbox &lt;<strong>Peptide</strong>&gt;.</li>
+<li>You can check how many genes are related to your criterium by clicking the &lt;<strong>Count</strong>&gt; button at the top. To see the selected dataset (and to download it) you have to click the &lt;<strong>Results</strong>&gt; button.</li>
+  </ol>
+</details>  
 
 # 2 Obtaining EST
 
