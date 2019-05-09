@@ -126,12 +126,19 @@ gff3_sp_manage_introns.pl --help
 ```
 
 <details>
-<summary>:key: Click to see how to get the solution .</summary>
+<summary>:key: Click to see the solution .</summary>
 
 <code>
+
 gxf_to_gff3.pl -g stringtie/transcripts.gtf -o transcript_stringtie.gff3
 gff3_sp_manage_introns.pl --gff transcript_stringtie.gff3 -o introns_information
+
 </code>
 </details>
 
 :question: What is the value you should choose?
+
+<details>
+<summary>:key: Click to see the solution .</summary>
+You can choose 6722, 6500 if you think the introns size is over estimate or 7000 if you think it is possible to have bigger introns and you do not want to miss them.
+</details>

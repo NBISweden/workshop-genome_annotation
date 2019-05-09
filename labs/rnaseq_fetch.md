@@ -29,7 +29,6 @@ You can create the folders where you want but I would suggest a folder organisat
 
 ```
 cd $RNAseq_assembly_path
-
 ```
 
 ## Assembling transcripts based on RNA-seq data
@@ -57,16 +56,26 @@ mkdir fastqc_reports
 
 fastqc $data/raw_computes/ERR305399_1.fastq.gz -o fastqc_reports/
 ```
-:question: scp the html file resulting of fastqc, what kind of result do you have?
+Copy the html file resulting of fastqc in your local machine
 
 ```
 scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNAseq_assembly/fastqc_reports/YOURFILE .
 ```
+:question: what kind of result do you have?
+
+<details>
+<summary>:key: Click to see the solution .</summary>
+
+Fastqc reports give you different statistics about your RNAseq data before assembly.
+Next to each categories, there is color code to tell you when data is good (green), bad or missing information (red) and questionable results (orange).
+
+You can find more details about the results [here](https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/)
+
+</details>
+
+
 Checking the fastq quality score format :
 
-As we will be using the scripts libraries available in the git gaas you need first to export the libraries (if you were logged off):
-
-Then :
 ```
 fastq_guessMyFormat.pl -i $data/raw_computes/ERR305399_1.fastq.gz
 ```
