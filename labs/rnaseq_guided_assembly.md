@@ -128,7 +128,7 @@ check the <a href="https://ccb.jhu.edu/software/stringtie/index.shtml?t=manual/"
 
 </details>
 
-##Check the intron size of your genes (Optional)
+## Check the intron size of your genes (Optional)
 
 From the gtf file, you can now know the size of introns in your genes.
 
@@ -136,8 +136,7 @@ From the gtf file, you can now know the size of introns in your genes.
 
 To do so, first you need to convert your gtf into a proper gff3 (You have done it in the Practical: Abinitio with augustus) and then run the script gff3_sp_manage_introns.pl
 
-:bulb: **Tips**:
-Do
+:bulb: **Tips**: Do
 ```
 gxf_to_gff3.pl --help
 gff3_sp_manage_introns.pl --help
