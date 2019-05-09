@@ -17,11 +17,9 @@ Genome Annotation Service
 
 ## Schedule
 
-*Click the heading of a topic to see the lecture slides or lab instructions.*
+***Click the heading of a topic to see the lecture slides or lab instructions.***
 
 <hr>
-
-#### Click the heading of a topic to see the lecture slides or lab instructions.
 
 ### Day 1  
 
