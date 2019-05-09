@@ -22,8 +22,6 @@ menu:
   - title: Uppmax&nbsp;login
     url: uppmax_login
   - title: Cheat&nbsp;sheets
-    submenus:
-      - title: Uppmax
-      url: files/cheat_sheet/uppmax-cheat-sheet.png
+    url: files/cheat_sheet/cheat_sheets
   - title: Schedule
     url: schedule
