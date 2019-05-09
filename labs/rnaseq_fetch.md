@@ -10,7 +10,7 @@ objectives:
 ---
 
 # Prerequisites
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+For this exercise you need to be logged in to Uppmax.
 
 Setup the folder structure:
 
@@ -55,12 +55,12 @@ module load FastQC/0.11.5
 
 mkdir fastqc_reports
 
-fastqc ~/annotation_course/data/raw_computes/ERR305399_1.fastq.gz -o fastqc_reports/
+fastqc $data/raw_computes/ERR305399_1.fastq.gz -o fastqc_reports/
 ```
 scp the html file resulting of fastqc, what kind of result do you have?
 
 ```
-scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/$USER/RNAseq_assembly/YOURFILE .
+scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNAseq_assembly/fastqc_reports/YOURFILE .
 ```
 Checking the fastq quality score format :
 
@@ -68,7 +68,7 @@ As we will be using the scripts libraries available in the git gaas you need fir
 
 Then :
 ```
-fastq_guessMyFormat.pl -i ~/annotation_course/assembly_annotation/?????/ERR305399_1.fastq.gz
+fastq_guessMyFormat.pl -i $data/raw_computes/ERR305399_1.fastq.gz
 
 ```
 

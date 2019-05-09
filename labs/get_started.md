@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Get started
-exercises: 15
+exercises: 20
 questions:
   - How do I connect to UPPMAX?
   - How do I get the data and tools necessary for the course?
@@ -27,34 +27,34 @@ Once connected you will need you to clone and install our github repository inde
   mkdir -p ~/git ; cd ~/git
   git clone https://github.com/NBISweden/GAAS.git
   cd GAAS
-  make install 
+  make install
   source ~/git/GAAS/profiles/activate_rackham_env
   ```
-  
+
    Now the GAAS environment is displayed at the beginnin of each prompt line: `(GAAS)`
    To get out of the nbis environment and restore your previous environment type:
 
   ```bash
   deactivate
   ```
-  
+
    To reactivate he GAAS environment at any time, just type:
-   
+
    ```bash
    source ~/git/GAAS/profiles/activate_rackham_env
    ```
-   
+
 ### Setup your general working place    
 Then you will prepare your general working place.  
 
    * Move to the place where you will work  
-    
+
    ```bash
    cd /proj/g2019006/nobackup/
    ```
-  
+
    * Create your private place where all the magic will happen.  
-    
+
    ```bash
    mkdir $USER
    cd $USER
@@ -66,4 +66,3 @@ Then you will prepare your general working place.
    ```bash
    cp -r /sw/courses/annotation/2019/data .
    ```
-

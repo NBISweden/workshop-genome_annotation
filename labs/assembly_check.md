@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Assembly Check
-exercises: 20
+exercises: 30
 questions:
   - How do I check the quality of my assembly regarding gene contents?
   - What should I look in my assembly to go forward
@@ -57,7 +57,7 @@ run_BUSCO.py -i $data/genome/genome.fa -o genome_dmel_busco -m genome -c 10 -l $
 ```
 
 While BUSCO is running, you may start the exercise 2 (to do so you will need to open another terminal).
-When done, check the short\_summary\_genome\_dmel\_busco file in the output folder. 
+When done, check the short\_summary\_genome\_dmel\_busco file in the output folder.
 
 :question: How many core genes have been searched in your assembly ? How many are reported as complete? Does this sound reasonable?  
 :bulb: **Tips**: the "genome" is here in fact only the chromosome 4 that corresponds to less than 1% of the real size of the genome.
