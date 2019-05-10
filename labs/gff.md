@@ -101,13 +101,11 @@ Download **human** gff annotation v96 from Ensembl:
  
  :question:  
 <ol>
-   <li>How many line?  </li>
+   <li>How many line are there? </li>
    <li>How many <strong>gene</strong> are there? </li>
    <li>How many <strong>mRNA</strong> are there? </li>
    <li>How many <strong>gene</strong> are there on chrmosome  <strong>1</strong>? </li>
    <li>How many type of feature (3rd column) are there? </li>
-
-   <li>Do you see any problem in the 9th colum? </li>
 </ol>
  
 <details>
