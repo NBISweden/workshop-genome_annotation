@@ -62,8 +62,8 @@ Now edit the file to fix the 9th column:
 <summary>:key: Click to see the solution .</summary>
   The two first line must be like that:
   <code>    
-4	AUGUSTUS        gene    386     13142   0.01    +	.	gene_id g1;  
-4	AUGUSTUS        transcript	386     13142   0.01    +	.	transcript_id g1.t1;
+    4	AUGUSTUS        gene    386     13142   0.01    +	.	gene_id g1;</br>
+    4	AUGUSTUS        transcript	386     13142   0.01    +	.	transcript_id g1.t1;
   </code>
 </details>
 
