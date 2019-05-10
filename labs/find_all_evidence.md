@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Find evidence
-exercises: 40
+exercises: 45
 questions:
   - What data do I need to run a genome annotation?
   - How/where to get them?
