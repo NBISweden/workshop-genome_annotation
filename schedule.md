@@ -78,10 +78,5 @@ Room: E10:4308
 **15.00-16.00** [Practical: Prokaryote annotation and visualization](labs/prokaryote_annotation)  
 **16.00-17.00** Wrap-up  
 
-<hr>
 
-<br/>
-<br/>
 
-***Note:***
-The practical exercise sessions will be made on the UPPMAX cluster. **>>[UPPMAX login instructions](uppmax_login)<<**
