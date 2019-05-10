@@ -90,7 +90,8 @@ The information regarding library type can be very useful for reads to be assemb
 
 Here a resume of the different library types:
 
-https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg
+ <img align="center" src="https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg"  />
+
 
 ```bash
 ln -s $data/raw_computes/ERR305399_1.fastq.gz
