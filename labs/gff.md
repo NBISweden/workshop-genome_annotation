@@ -33,9 +33,7 @@ cp $data/annotation/augustus.xxx .
 less augustus.xxx
 ```
 
-:question:
-<ol>
-   <li>Is it a GFF of GTF file?  
+:question:<ol><li>Is it a GFF of GTF file?  
    <li>Do you see any problem in the 3rd colum? 
    <li>Which version of the format it is?
    <li>Do you see any problem in the 9th colum? 
