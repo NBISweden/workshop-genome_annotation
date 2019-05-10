@@ -76,7 +76,7 @@ Indeed, each sequence can contain one or more genes; the genes can be on either 
 ```
 gff3_sp_extract_sequences.pl -g filter/codingGeneFeatures.filter.longest_cds.gff3 -f $data/genome/genome.fa -o protein/codingGeneFeatures.filter.longest_cds.proteins.fa
 
-module load blast  
+module load blast/2.7.1+   
 
 makeblastdb -in protein/codingGeneFeatures.filter.longest_cds.proteins.fa -dbtype prot  
 
@@ -109,7 +109,7 @@ The training will probably not be good!
 Now that you have created a set of gene to train augustus, let's train it!
 
 ```
-module load BUSCO
+module load BUSCO/3.0.2b
 
 source $BUSCO_SETUP
 
