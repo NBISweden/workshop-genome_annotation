@@ -13,7 +13,7 @@ title:  'Schedule'
 
 [NBIS (National Bioinformatics Infrastructure Sweden)](https://nbis.se)
 Genome Annotation Service   
-  
+
 
 ## Schedule
 
@@ -23,7 +23,7 @@ Genome Annotation Service
 
 ### Day 1  
 
-**Wednesday 15th** 
+**Wednesday 15th**
 
 Room: E10:4308  
 **09.00-09.45** [Lecture: Understanding Annotation](lectures/) (Henrik Lantz)  
@@ -37,10 +37,10 @@ Room: E10:4308
 **14.00-15.00** [Practical: Abinitio with augustus](labs/augustus)  
 **15.00-15.15** Coffee break  
 **14.00-17.00** Practical: Evidence based annotation - How to prepare RNAseq (short reads)  
-   *   **14.00-14.45** [fetch](labs/rnaseq_fetch)
-   *   **14.45-15.45** [guided assembly](labs/rnaseq_guided_assembly)  
-   *   **15.45-16.15** [denovo assembly](labs/rnaseq_denovo_assembly)  
-   *   **16.15-17.00** [quality assessment ](labs/rnaseq_assembly_assessment)  
+  -  **14.00-14.45** [fetch](labs/rnaseq_fetch)
+  -  **14.45-15.45** [guided assembly](labs/rnaseq_guided_assembly)  
+  -  **15.45-16.15** [denovo assembly](labs/rnaseq_denovo_assembly)  
+  -  **16.15-17.00** [quality assessment ](labs/rnaseq_assembly_assessment)  
 <hr>
 
 ### Day 2  
@@ -73,9 +73,9 @@ Room: E10:4308
 **12.00-13.00** Lunch  
 **13.00-13.45** [Practical: Functional annotation (part2)](labs/functional_annotation)  
 **13.45-14.15** [Practical: Submission to DB](labs/submission)  
-**14.15-14.45** [Lecture: Prokaryote annotation](slides/) (Lucile Soler)
-**14.45-15.00** Coffee break
-**15.00-16.00** [Practical: Prokaryote annotation and visualization](labs/prokaryote_annotation)
+**14.15-14.45** [Lecture: Prokaryote annotation](slides/) (Lucile Soler)  
+**14.45-15.00** Coffee break  
+**15.00-16.00** [Practical: Prokaryote annotation and visualization](labs/prokaryote_annotation)  
 **16.00-17.00** Wrap-up  
 
 <hr>
