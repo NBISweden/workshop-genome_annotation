@@ -35,11 +35,11 @@ Before running Prokka on genomes assemblies, it is a good step to start with che
 
 ## Checking genes in the assembly
 
-BUSCO2 provides measures for quantitative assessment of genome assembly, gene set, and transcriptome completeness. Genes that make up the BUSCO2 sets for each major lineage are selected from orthologous groups with genes present as single-copy orthologs in at least 90% of the species. It includes 1,066 genes for arthropods, 2,586 for vertebrates, 978 for metazoans, 290 for fungi, 303 for eukaryotes and for bacteria 40 universal marker genes.
+[BUSCO](https://busco.ezlab.org/) provides measures for quantitative assessment of genome assembly, gene set, and transcriptome completeness. Genes that make up the BUSCO sets for each major lineage are selected from orthologous groups with genes present as single-copy orthologs in at least 90% of the species.
 
 You will run BUSCO on 3 bacterial assemblies provided (one E coli, one chlamydia and one streptococcus). We will select the lineage set of bacteria.
 
-BUSCO2 is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up the environment.
+BUSCO is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up the environment.
 
 ```
 module load BUSCO
