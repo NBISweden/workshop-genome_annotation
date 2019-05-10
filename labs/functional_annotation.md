@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Functional annotation
-exercises: 1h45
+exercises: 1h30
 questions:
   - What is needed for functional annotation?
   - How to do functional annotation?
@@ -52,10 +52,10 @@ InterproScan can be run through a website or from the command line on a linux se
 
 Launch Interproscan with the option -h if you want have a look about all the parameters.
 
-- The '-app' option allows defining the database used. Here we will use the PfamA,ProDom and SuperFamily databases.  
-- Interproscan uses an internal database that related entries in public databases to established GO terms. By running the '-goterms' option, we can add this information to our data set.
-- If you enable the InterPro lookup ('-iprlookup'), you can also get the InterPro identifier corresponding to each motif retrieved: for example, the same motif is known as PF01623 in Pfam and as IPR002568 in InterPro.
-- The option '-pa' provides mappings from matches to pathway information (MetaCyc,UniPathway,KEGG,Reactome).
+<br> - The '-app' option allows defining the database used. Here we will use the PfamA,ProDom and SuperFamily databases.  
+<br> - Interproscan uses an internal database that related entries in public databases to established GO terms. By running the '-goterms' option, we can add this information to our data set.
+<br> - If you enable the InterPro lookup ('-iprlookup'), you can also get the InterPro identifier corresponding to each motif retrieved: for example, the same motif is known as PF01623 in Pfam and as IPR002568 in InterPro.
+<br> - The option '-pa' provides mappings from matches to pathway information (MetaCyc,UniPathway,KEGG,Reactome).
 ```
 module load InterProScan
 interproscan.sh -i maker_final.faa -t p -dp -pa -appl Pfam,ProDom-2006.1,SuperFamily-1.75 --goterms --iprlookup
@@ -67,8 +67,8 @@ You will obtain 3 result files with the following extension '.gff3', '.tsv' and 
 ### load the retrieved functional information in your annotation file:
 Next, you could write scripts of your own to merge interproscan output into your annotation. Incidentally, Maker comes with utility scripts that can take InterProscan output and add it to a Maker annotation file (you need to load maker).  
 
-- ipr\_update\_gff: adds searchable tags to the gene and mRNA features in the GFF3 files.  
-- iprscan2gff3: adds physical viewable features for domains that can be displayed in JBrowse, Gbrowse, and Web Apollo.
+<br> - ipr\_update\_gff: adds searchable tags to the gene and mRNA features in the GFF3 files.  
+<br> - iprscan2gff3: adds physical viewable features for domains that can be displayed in JBrowse, Gbrowse, and Web Apollo.
 
 We also created a script that can do the merging between the structural annotation and the interpro results :
 
@@ -104,10 +104,10 @@ The improved annotation is the gff file inside the maker_final.interpro.blast fo
 
 <details>
 <summary>:key: Click to see the solution .</summary>  
-you can do this to count genes with names :
+For instance, you can do this to count genes with names :
+grep -P "\tgene" maker_final.interpro.blast/maker_final.gff | grep -v "Name" | wc -l
 <code> </code>
 </details>
-
 
 ### Set nice IDs
 
