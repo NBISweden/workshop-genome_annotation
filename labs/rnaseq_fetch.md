@@ -83,3 +83,36 @@ In the normal mode, it differentiates between Sanger/Illumina1.8+ and Solexa/Ill
 In the advanced mode, it will try to pinpoint exactly which scoring system is used.
 
 More test can be made and should be made on RNA-seq data before doing the assembly, we have not time to do all of them during this course. have a look [here](https://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools)
+
+### Checking the library type (read orientations)
+
+The information regarding library type can be very useful for reads to be assembled into a transcriptome or mapped to a reference assembly. This is because the library type can help to discern where in the transcriptome shorter ambiguous reads belong by using the read’s relative orientation and from which strand it was sequenced. Unfortunately, this information regarding the library type used is not included in sequencing output files and may be lost before the assembly of the data.
+
+Here a resume of the different library types:
+
+https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg
+
+```bash
+ln -s $data/raw_computes/ERR305399_1.fastq.gz
+ln -s $data/raw_computes/ERR305399_2.fastq.gz
+ln -s $data/genome/genome.fa
+
+module load trinity/2.8.2
+module load BUSCO/3.0.2b
+module load bowtie2/2.3.4.3
+module load samtools/1.9
+module load snakemake/5.4.5
+
+git clone https://github.com/NBISweden/GUESSmyLT.git
+cd GUESSmyLT
+python setup.py install --user
+```
+
+```bash
+~/.local/bin/GUESSmyLT -h
+```
+
+```bash
+ ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome
+```
+
