@@ -55,7 +55,7 @@ First you need to build an index of your genome
 ```
 mkdir index
 
-module load HISAT2
+module load HISAT2/2.1.0
 module load samtools/1.8
 hisat2-build $data/genome/genome.fa index/genome_index
 ```
@@ -89,7 +89,7 @@ You can add as input an annotation from gtf/gff3 file to calculate TPM and FPKM 
 
 
 ```
-module load StringTie
+module load StringTie/1.3.3
 
 stringtie hisat2/accepted_hits.sorted.bam -o stringtie/transcripts.gtf
 ```

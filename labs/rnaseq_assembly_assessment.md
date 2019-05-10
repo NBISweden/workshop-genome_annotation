@@ -36,7 +36,7 @@ mkdir assembly_assessment
 
 cd assembly_assessment
 
-module load BUSCO
+module load BUSCO/3.0.2b
 source $BUSCO_SETUP
 
 run_BUSCO.py -i $data/RNAseq/trinity/Trinity.fasta -o busco_trinity -l $BUSCO_LINEAGE_SETS/arthropoda_odb9 -m tran -c 5

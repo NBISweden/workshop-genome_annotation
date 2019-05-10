@@ -32,7 +32,7 @@ mkdir trinity
 cd trinity
 
 module load trinity/2.4.0
-module load samtools
+module load samtools/1.9
 
 Trinity --seqType fq --max_memory 32G --left $data/raw_computes/ERR305399_1.fastq.gz --right $data/raw_computes/ERR305399_2.fastq.gz --CPU 5 --output trinity --SS_lib_type RF
 ```
