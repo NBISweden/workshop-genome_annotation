@@ -69,7 +69,6 @@ Fastqc reports give you different statistics about your RNAseq data before assem
 Next to each categories, there is color code to tell you when data is good (green), bad or missing information (red) and questionable results (orange).  
 
 <br>You can find more details about the results <a href="https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/">here</a>.
-
 </details>
 
 <br>
@@ -92,7 +91,9 @@ Here a resume of the different library types:
 
  <img align="center" src="https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg"  />
 
+In order to guess de-novo the library type we will use for this excercise: [GUESSmyLT](https://github.com/NBISweden/GUESSmyLT).  
 
+First link the data and load the necessary modules:  
 ```bash
 ln -s $data/raw_computes/ERR305399_1.fastq.gz
 ln -s $data/raw_computes/ERR305399_2.fastq.gz
@@ -103,17 +104,29 @@ module load BUSCO/3.0.2b
 module load bowtie2/2.3.4.3
 module load samtools/1.9
 module load snakemake/5.4.5
+```
 
+Then install [GUESSmyLT](https://github.com/NBISweden/GUESSmyLT):   
+```
 git clone https://github.com/NBISweden/GUESSmyLT.git
 cd GUESSmyLT
 python setup.py install --user
 ```
 
+Check that the tool is working fine:  
 ```bash
 ~/.local/bin/GUESSmyLT -h
 ```
 
+Let's know launch it on our data:  
 ```bash
  ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome
 ```
 
+:question: What library type has been used for the ERR305399 sample?
+
+<details>
+<summary>:key: Click to see the solution .</summary>
+<br>
+In was ... in other term ... .
+</details>
