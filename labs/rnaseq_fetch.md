@@ -101,6 +101,7 @@ ln -s $data/genome/genome.fa
 
 module load trinity/2.8.2
 module load BUSCO/3.0.2b
+source $BUSCO_SETUP
 module load bowtie2/2.3.4.3
 module load samtools/1.9
 module load snakemake/5.4.5
@@ -120,7 +121,7 @@ Check that the tool is working fine:
 
 Let's know launch it on our data:  
 ```bash
- ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome
+ ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome --threads 10
 ```
 
 :question: What library type has been used for the ERR305399 sample?
