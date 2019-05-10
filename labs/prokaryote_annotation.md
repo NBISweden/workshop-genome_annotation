@@ -51,8 +51,8 @@ run_BUSCO.py -i $data/raw_computes/Chlamydia_trachomatis_a_363.fa -o chlamydia_b
 look at the results of busco in short_summary_chlamydia_busco.txt
 
 :question:what outputs do you have? where do you have the annotation?
-:question:what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
-:question:how do you expect the annotation will be?
+<br>:question:what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
+<br>:question:how do you expect the annotation will be?
 
 Do the same for the two other assemblies and answer those questions again.
 
@@ -93,7 +93,7 @@ You can try other options to see what you would need to modify in your own proje
 Look at the different results obtained :
 
 :question:Do you see any differences with the different options and no options you used? (like for instance with or without --proteins)
-:question:Did you get the annotation you expected after the busco results?
+<br>:question:Did you get the annotation you expected after the busco results?
 
 You could now also visualise all this information using a genome browser, such as [IGV](http://software.broadinstitute.org/software/igv/).
 IGV requires a genome fasta file and any number of annotation files in GTF or GFF3 format (note that GFF3 formatted file tend to look a bit weird in IGV sometimes).
@@ -119,7 +119,7 @@ You can do it for the two other genomes.
 :question:Do you see a difference with the BUSCO of the genome?
 
 <details>
-<summary>:key: Click to see part of the solution .</summary>  
+<summary>:key: Click to see the solution .</summary>  
 Often the BUSCO results for genes are slightly lower than the BUSCO results for the full genome, this is due to the fact that annotation method will always not predict everything.
 It should not be too much of a difference either.
 
