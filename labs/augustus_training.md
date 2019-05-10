@@ -3,10 +3,11 @@ layout: default-overview
 title: Training ab-initio predictor
 exercises: 60
 questions:
-  -
-  -
+  - What do I need to train Augustus?
+  - What are the step to train Augustus?
 objectives:
-  -
+  - Going through the steps
+  - Understanding the different part of the training (it is complex so take your time!)
 ---
 
 # Prerequisites
@@ -21,10 +22,9 @@ export augustus_training_path=/proj/g2019006/nobackup/$USER/structural_annotatio
 mkdir -p $augustus_training_path
 ```
 
-
 # Introduction
 
-From this maker run evidence based, we can train our ab-initio predictors and then use them for the second run of annotation.
+From the maker run evidence based, we can train our ab-initio predictors and then use them for the second run of annotation.
 You will need a set of genomic sequences with gene structures (sequence coordinates of starts and ends of exons and genes) and the most important part is selected the right set of genes.
 In many cases, or as a first step towards modeling complete genes, it is sufficient to have only the coding parts of the gene structure (CDS).
 We will only train augustus today as it is one the best ab-initio predictor and one of the hardest to train.
@@ -43,15 +43,15 @@ module load cufflinks/2.2.1
 
 You will need to symlink all data you will need such as the gff files from the first run of maker and the chromosome 4 fasta sequence.
 ```
-ln -s $structural_annotation_path/maker_evidence/annotationByType/maker.gff dmel_results_noAbinitio.gff
+ln -s $structural_annotation_path/maker/maker_evidence/maker.gff maker_no_abinitio.gff
 ```
 ## Compile a set of training and test genes
 
-First step is to select only the coding genes from the maker.gff file and remove all tRNA
+First step is to select only the coding genes from the maker.gff file and remove all tRNA ( :bulb: **Tips**: in this case there no tRNA but it is important to remove them)
 ```
-~/annotation_course/course_material/git/GAAS/annotation/Tools/Maker/maker_gff3manager_JD_v8.pl -f dmel_results_noAbinitio.gff -o dmel_results_noAbinitio_clean
+gff3_sp_splitByLevel2Feature.pl -g maker_no_abinitio.gff -o maker_results_noAbinitio_clean
 
-cd dmel_results_noAbinitio_clean
+cd maker_results_noAbinitio_clean
 ```
 In this folder you will need to create different folders
 ```
@@ -61,23 +61,21 @@ mkdir nonredundant
 mkdir blast_recursive  
 mkdir gff2genbank  
 ```
-Next step, we need to filter the best genes we will use for the training, we need complete genes, models with a distance with an other model (distance genes to genes) over 500 nt and a AED score under 0.3 (those are our default parameters).
+Next step, we need to filter the best genes we will use for the training, we need complete genes and a AED score under 0.3 (:bulb: **Tips**:those are our default parameters you can change them if you want to be more selective with an AED under 0.1, you can alsoknow your gene are further appart or if you want to be more selective with an AED under 0.1).
+
 ```
-~/annotation_course/course_material/scripts/filter_sort.pl -file codingGeneFeatures.gff -F 4.fa -o filter/codingGeneFeatures.filter.gff -c -r -d 500 -a 0.3
+maker_select_models_by_AED_score.pl -f mrna.gff -v 0.3 -t "<=" -o filter/codingGeneFeatures.filter.gff
 ```
-We also need to select the longest ORF
+
+We also need to select the longest ORF (we want to use the complete longest genes to avoid create incorrect and too short genes when we use the abinitio profile )
 ```
-~/annotation_course/course_material/scripts/find_longest_CDS.pl -f filter/codingGeneFeatures.filter.gff -o codingGeneFeatures.filter.longest_cds.gff
+gff3_sp_keep_longest_isoform.pl -f filter/codingGeneFeatures.filter.gff -o filter/codingGeneFeatures.filter.longest_cds.gff
 ```
 There are different ways of proceeding after the first selection and we are using "the approached of spliced alignments of protein sequences of the same or a very closely related species" against the assembled genomic sequence.
 In order to do so, we translate our coding genes into proteins, format the protein fasta file to be able to run a recursive blast and then select the best ones.
 Indeed, each sequence can contain one or more genes; the genes can be on either strand. However, the genes must not overlap, and only one transcript per gene is allowed.
 ```
-gffread -y codingGeneFeatures.filter.longest_cds.tmp -g 4.fa codingGeneFeatures.filter.longest_cds.gff  
-
-~/annotation_course/course_material/scripts/fix_fasta.sh codingGeneFeatures.filter.longest_cds.tmp > protein/codingGeneFeatures.filter.longest_cds.proteins.fa  
-
-rm codingGeneFeatures.filter.longest_cds.tmp
+gff3_sp_extract_sequences.pl -g filter/codingGeneFeatures.filter.longest_cds.gff3 -f $data/genome/genome.fa -o protein/codingGeneFeatures.filter.longest_cds.proteins.fa
 
 module load blast  
 
@@ -85,9 +83,8 @@ makeblastdb -in protein/codingGeneFeatures.filter.longest_cds.proteins.fa -dbtyp
 
 blastp -query protein/codingGeneFeatures.filter.longest_cds.proteins.fa -db protein/codingGeneFeatures.filter.longest_cds.proteins.fa -outfmt 6 -out blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive
 
-~/annotation_course/course_material/git/GAAS/annotation/Tools/Util/gff/gff_filter_by_mrna_id.pl --gff codingGeneFeatures.filter.longest_cds.gff --blast blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile nonredundant/codingGeneFeatures.nr.gff
+gff3_sp_filter_by_mrnaBlastValue_bioperl.pl --gff codingGeneFeatures.filter.longest_cds.gff --blast blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile nonredundant/codingGeneFeatures.nr.gff
 
-module load augustus/3.2.3
 ```
 Sequences need to be converted in a simple genbank format.
 ```
@@ -109,6 +106,8 @@ Augustus need a set of parameters that are provided :
 
 please use the path where you copied augustus_path in the Busco exercise yesterday.
 ```
+module load augustus/3.2.3
+
 new_species.pl --AUGUSTUS_CONFIG_PATH=augustus_path --species=dmel_login
 
 AUGUSTUS_CONFIG_PATH=augustus_path

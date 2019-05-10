@@ -1,12 +1,13 @@
 ---
 layout: default-overview
-title:
-exercises:
+title: Abinitio with augustus
+exercises: 60
 questions:
-  -
+  - How to run augustus?
+  - How visualise you results?
 objectives:
-  -
-  -
+  - Run augustus
+  - Open and load data in webapollo
 ---
 
 
@@ -30,10 +31,8 @@ cd $abinitio_augustus_path
 
 ```
 
-We have made a genome browser called Webapollo available for you on the address [http://annotation-prod.scilifelab.se:8080/NBIS_gp1/](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/)  called drosophila\_melanogaster\_course.
-This browser can already has a number of tracks preloaded for you, but you can also load data you have generated yourself using the ‘file” menu and then ‘open’ and ‘local files’. First time you go there you need to log in using the email adress provided to register the course and your last name as password (lower case and if more than one last name separated by _ eg: lastname1_lastname2)(if you already have access to our webapollo please use the password that have been previously provided to you).
-
 <u>**Ab initio gene finders:**</u> These methods have been around for a very long time, and there are many different programs to try. We will in this exercise focus on the gene finder Augustus. These gene finders use likelihoods to find the most likely genes in the genome. They are aware of start and stop codons and splice sites, and will only try to predict genes that follow these rules. The most important factor here is that the gene finder needs to be trained on the organism you are running the program on, otherwise the probabilities for introns, exons, etc. will not be correct. Luckily, these training files are available for Drosophila.
+
 
 :mortar_board: **_Exercise 1_ - Augustus:**
 
@@ -44,9 +43,24 @@ Second load the needed modules using:
 module load bioinfo-tools  
 module load augustus
 ```
-Run Augustus on your genome file using:  
+Then you can have a look at the list of species that already have a trained hmm model.  
+
 ```
-augustus --species=fly $data/genome/genome.fa --gff3=on > augustus_drosophila.gff
+augustus --species=help
+```
+
+:question:Did you see the approprate model for Drosophila Melanogaster ?
+
+So, let's now launch Augustus on our genome with the `fly` model.
+
+```
+augustus --species=fly ~/annotation_course/data/genome/genome.fa --gff3=yes --progress=true > augustus_drosophila.gff
+```
+
+if you wish to annotate isoforms too, use the following command:
+
+```
+augustus --species=fly ~/annotation_course/data/genome/genome.fa --gff3=yes --progress=true --alternatives-from-sampling=true > augustus_drosophila_isoform.gff
 ```
 
 Take a look at the result file using ‘less augustus\_drosophila.gff’. What kinds of features have been annotated? Does it tell you anything about UTRs?
@@ -56,16 +70,35 @@ The gff-format of Augustus is non-standard (looks like gtf) so to view it in a g
 ```
 gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3
 ```
+To better understand what contains your gff file you may use a script that will provide you some statistics like this one:
+```
+gff3_sp_statistics.pl --gff augustus_drosophila.gff
+```
+:question:How many genes have you annotated ?
+
+
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
 ```
 scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/abinitio_augustus/augustus_drosophila.gff3 .  
 ```
-Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_gp1/). [Here find the WebApollo instruction](webapollo_usage)
+Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_course). [Here find the WebApollo instruction](webapollo_usage)
 <br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/data/dmel/chromosome\_4/annotation
 :question: How does the Augustus annotation compare with the Ensembl annotation? Are they identical?
 
 :mortar_board: **_Exercise 2 -_ Augustus with yeast models:**  
 Run augustus on the same genome file but using settings for yeast instead (change species to Saccharomyces).
 
+<details>
+<summary>:key: Click to see the solution .</summary>
+<code> augustus --species=saccharomyces $data/genome/genome.fa --gff3=on > augustus_saccharomyces.gff
+
+</code>
+</details>
+
 Load this result file into Webapollo and compare with your earlier results.
 :question: Can you based on this draw any conclusions about how a typical yeast gene differs from a typical Drosophila gene?
+
+# Closing remarks
+
+We have seen how to assess the quality of the assembly and how to launch a quick annotation using an abinitio tool.
+We have also seen the importance to use a species specific hmm model into the ab initio tool. Thus, the limitation of this approach is linked to the pre-trained species that are available.
