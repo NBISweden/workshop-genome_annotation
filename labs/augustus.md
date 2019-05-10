@@ -26,7 +26,7 @@ mkdir -p $abinitio_augustus_path
 
 # Running an ab initio gene finder
 
-```
+```bash
 cd $abinitio_augustus_path
 ```
 
@@ -38,12 +38,12 @@ cd $abinitio_augustus_path
 First you need to be sure that you have access to the libraries required to run tools (you need to redo this if you have been logged off).
 
 Second load the needed modules using:  
-``` 
+``` bash
 module load augustus
 ```
 Then you can have a look at the list of species that already have a trained hmm model.  
 
-```
+```bash
 augustus --species=help
 ```
 
@@ -51,13 +51,13 @@ augustus --species=help
 
 So, let's now launch Augustus on our genome with the `fly` model.
 
-```
+```bash
 augustus --species=fly $data/genome/genome.fa --gff3=yes --progress=true > augustus_drosophila.gff
 ```
 
 if you wish to annotate isoforms too, use the following command:
 
-```
+```bash
 augustus --species=fly $data/genome/genome.fa --gff3=yes --progress=true --alternatives-from-sampling=true > augustus_drosophila_isoform.gff
 ```
 
@@ -65,18 +65,18 @@ Take a look at the result file using ‘less augustus\_drosophila.gff’. What k
 
 The gff-format of Augustus is non-standard (looks like gtf) so to view it in a genome browser you need to convert it. You can do this using the following command line:
 
-```
+```bash
 gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3
 ```
 To better understand what contains your gff file you may use a script that will provide you some statistics like this one:
-```
+```bash
 gff3_sp_statistics.pl --gff augustus_drosophila.gff
 ```
 :question:How many genes have you annotated?
 
 
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
-```
+```bash
 scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/abinitio_augustus/augustus_drosophila.gff3 .  
 ```
 Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_course). [Here find the WebApollo instruction](webapollo_usage)
