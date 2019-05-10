@@ -76,7 +76,7 @@ Let's convert it to **GFF3** format:
 
 The script **gxf_to_gff3.pl** can be your friend when dealing with GFF/GTF format files. It can deal with any kind of GFF/GTF format (even mixed formats) and errors. It allows to create a standardized **GFF3** format file.
 
-# Exrtract information from a GFF file
+# Extract information from a GFF file
 
 The GFF fomat has been developed to be easy to parse and process by a variety of programs in different languages (e.g Unix tools as grep and sort, perl, awk, etc). For these reasons, they decided that each feature is described on a single line.
 
@@ -105,7 +105,7 @@ Download **human** gff annotation v96 from Ensembl:
    <li>How many <strong>gene</strong> are there? </li>
    <li>How many <strong>mRNA</strong> are there? </li>
    <li>How many <strong>gene</strong> are there on chrmosome  <strong>1</strong>? </li>
-   <li>How many type of feature (3rd column) are there? </li>
+   <li>How many types of feature (3rd column) are there? </li>
 </ol>
  
 <details>
