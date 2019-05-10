@@ -38,8 +38,7 @@ cd $abinitio_augustus_path
 First you need to be sure that you have access to the libraries required to run tools (you need to redo this if you have been logged off).
 
 Second load the needed modules using:  
-```
-module load bioinfo-tools  
+``` 
 module load augustus
 ```
 Then you can have a look at the list of species that already have a trained hmm model.  
