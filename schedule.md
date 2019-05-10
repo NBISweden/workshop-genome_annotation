@@ -66,14 +66,16 @@ Room: E10:4308
 
 Room: E10:4308  
 **09.00-9.15** Summary of yesterday’s exercise  
-**09.15-17.00** [Practical: Manual curation](labs/manual_curation)  
-**09.15-10.00** [Lecture: Functional annotation](slides/) (Lucile Soler)  
-**10.00-10.15** Coffee break  
-**10.15-12.00** [Practical: Functional annotation](labs/functional_annotation)  
+**09.15-10.15** [Practical: Manual curation](labs/manual_curation)  
+**10.15-10.30** Coffee break  
+**10.30-11.15** [Lecture: Functional annotation](slides/) (Lucile Soler)    
+**11.15-12.00** [Practical: Functional annotation (part1)](labs/functional_annotation)  
 **12.00-13.00** Lunch  
-**13.00-13.30** [Practical: Submission to DB](labs/submission)  
-**13.30-14.00** [Lecture: Prokaryote annotation](slides/) (Lucile Soler)  
-**14.00-15.45** [Practical: Prokaryote annotation and visualization](labs/prokaryote_annotation) (incl. coffee break)  
+**13.00-13.45** [Practical: Functional annotation (part2)](labs/functional_annotation)  
+**13.45-14.15** [Practical: Submission to DB](labs/submission)  
+**14.15-14.45** [Lecture: Prokaryote annotation](slides/) (Lucile Soler)
+**14.45-15.00** Coffee break
+**15.00-16.00** [Practical: Prokaryote annotation and visualization](labs/prokaryote_annotation)
 **16.00-17.00** Wrap-up  
 
 <hr>
