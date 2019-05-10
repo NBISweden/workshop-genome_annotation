@@ -39,7 +39,7 @@ First you need to be sure that you have access to the libraries required to run 
 
 Second load the needed modules using:  
 ``` bash
-module load augustus
+module load augustus/3.2.3
 ```
 Then you can have a look at the list of species that already have a trained hmm model.  
 

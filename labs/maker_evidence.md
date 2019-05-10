@@ -184,7 +184,7 @@ maker_merge_outputs_from_datastore.pl --output maker_evidence
 ```
 We have specified a name for the output directory since we will be creating more than one annotation and need to be able to tell them apart.  
 
-This should create a **maker\_evidence** folder containing all computed data including **maker.gff** which is the maker annotation file and **genome.all.maker.proteins.fasta** which is the protein fasta file of this annotation. Those two files are the most important outputs from this analysis.
+This should create a **maker\_evidence** folder containing all computed data including **maker.gff** which is the maker annotation file and **genome.all.maker.proteins.fasta** which is the protein fasta file of this annotation. Those two files are the most important outputs from this analysis. 
 
 => You could sym-link the **maker.gff** and **genome.all.maker.proteins.fasta** files to another folder called e.g. dmel\_results, so everything is in the same place in the end. Just make sure to call the links with specific names, since any maker output will be called similarly.
 
