@@ -37,10 +37,10 @@ Room: E10:4308
 **14.00-15.00** [Practical: Abinitio with augustus](labs/augustus)  
 **15.00-15.15** Coffee break  
 **14.00-17.00** Practical: Evidence based annotation - How to prepare RNAseq (short reads)  
-  -  **14.00-14.45** [fetch](labs/rnaseq_fetch)
-  -  **14.45-15.45** [guided assembly](labs/rnaseq_guided_assembly)  
-  -  **15.45-16.15** [denovo assembly](labs/rnaseq_denovo_assembly)  
-  -  **16.15-17.00** [quality assessment ](labs/rnaseq_assembly_assessment)  
+  *  **14.00-14.45** [fetch](labs/rnaseq_fetch)
+  *  **14.45-15.45** [guided assembly](labs/rnaseq_guided_assembly)  
+  *  **15.45-16.15** [denovo assembly](labs/rnaseq_denovo_assembly)  
+  *  **16.15-17.00** [quality assessment ](labs/rnaseq_assembly_assessment)  
 <hr>
 
 ### Day 2  
