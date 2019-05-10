@@ -33,7 +33,7 @@ cp $data/annotation/augustus.xxx .
 less augustus.xxx
 ```
 
-:question:
+:question:  
 <ol>
    <li>Is it a GFF of GTF file?  
    <li>Do you see any problem in the 3rd colum? 
@@ -49,20 +49,28 @@ less augustus.xxx
   <li>Tricky question, it looks like GTF2.5 but it's actually a flavor specific to augustus.</li>
   <li>The <strong>gene</strong> and <strong>transcript</strong> features have wrong <strong>attributes</strong>. It is missing the <strong>tag</strong>, they only contain the value. It is suppose to look like <code>tag value</code></li>
 </ol>
-</details>
-
-:question: Now edit the file to fix the 9th colum.
+</details>  
+  
+   
+:question: Now edit the file to fix the 9th column.
 
 ```bash
 nano augustus.xxx
 ```
 <details>
 <summary>:key: Click to see the solution .</summary>
-  The two first line must be like that.
+  The two first line must be like that:
   <code>    
-4	AUGUSTUS        gene    386     13142   0.01    +	.	gene_id g1;
+4	AUGUSTUS        gene    386     13142   0.01    +	.	gene_id g1;  
 4	AUGUSTUS        transcript	386     13142   0.01    +	.	transcript_id g1.t1;
   </code>
 </details>
 
-Now your file has at least a correct structure!
+Now your file has at least a correct structure!  
+Let's convert it to **GFF3** format:  
+
+```bash
+gxf_to_gff3.pl --gff augustus.xxx -o augustus.gff3 
+```
+
+The script **gxf_to_gff3.pl** can be your friend when dealing with GFF/GTF format. It can deal with any kind of format and errors and even mixed format and errors. It allows to create a standardized GFF3 format
