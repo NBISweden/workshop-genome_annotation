@@ -14,7 +14,6 @@ objectives:
 
 We will for all exercises use data for the fruit fly, *Drosophila melanogaster*, as that is one of the currently best annotated organisms and there is plenty of high quality data available. However, working on eukaryotes can be time consuming. Even a small genome like Drosophila would take too long to run within the time we have for this course. Thus to be sure to perform the practicals in good conditions, we will use the smallest chromosome of the drosophila (chromosome 4) like it was a whole genome.
 
-
 ## Prerequisites
 
 ### Connection to Uppmax  
