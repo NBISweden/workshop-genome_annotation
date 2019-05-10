@@ -28,7 +28,6 @@ mkdir -p $abinitio_augustus_path
 
 ```
 cd $abinitio_augustus_path
-
 ```
 
 <u>**Ab initio gene finders:**</u> These methods have been around for a very long time, and there are many different programs to try. We will in this exercise focus on the gene finder Augustus. These gene finders use likelihoods to find the most likely genes in the genome. They are aware of start and stop codons and splice sites, and will only try to predict genes that follow these rules. The most important factor here is that the gene finder needs to be trained on the organism you are running the program on, otherwise the probabilities for introns, exons, etc. will not be correct. Luckily, these training files are available for Drosophila.
@@ -54,13 +53,13 @@ augustus --species=help
 So, let's now launch Augustus on our genome with the `fly` model.
 
 ```
-augustus --species=fly ~/annotation_course/data/genome/genome.fa --gff3=yes --progress=true > augustus_drosophila.gff
+augustus --species=fly $data/genome/genome.fa --gff3=yes --progress=true > augustus_drosophila.gff
 ```
 
 if you wish to annotate isoforms too, use the following command:
 
 ```
-augustus --species=fly ~/annotation_course/data/genome/genome.fa --gff3=yes --progress=true --alternatives-from-sampling=true > augustus_drosophila_isoform.gff
+augustus --species=fly $data/genome/genome.fa --gff3=yes --progress=true --alternatives-from-sampling=true > augustus_drosophila_isoform.gff
 ```
 
 Take a look at the result file using ‘less augustus\_drosophila.gff’. What kinds of features have been annotated? Does it tell you anything about UTRs?
@@ -82,7 +81,7 @@ Transfer the augustus\_drosophila.gff3 to your computer using scp:
 scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/abinitio_augustus/augustus_drosophila.gff3 .  
 ```
 Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_course). [Here find the WebApollo instruction](webapollo_usage)
-<br/>Load the Ensembl annotation available in  ~/annotation\_course/course\_material/data/dmel/chromosome\_4/annotation
+<br/>The official Ensembl annotation is available in the genome browser.
 :question: How does the Augustus annotation compare with the Ensembl annotation? Are they identical?
 
 :mortar_board: **_Exercise 2 -_ Augustus with yeast models:**  

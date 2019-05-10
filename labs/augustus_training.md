@@ -37,7 +37,6 @@ cd into the folder and then load all modules that we will need to train Augustus
 ```
 cd $augustus_training_path
 
-module load bioinfo-tools   
 module load cufflinks/2.2.1
 ```
 
@@ -83,12 +82,14 @@ makeblastdb -in protein/codingGeneFeatures.filter.longest_cds.proteins.fa -dbtyp
 
 blastp -query protein/codingGeneFeatures.filter.longest_cds.proteins.fa -db protein/codingGeneFeatures.filter.longest_cds.proteins.fa -outfmt 6 -out blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive
 
-gff3_sp_filter_by_mrnaBlastValue_bioperl.pl --gff codingGeneFeatures.filter.longest_cds.gff --blast blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile nonredundant/codingGeneFeatures.nr.gff
+gff3_sp_filter_by_mrnaBlastValue_bioperl.pl --gff filter/codingGeneFeatures.filter.longest_cds.gff3 --blast blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile nonredundant/codingGeneFeatures.nr.gff
 
 ```
 Sequences need to be converted in a simple genbank format.
 ```
-gff2gbSmallDNA.pl nonredundant/codingGeneFeatures.nr.gff 4.fa 500 gff2genbank/codingGeneFeatures.nr.gbk
+module load augustus/3.2.3
+
+gff2gbSmallDNA.pl nonredundant/codingGeneFeatures.nr.gff $data/genome/genome.fa 500 gff2genbank/codingGeneFeatures.nr.gbk
 ```
 In order for the test accuracy to be statistically meaningful the test set should also be large enough (100-200 genes).
 You should split the set of gene structures randomly.
@@ -97,6 +98,11 @@ randomSplit.pl gff2genbank/codingGeneFeatures.nr.gbk 100
 ```
 - What happened? how can you solve it? what might be the consequences of it?
 
+<details>
+<summary>:key: Click to see the solution .</summary>
+There are not 100 genes in the file, because we are using only the chr4 of drosophila.
+The training will probably not be good!
+</details>
 
 ## Train Augustus
 
@@ -106,11 +112,11 @@ Augustus need a set of parameters that are provided :
 
 please use the path where you copied augustus_path in the Busco exercise yesterday.
 ```
-module load augustus/3.2.3
+module load BUSCO
 
-new_species.pl --AUGUSTUS_CONFIG_PATH=augustus_path --species=dmel_login
+source $BUSCO_SETUP
 
-AUGUSTUS_CONFIG_PATH=augustus_path
+new_species.pl --species=dmel_login
 
 etraining --species=dmel_login gff2genbank/codingGeneFeatures.nr.gbk.train 
 
