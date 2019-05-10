@@ -121,7 +121,7 @@ Check that the tool is working fine:
 
 Let's know launch it on our data:  
 ```bash
- ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome --threads 10
+ ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome --threads 10 --subsample 600000
 ```
 
 :question: What library type has been used for the ERR305399 sample?
