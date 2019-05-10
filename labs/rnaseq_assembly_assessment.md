@@ -36,7 +36,6 @@ mkdir assembly_assessment
 
 cd assembly_assessment
 
-module load bioinfo-tools
 module load BUSCO
 source $BUSCO_SETUP
 

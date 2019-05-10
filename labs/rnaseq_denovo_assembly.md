@@ -31,7 +31,6 @@ mkdir trinity
 
 cd trinity
 
-module load bioinfo-tools
 module load trinity/2.4.0
 module load samtools
 

@@ -30,7 +30,6 @@ export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
 cd $RNAseq_assembly_path
 mkdir -p guided_assembly/trimmomatic
 cd guided_assembly
-module load bioinfo-tools
 module load trimmomatic/0.36
 ```
 
@@ -90,7 +89,6 @@ You can add as input an annotation from gtf/gff3 file to calculate TPM and FPKM 
 
 
 ```
-module load bioinfo-tools
 module load StringTie
 
 stringtie hisat2/accepted_hits.sorted.bam -o stringtie/transcripts.gtf

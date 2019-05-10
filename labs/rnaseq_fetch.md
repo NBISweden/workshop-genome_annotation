@@ -49,7 +49,6 @@ Important remarks to remember before starting working with RNA-seq:
 To check the technology used to sequences the RNAseq and get some extra information we have to use fastqc tool.
 
 ```
-module load bioinfo-tools
 module load FastQC/0.11.5
 
 mkdir fastqc_reports

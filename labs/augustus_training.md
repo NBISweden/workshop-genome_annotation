@@ -96,7 +96,7 @@ You should split the set of gene structures randomly.
 ```
 randomSplit.pl gff2genbank/codingGeneFeatures.nr.gbk 100
 ```
-- What happened? how can you solve it? what might be the consequences of it?
+:question:What happened? how can you solve it? what might be the consequences of it?
 
 <details>
 <summary>:key: Click to see the solution .</summary>
@@ -108,9 +108,6 @@ The training will probably not be good!
 
 Now that you have created a set of gene to train augustus, let's train it!
 
-Augustus need a set of parameters that are provided :
-
-please use the path where you copied augustus_path in the Busco exercise yesterday.
 ```
 module load BUSCO
 
