@@ -1,8 +1,18 @@
-# Making an evidence based annotation with MAKER
+---
+layout: default-overview
+title: Making an evidence based annotation with MAKER
+exercises: 45
+questions:
+  - how to create a structural annotation based on evidence only?
+  -
+objectives:
+  - Understand maker parameters files
+  - run maker
+---
+
 
 ## Prerequisites
 
-# Prerequisites
 For this exercise you need to be logged in to Uppmax.
 
 Setup the folder structure:
@@ -35,35 +45,39 @@ Link the raw computes you want to use into your folder. The files you will need 
 - the gff file of the pre-computed repeats (coordinates of repeatmasked regions)
 
 ```
-ln -s ~/annotation_course/data/raw_computes/repeatmasker.genome.gff
-ln -s ~/annotation_course/data/raw_computes/repeatrunner.genome.gff
+ln -s $data/raw_computes/repeatmasker.genome.gff
+ln -s $data/raw_computes/repeatrunner.genome.gff
 ```
 
 In addition, you will also need the genome sequence.
 ```
-ln -s ~/annotation_course/data/genome/genome.fa
+ln -s $data/genome/genome.fa
 ```
 Then you will also need EST and protein fasta file:  
 ```
-ln -s ~/annotation_course/data/evidence/est.genome.fa
-ln -s ~/annotation_course/data/evidence/proteins.genome.fa
+ln -s $data/evidence/est.genome.fa
+ln -s $data/evidence/proteins.genome.fa
 ```
-To finish you will could use a transcriptome assembly (This one has been made using Stringtie):
+To finish you will could use a transcriptome assembly (This is the same as the one you made using Stringtie):
 ```
-ln -s ~/annotation_course/data/RNAseq/stringtie/stringtie2genome.genome.gff
+ln -s $data/RNAseq/stringtie/transcript_stringtie.gff3 stringtie2genome.gff
+```
+OR
+```
+ln -s $RNAseq_assembly_path/stringtie/transcript_stringtie.gff3 stringtie2genome.gff
 ```
 
 /!\\ Always check that the gff files you provides as protein or EST contains match/match_part (gff alignment type ) feature types rather than genes/transcripts (gff annotation type) otherwise MAKER will not use the contained data properly. Here we have to fix the stringtie gff file.
 
 ```
-gff3_sp_alignment_output_style.pl --gff stringtie2genome.genome.gff -o stringtie2genome.genome.ok.gff
+gff3_sp_alignment_output_style.pl --gff stringtie2genome.gff -o stringtie2genome.ok.gff
 ```
 
 You should now have 2 repeat files, 1 EST file, 1 protein file, 1 transcript file, and the genome sequence in the working directory.
 
 For Maker to use this information, we need create the three config files, typing this command:
 ```
-module load maker
+module load maker/3.01.2-beta
 maker -CTL
 ```
 
@@ -75,11 +89,11 @@ nano maker_opts.ctl
 
 In the **maker_opts.ctl** you will set:
 
-- name of the genome sequence (genome=)
-- name of the 'EST' file in fasta format  (est=)
-- name of the 'Transcript' file in gff format (est_gff=)
-- name of the 'Protein' set file(s) (protein=)
-- name of the repeatmasker and repeatrunner files (rm_gff=)
+- name of the genome sequence (genome=)  
+- name of the 'EST' file in fasta format  (est=) :bulb:You can write the result of your denovo assembly Trinity.fasta there  
+- name of the 'Transcript' file in gff format (est_gff=)  
+- name of the 'Protein' set file(s) (protein=)  
+- name of the repeatmasker and repeatrunner files (rm_gff=)  
 
 You can list multiple files in one field by separating their names by a **comma** ','.
 
@@ -105,7 +119,7 @@ organism\_type=eukaryotic #eukaryotic or prokaryotic. Default is eukaryotic
 \#-----EST Evidence (for best results provide a file for at least one)  
 **est=est.genome.fa** #set of ESTs or assembled mRNA-seq in fasta format  
 altest= #EST/cDNA sequence file in fasta format from an alternate organism  
-**est\_gff=stringtie2genome.genome.ok.gff** #aligned ESTs or mRNA-seq from an external GFF3 file  
+**est\_gff=stringtie2genome.ok.gff** #aligned ESTs or mRNA-seq from an external GFF3 file  
 altest\_gff= #aligned ESTs from a closly relate species in GFF3 format
 
 ...

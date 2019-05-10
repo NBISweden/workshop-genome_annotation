@@ -42,7 +42,7 @@ You will run BUSCO on 3 bacterial assemblies provided (one E coli, one chlamydia
 BUSCO is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up the environment.
 
 ```
-module load BUSCO
+module load BUSCO/3.0.2b
 
 source $BUSCO_SETUP
 
@@ -65,7 +65,7 @@ You are going to use the same assemblies you used previously for Busco
 ```
 module unload BUSCO
 
-module load prokka
+module load prokka/1.12-12547ca
 
 prokka --help
 ```
@@ -110,7 +110,7 @@ Congratulations you have annotate bacterial genome!
 BUSCO can also be used after the annotation to check if you found the genes you were expected or if something happened during the annotation and you lost genes. To do so you change the option "-m geno" by "-m prot"
 
 ```
-module load BUSCO
+module load BUSCO/3.0.2b
 
 run_BUSCO.py -i prokka_Chlamydia/PROKKA_05102019.faa -o chlamydia_busco_prot -m prot -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
 ```
