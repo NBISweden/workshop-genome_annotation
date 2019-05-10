@@ -52,7 +52,7 @@ InterproScan can be run through a website or from the command line on a linux se
 
 Launch Interproscan with the option -h if you want have a look about all the parameters.
 
-<br> - The '-app' option allows defining the database used. Here we will use the PfamA,ProDom and SuperFamily databases.  
+<br> - The '-app' option allows defining the database used. Here we will use the PfamA,ProDom and SuperFamily databases.
 <br> - Interproscan uses an internal database that related entries in public databases to established GO terms. By running the '-goterms' option, we can add this information to our data set.
 <br> - If you enable the InterPro lookup ('-iprlookup'), you can also get the InterPro identifier corresponding to each motif retrieved: for example, the same motif is known as PF01623 in Pfam and as IPR002568 in InterPro.
 <br> - The option '-pa' provides mappings from matches to pathway information (MetaCyc,UniPathway,KEGG,Reactome).
@@ -67,7 +67,7 @@ You will obtain 3 result files with the following extension '.gff3', '.tsv' and 
 ### load the retrieved functional information in your annotation file:
 Next, you could write scripts of your own to merge interproscan output into your annotation. Incidentally, Maker comes with utility scripts that can take InterProscan output and add it to a Maker annotation file (you need to load maker).  
 
-<br> - ipr\_update\_gff: adds searchable tags to the gene and mRNA features in the GFF3 files.  
+<br> - ipr\_update\_gff: adds searchable tags to the gene and mRNA features in the GFF3 files.
 <br> - iprscan2gff3: adds physical viewable features for domains that can be displayed in JBrowse, Gbrowse, and Web Apollo.
 
 We also created a script that can do the merging between the structural annotation and the interpro results :
@@ -104,9 +104,8 @@ The improved annotation is the gff file inside the maker_final.interpro.blast fo
 
 <details>
 <summary>:key: Click to see the solution .</summary>  
-For instance, you can do this to count genes with names :
-grep -P "\tgene" maker_final.interpro.blast/maker_final.gff | grep -v "Name" | wc -l
-<code> </code>
+For instance, you can do this to count genes with names :  
+<code> grep -P "\tgene" maker_final.interpro.blast/maker_final.gff | grep -v "Name" | wc -l</code>
 </details>
 
 ### Set nice IDs
@@ -128,8 +127,9 @@ As example the attribute ***product*** is not displayed in Webapollo, whereas re
 ## Visualise the final annotation
 
 Transfer the final_annotation.gff file to your computer using scp in a new terminal:
-
+```
 scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/functional_annotation/final_annotation.gff .
+```
 
 Load the file in into the genome portal called drosophila_melanogaster_chr4 in the Webapollo genome browser available at the address [http://annotation-prod.scilifelab.se:8080/NBIS_course/](http://annotation-prod.scilifelab.se:8080/NBIS_course/). [Here find the WebApollo instruction](labs/webapollo_usage.md)
 
