@@ -33,7 +33,7 @@ cd $abinitio_augustus_path
 <u>**Ab initio gene finders:**</u> These methods have been around for a very long time, and there are many different programs to try. We will in this exercise focus on the gene finder Augustus. These gene finders use likelihoods to find the most likely genes in the genome. They are aware of start and stop codons and splice sites, and will only try to predict genes that follow these rules. The most important factor here is that the gene finder needs to be trained on the organism you are running the program on, otherwise the probabilities for introns, exons, etc. will not be correct. Luckily, these training files are available for Drosophila.
 
 
-:mortar_board: **_Exercise 1_ - Augustus:**
+:mortar_board: **Augustus:**
 
 First you need to be sure that you have access to the libraries required to run tools (you need to redo this if you have been logged off).
 
@@ -83,7 +83,7 @@ Load the file in [Webapollo](http://annotation-prod.scilifelab.se:8080/NBIS_cour
 <br/>The official Ensembl annotation is available in the genome browser.
 :question: How does the Augustus annotation compare with the Ensembl annotation? Are they identical?
 
-:mortar_board: **_Exercise 2 -_ Augustus with yeast models:**  
+:mortar_board: **Augustus with yeast models:**  
 Run augustus on the same genome file but using settings for yeast instead (change species to Saccharomyces).
 
 <details>
