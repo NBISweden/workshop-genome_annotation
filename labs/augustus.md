@@ -47,7 +47,7 @@ Then you can have a look at the list of species that already have a trained hmm 
 augustus --species=help
 ```
 
-:question:Did you see the approprate model for Drosophila Melanogaster ?
+:question:Did you see the appropriate model for Drosophila Melanogaster?
 
 So, let's now launch Augustus on our genome with the `fly` model.
 
@@ -72,7 +72,7 @@ To better understand what contains your gff file you may use a script that will 
 ```
 gff3_sp_statistics.pl --gff augustus_drosophila.gff
 ```
-:question:How many genes have you annotated ?
+:question:How many genes have you annotated?
 
 
 Transfer the augustus\_drosophila.gff3 to your computer using scp:    
