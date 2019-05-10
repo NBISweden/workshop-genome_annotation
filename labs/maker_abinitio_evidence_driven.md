@@ -1,6 +1,30 @@
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+---
+layout: default-overview
+title: Making an abinitio evidence-driven annotation with MAKER
+exercises: 1h30
+questions:
+  -
+  -
+objectives:
+  -
+  -
+---
 
-# Making an abinitio evidence-driven annotation with MAKER
+## Prerequisites
+
+For this exercise you need to be logged in to Uppmax.
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/proj/g2019006/nobackup/$USER/data
+export structural_annotation_path=/proj/g2019006/nobackup/$USER/structural_annotation
+
+cd $structural_annotation_path/maker
+```
+
+# Introduction
 
 The recommended way of running Maker is in combination with one or more ab-initio profile models. Maker natively supports input from several tools, including augustus, snap and genemark. The choice of tool depends a bit on the organism that you are annotating - for example, GeneMark-ES is mostly recommended for fungi, whereas augustus and snap have a more general use.
 
@@ -18,12 +42,10 @@ No need to re-compute the mapping/alignment of the different lines of evidence. 
 
 Link the gff files you want to use into your folder:
 
-NAMES????
-
- - repeatmasker.chr4.gff (already present)
- - repeatrunner.chr4.gff (already present)
+ - repeatmasker.genome.gff (already present)
+ - repeatrunner.genome.gff (already present)
  - genome.fa (already present)
- - stringtie2genome.genome.gff (already present)
+ - stringtie2genome.gff (already present)
  - est2genome.gff
  - protein2genome.gff
 

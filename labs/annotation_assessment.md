@@ -1,6 +1,28 @@
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+---
+layout: default-overview
+title: Comparing and evaluating annotations
+exercises: 1h15
+questions:
+  -
+  -
+objectives:
+  -
+  -
+---
 
-# Comparing and evaluating annotations
+## Prerequisites
+
+For this exercise you need to be logged in to Uppmax.
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/proj/g2019006/nobackup/$USER/data
+export structural_annotation_path=/proj/g2019006/nobackup/$USER/structural_annotation
+```
+
+# Introduction
 
 In this exercise you will handle different annotation files:
 
@@ -40,11 +62,11 @@ As you will note, there are some differences - and of course, this is expected, 
 
 We will compare the two annotation made with MAKER: the evidence one and the abinitio one.
 ```
-cd ~/annotation_course/maker
+cd $structural_annotation_path/maker
 mkdir complement
 cd complement
-ln -s ../maker/maker_evidence/maker.gff maker_evidence.gff
-ln -s ../maker/maker_abinitio/maker.gff maker_abinitio.gff
+ln -s ../maker_evidence/maker.gff maker_evidence.gff
+ln -s ../maker_abinitio/maker.gff maker_abinitio.gff
 maker_checkFusionSplitBetweenTwoBuilds.pl --ref maker_evidence.gff --tar maker_abinitio.gff --out maker_evidence_compare_to_abinitio
 cat maker_evidence_compare_to_abinitio/resume.txt
 ```
@@ -60,7 +82,7 @@ How many genes have been added in this new maker_abinitio_cplt_by_evidence.gff a
 
 Let's extract the proteins form this new annotation:
 ```
-ln -s ~/annotation_course/data/genome/genome.fa
+ln -s $data/genome/genome.fa
 gff3_sp_extract_sequences.pl -gff maker_abinitio_cplt_by_evidence.gff -f genome.fa -p -o maker_abinitio_cplt_by_evidence.fasta
 ```
 
@@ -70,14 +92,16 @@ BUSCO is run before annotating to check if the assembly is good and therefore if
 
 You will need to link the protein file created by maker on the run with the ab-initio
 ```
-cd ~/annotation_course/maker
+cd $structural_annotation_path/maker
 mkdir busco
 cd busco
 
-ln -s  ~/annotation_course/maker/complement/maker_abinitio_cplt_by_evidence.fasta
+ln -s  $structural_annotation_path/maker/complement/maker_abinitio_cplt_by_evidence.fasta
 
+module load BUSCO/3.0.2b
+source $BUSCO_SETUP
 
-BUSCO -i maker_abinitio_cplt_by_evidence.fasta -o dmel_maker_abinitio_cplt_by_evidence -m prot -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_odb9
+run_BUSCO.py -i maker_abinitio_cplt_by_evidence.fasta -o dmel_maker_abinitio_cplt_by_evidence -m prot -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/arthropoda_odb9
 ```
  * if you compare with you first busco results what do you see?
 
@@ -87,16 +111,16 @@ As with many tasks within bioinformatics, it is always a great idea to first loo
 
 First create the working folder:
 ```
-cd ~/annotation_course/maker/
+cd $structural_annotation_path/maker
 mkdir compare_ref
 cd compare_ref
 ```
 
 Then, copy or sym-link the EnsEMBL reference annotation as well as yours:
 ```
-ln -s ~/annotation_course/abinitio_augustus/augustus/augustus_drosophila.gff
-ln -s ~/annotation_course/maker/complement/maker_abinitio_cplt_by_evidence.gff
-ln -s ~/annotation_course/data/annotation/ensembl.genome.gff
+ln -s ../../abinitio_augustus/augustus_drosophila.gff
+ln -s $structural_annotation_path/maker/complement/maker_abinitio_cplt_by_evidence.gff
+ln -s $data/annotation/ensembl.genome.gff
 ```
 
 Now we have to sort any GFF3-formatted annotation in a way that genometools accepts:
@@ -126,7 +150,7 @@ A AED value of 0 means the whole gene model is supported by evidence while 1 mea
 cd ~/annotation_course/maker/
 mkdir filter
 cd filter
-ln -s ~/annotation_course/maker/complement/maker_abinitio_cplt_by_evidence.gff
+ln -s $structural_annotation_path/maker/complement/maker_abinitio_cplt_by_evidence.gff
 maker_select_models_by_AED_score.pl -f maker_abinitio_cplt_by_evidence.gff -v 0.3 -t "<" -o result
 ```
 
