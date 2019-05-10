@@ -30,8 +30,8 @@ Room: E10:4308
 **09.45-10.00** [Practical: Get started](labs/get_started)  
 **10.00-10.15** Coffee break  
 **10.15-10.45** [Practical: assembly check](labs/assembly_check)  
-**10.45-11.15** [Practical: find evidence](labs/find_all_evidence)  
-**10.45-11.15** [Practical: work with gff](labs/gff)  
+**10.45-11.30** [Practical: find evidence](labs/find_all_evidence)  
+**11.30-12.00** [Practical: work with gff](labs/gff)  
 **12.00-13.00** Lunch  
 **13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/)  (Jacques Dainat)  
 **14.00-15.00** [Practical: Abinitio with augustus](labs/augustus)  
