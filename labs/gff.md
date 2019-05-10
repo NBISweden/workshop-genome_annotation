@@ -60,7 +60,7 @@ Now edit the file to fix the 9th column:
 
 <details>
 <summary>:key: Click to see the solution .</summary>
-  The two first line must be like that:
+  The two first line must be like that:  
   <code>    
     4	AUGUSTUS        gene    386     13142   0.01    +	.	gene_id g1;<br>
     4	AUGUSTUS        transcript	386     13142   0.01    +	.	transcript_id g1.t1;
@@ -75,3 +75,48 @@ Let's convert it to **GFF3** format:
   ```
 
 The script **gxf_to_gff3.pl** can be your friend when dealing with GFF/GTF format files. It can deal with any kind of GFF/GTF format (even mixed formats) and errors. It allows to create a standardized **GFF3** format file.
+
+# Exrtract information from a GFF file
+
+The GFF fomat has been developed to be easy to parse and process by a variety of programs in different languages (e.g Unix tools as grep and sort, perl, awk, etc). For these reasons, they decided that each feature is described on a single line.
+
+Download **human** gff annotation v96 from Ensembl:
+
+```bash
+ wget ftp://ftp.ensembl.org/pub/release-96/gff3/homo_sapiens/Homo_sapiens.GRCh38.96.chr.gff3.gz
+ ```
+ 
+ :question: What is the size of this file?
+ 
+ Now uncompress it:
+ ```bash
+ gunzip Homo_sapiens.GRCh38.96.chr.gff3.gz 
+ ```
+ 
+ :question: What is the size of the uncompressed file?  
+  
+ The gff/gtf format has a good compression ratio.
+ 
+ Let's now compute some statistics on this file.
+ 
+ :question:  
+<ol>
+   <li>How many line?  </li>
+   <li>How many <strong>gene</strong> are there? </li>
+   <li>How many <strong>mRNA</strong> are there? </li>
+   <li>How many <strong>gene</strong> are there on chrmosome  <strong>1</strong>? </li>
+   <li>How many type of feature (3rd column) are there? </li>
+
+   <li>Do you see any problem in the 9th colum? </li>
+</ol>
+ 
+<details>
+<summary>:key: Click to see the solution .</summary>
+<ol>
+<li> <code>wc -l Homo_sapiens.GRCh38.96.chr.gff3</code> </li>
+<li> <code>awk '{if($3=="gene") print $0}' Homo_sapiens.GRCh38.96.chr.gff3 | wc -l</code> </li>
+<li> <code>awk '{if($3=="mRNA") print $0}' Homo_sapiens.GRCh38.96.chr.gff3 | wc -l</code> </li>
+<li> <code>awk '{if($3=="gene" && $1=="1") print $0}' Homo_sapiens.GRCh38.96.chr.gff3 | wc -l</code> </li>
+<li> <code>awk '{if($0 !~ /^#/)print $3}' Homo_sapiens.GRCh38.96.chr.gff3 | sort -u</code> </li>
+</ol>
+</details> 
