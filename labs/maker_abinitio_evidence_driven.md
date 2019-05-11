@@ -3,11 +3,10 @@ layout: default-overview
 title: Making an abinitio evidence-driven annotation with MAKER
 exercises: 1h30
 questions:
-  -
-  -
+  - How to create structural annotation with evidence and abinitio?
 objectives:
-  -
-  -
+  - run maker with augustus
+  - understand the parameters files and the output
 ---
 
 ## Prerequisites
@@ -56,7 +55,7 @@ ln -s maker_evidence/protein2genome.gff
 
 This time, we do specify a reference species to be used by augustus, which will enable ab-initio gene finding and keep_preds=1 will also show abinitio prediction not supported by any evidences :  
 
-*augustus\_species=fly* #Augustus gene prediction species model  (this is where you can call the database you trained for augustus)   
+*augustus\_species=fly* #Augustus gene prediction species model  (:bulb:this is where you can call the database you trained for augustus dmel_$USER)   
 ...
 *keep_preds=1*
 
