@@ -95,6 +95,7 @@ In order to guess de-novo the library type we will use for this excercise: [GUES
 
 First link the data and load the necessary modules:  
 ```bash
+cd $RNAseq_assembly_path
 ln -s $data/raw_computes/ERR305399_1.fastq.gz
 ln -s $data/raw_computes/ERR305399_2.fastq.gz
 ln -s $data/genome/genome.fa
@@ -103,7 +104,8 @@ module load trinity/2.8.2
 module load BUSCO/3.0.2b
 source $BUSCO_SETUP
 module load bowtie2/2.3.4.3
-module load samtools/1.9
+module load samtools/1.2
+module load python3/3.6.0
 module load snakemake/5.4.5
 ```
 
@@ -111,7 +113,7 @@ Then install [GUESSmyLT](https://github.com/NBISweden/GUESSmyLT):
 ```
 git clone https://github.com/NBISweden/GUESSmyLT.git
 cd GUESSmyLT
-python setup.py install --user
+python3 setup.py install --user
 ```
 
 Check that the tool is working fine:  
@@ -121,6 +123,7 @@ Check that the tool is working fine:
 
 Let's know launch it on our data:  
 ```bash
+cd $RNAseq_assembly_path
  ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome --threads 10 --subsample 600000
 ```
 
