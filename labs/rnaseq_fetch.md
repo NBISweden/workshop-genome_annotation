@@ -90,7 +90,6 @@ The information regarding library type can be very useful for reads to be assemb
 Here a resume of the different library types:
 
  <img align="center" src="https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg"  />
-[[https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg]]
 
 In order to guess de-novo the library type we will use for this excercise: [GUESSmyLT](https://github.com/NBISweden/GUESSmyLT).  
 
