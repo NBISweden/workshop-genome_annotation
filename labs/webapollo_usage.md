@@ -13,7 +13,7 @@ In the right side of the browser you will see different tabs available. The most
 If you wish uploading a(n) track/annotation you have created to the web portal, follow these instructions:
 
 - Click on 'File' in the top left corner of the page  
-- Select 'Open'  
+- Select 'Open track file or URL'  
 - Click in 'Select Files' from the 'Local Files' section  
 - Select the file you wish to upload, and leave all settings at their defaults (you may wish to specify a more informative name for the new track though).
 
