@@ -1,6 +1,6 @@
 ---
 layout: default-overview
-title: Assessing quality of you RNAseq assembly
+title: Assessing quality of your RNAseq assembly
 exercises: 45
 questions:
   - How do I check the quality of my assembly?
