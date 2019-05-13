@@ -33,7 +33,7 @@ cd $RNAseq_assembly_path
 
 ## Assembling transcripts based on RNA-seq data
 
-Rna-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you are studying and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
+RNA-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you are studying and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
 
 Important remarks to remember before starting working with RNA-seq:
 
@@ -81,7 +81,7 @@ fastq_guessMyFormat.pl -i $data/raw_computes/ERR305399_1.fastq.gz
 In the normal mode, it differentiates between Sanger/Illumina1.8+ and Solexa/Illumina1.3+/Illumina1.5+.
 In the advanced mode, it will try to pinpoint exactly which scoring system is used.
 
-More test can be made and should be made on RNA-seq data before doing the assembly, we have not time to do all of them during this course. have a look [here](https://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools)
+More test can be made and should be made on RNA-seq data before doing the assembly, we do not have time to do all of them during this course. Have a look [here](https://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools)
 
 ### Checking the library type (read orientations)
 
@@ -90,6 +90,7 @@ The information regarding library type can be very useful for reads to be assemb
 Here a resume of the different library types:
 
  <img align="center" src="https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg"  />
+[[https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg]]
 
 In order to guess de-novo the library type we will use for this excercise: [GUESSmyLT](https://github.com/NBISweden/GUESSmyLT).  
 
