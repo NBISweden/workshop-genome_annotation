@@ -66,7 +66,7 @@ Take a look at the result file using ‘less augustus\_drosophila.gff’. What k
 The gff-format of Augustus is non-standard (looks like gtf) so to view it in a genome browser you need to convert it. You can do this using the following command line:
 
 ```bash
-gxf_to_gff3.pl -g augustus_drosophila.gtf -o augustus_drosophila.gff3
+gxf_to_gff3.pl -g augustus_drosophila.gff -o augustus_drosophila.gff3
 ```
 To better understand what contains your gff file you may use a script that will provide you some statistics like this one:
 ```bash
