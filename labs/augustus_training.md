@@ -60,7 +60,7 @@ mkdir nonredundant
 mkdir blast_recursive  
 mkdir gff2genbank  
 ```
-Next step, we need to filter the best genes we will use for the training, we need complete genes and a AED score under 0.3 (:bulb: **Tips**:those are our default parameters you can change them if you want to be more selective with an AED under 0.1, you can alsoknow your gene are further appart or if you want to be more selective with an AED under 0.1).
+Next step, we need to filter the best genes we will use for the training, we need complete genes and a AED score under 0.3 (:bulb: **Tips**:those are our default parameters you can change them if you want to be more selective with an AED under 0.1, you can also set a distance between genes if you know your gene are further appart).
 
 ```
 maker_select_models_by_AED_score.pl -f mrna.gff -v 0.3 -t "<=" -o filter/codingGeneFeatures.filter.gff
