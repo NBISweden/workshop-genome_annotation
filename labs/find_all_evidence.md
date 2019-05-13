@@ -51,7 +51,7 @@ If you wish to use a massive database Uniparc will be your best choice. But reme
 :mortar_board: **Proteomes**
 This section contains protein sets from fully sequenced genomes.
 
-:question: How many reference proteomes are there in Proteomes? How many are from eukaryota? What is the size of Drosophila melanogaste proteome? How many of its proteins are reviewed?
+:question: How many reference proteomes are there in Proteomes? How many are from eukaryota? What is the size of Drosophila melanogaster proteome? How many of its proteins are reviewed?
 
 ## Ensembl  
 
@@ -93,7 +93,7 @@ On the NCBI main page:
 # 3 Obtaining RNA-seq (SRA)
 
 Commonly, such data are produced within the project you are working on. Otherwise the most appropriate data could be retrieved on the Sequence Read Archive (SRA) database. SRA is a database which stores sequence data obtained from next generation sequence (NGS) technology.  
-All menbers of the INSDC consortium (NCBI, EMBL-EBI and DDBJ) operate an instance of the Sequence Read Archive (SRA).  
+All members of the INSDC consortium (NCBI, EMBL-EBI and DDBJ) operate an instance of the Sequence Read Archive (SRA).  
 
 :mortar_board: **ENA:**  
 In Europe, EMBL-EBI provides access to SRA through the European Nucleotide Archive (ENA). Go to [ENA website](https://www.ebi.ac.uk/ena).  
