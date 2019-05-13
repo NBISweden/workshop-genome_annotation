@@ -108,6 +108,9 @@ For instance, you can do this to count genes with names :
 <code> grep -P "\tgene" maker_final.interpro.blast/maker_final.gff | grep -v "Name" | wc -l</code>
 </details>
 
+:mortar_board: Choose one gene in your gff file with annotation with at least one GO terms (they look like GO:XXXX) and some domains annotated and have a look a them in the [Gene Ontology webpage](http://www.geneontology.org/) and [Interproscan webpage](http://www.ebi.ac.uk/interpro/). 
+
+
 ### Set nice IDs
 
 The purpose is to modify the ID value by something more convenient (i.e FLYG00000001 instead of maker-4-exonerate_protein2genome-gene-8.41).  
