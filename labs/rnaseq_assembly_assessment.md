@@ -27,7 +27,7 @@ There are different ways of assessing the quality of your assembly, you will fin
 We will run busco to check the the quality of the assembly.
 [BUSCO](https://busco.ezlab.org/) provides measures for quantitative assessment of genome assembly, gene set, and transcriptome completeness (what we are going to do here). Genes that make up the BUSCO sets for each major lineage are selected from orthologous groups with genes present as single-copy orthologs in at least 90% of the species in the chosen branch of tree of life.
 
-For the trinity results :
+### For the trinity results :
 
 ```
 cd $RNAseq_assembly_path
@@ -45,7 +45,7 @@ run_BUSCO.py -i $data/RNAseq/trinity/Trinity.fasta -o busco_trinity -l $BUSCO_LI
 Busco will take 30 min to run so you can check the results in $data/RNAseq/busco_trinity
 
 
-For the guided assembly results
+### For the guided assembly results:
 
 You need first to extract the transcript sequences from the gtf transcript file :
 
