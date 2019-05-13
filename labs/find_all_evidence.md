@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Find evidence
-exercises: 45
+exercises: 40
 questions:
   - What data do I need to run a genome annotation?
   - How/where to get them?
@@ -20,14 +20,14 @@ Statistics about the different DB holded by Uniprot can be found on this page [h
 :mortar_board: **UniProtKB/Swiss-prot:**  
 Swiss-Prot (created in 1986) is the manually annotated and reviewed section of the UniProt Knowledgebase (UniProtKB). It is a high quality annotated and non-redundant protein sequence database, which brings together experimental results, computed features and scientific conclusions. Since 2002, it is maintained by the UniProt consortium and is accessible via the UniProt website.  
 
-:question: How many proteins Hare there in UniProtKB/Swiss-prot? Navigate the Uniprot site to find the download location for Swissprot in fasta-format. You do not need to download the file, just find it.
+:question: How many proteins are there in UniProtKB/Swiss-prot? Navigate the Uniprot site to find the download location for Swissprot in fasta-format. You do not need to download the file, just find it.
 
 :mortar_board: **UniProtKB/TrEMBL**  
 UniProtKB/TrEMBL contains the translations of all coding sequences (CDS) present in the EMBL/GenBank/DDBJ Nucleotide Sequence Databases (INSDC consortium) and also protein sequences extracted from the literature or submitted to UniProtKB/Swiss-Prot.  
 
 Even with UniProtKB/Swiss-prot available, you also often want to include protein sequences from organisms closely related to your study organism. An approach we often use is to concatenate Swissprot with a few protein fasta-files from closely related organisms and use this in our annotation pipeline.
 
-:question: How many proteins Hare there in UniProtKB/TrEMBL? Find (not download) all unrewied protein sequences that have atleast an evidence of their existence at transcript level and come from species of the Drosophilidae family.
+:question: How many proteins are there in UniProtKB/TrEMBL? Find (not download) all unreviewed protein sequences that have at least an evidence of their existence at transcript level and come from species of the Drosophilidae family.
 
 <details>
 <summary>:key: Click to see how to get the answer.</summary>
