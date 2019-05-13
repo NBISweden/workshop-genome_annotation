@@ -127,10 +127,13 @@ cd $RNAseq_assembly_path
  ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome --threads 10 --subsample 600000
 ```
 
-:question: What library type has been used for the ERR305399 sample?
+:question:
+<ol><li>Do you recognize the pipeline framework run by GUESSmyLT? </li>
+<li>What library type has been used for the ERR305399 sample? </li>
 
 <details>
 <summary>:key: Click to see the solution .</summary>
 <br>
-In was ... in other term ... .
+<ol><li>kGUESSmyLT run <strong>Snakemake</strong>.</li>
+<li>In was ... in other term ... .</li>
 </details>
