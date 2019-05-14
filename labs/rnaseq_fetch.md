@@ -124,7 +124,7 @@ Check that the tool is working fine:
 Let's know launch it on our data:  
 ```bash
 cd $RNAseq_assembly_path
- ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome --threads 10 --subsample 600000
+ ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --threads 10 --subsample 100000 --output result
 ```
 
 :question:
@@ -136,6 +136,6 @@ cd $RNAseq_assembly_path
 <br>
 <ol>
 <li>GUESSmyLT run <strong>Snakemake</strong>.</li>
-  <li>The data is <strong>fr-unstranded</strong> (according to the <code>first strand</code>) or in other term <strong>RF unstranded</strong> (according to <code>mRNA/code>).</li>
+<li>The data is <strong>fr-unstranded</strong> (according to the <code>first strand</code>) or in other term <strong>RF unstranded</strong> (according to <code>mRNA</code>).</li>
 </ol>
 </details>
