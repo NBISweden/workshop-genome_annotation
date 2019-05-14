@@ -32,7 +32,7 @@ We will for all exercises use data for the fruit fly, *Drosophila melanogaster*,
   Data that will be needed for the annotation course can be found THERE
 
   ```
-  ln -s /proj/uppstore2019059/RESTOFPATH . or copy?
+  ln -s /proj/uppstore2019059/nobackup/data . or copy?
   ```
 
   * **install the GAAS repository**  
