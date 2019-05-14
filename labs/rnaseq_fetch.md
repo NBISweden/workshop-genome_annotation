@@ -89,7 +89,7 @@ The information regarding library type can be very useful for reads to be assemb
 
 Here a resume of the different library types:
 
- <img align="center" src="https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg"  />
+ <img align="center" src="https://raw.githubusercontent.com/NBISweden/GUESSmyLT/master/library_types.jpg"  />
 
 In order to guess de-novo the library type we will use for this excercise: [GUESSmyLT](https://github.com/NBISweden/GUESSmyLT).  
 
@@ -134,6 +134,8 @@ cd $RNAseq_assembly_path
 <details>
 <summary>:key: Click to see the solution .</summary>
 <br>
-<ol><li>kGUESSmyLT run <strong>Snakemake</strong>.</li>
-<li>In was ... in other term ... .</li>
+<ol>
+<li>GUESSmyLT run <strong>Snakemake</strong>.</li>
+  <li>The data is <strong>fr-unstranded</strong> (according to the <code>first strand</code>) or in other term <strong>RF unstranded</strong> (according to <code>mRNA/code>).</li>
+</ol>
 </details>
