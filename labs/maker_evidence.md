@@ -1,14 +1,28 @@
-# Making an evidence based annotation with MAKER
+---
+layout: default-overview
+title: Making an evidence based annotation with MAKER
+exercises: 45
+questions:
+  - how to create a structural annotation based on evidence only?
+  -
+objectives:
+  - Understand maker parameters files
+  - run maker
+---
+
 
 ## Prerequisites
 
-  * **Connection to Uppmax**  
-Please connect yourself to Uppmax following those instruction[UPPMAX login instructions](uppmax_login).
-* **GAAS repository path**  
-As yesterday, make sure that the GAAS scripts are in your path or do the following command line :
+For this exercise you need to be logged in to Uppmax.
 
-```
-export PERL5LIB=$PERL5LIB:~/annotation_course/GAAS/annotation/
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/proj/g2019006/nobackup/$USER/data
+export structural_annotation_path=/proj/g2019006/nobackup/$USER/structural_annotation
+export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
+mkdir -p $structural_annotation_path
 ```
 
 ## Overview
@@ -22,8 +36,9 @@ Let's do this step-by-step:
 Create the folder where we will launch this maker run.
 
 ```
-mkdir -p ~/annotation_course/maker
-cd ~/annotation_course/maker
+cd $structural_annotation_path
+mkdir maker
+cd maker
 ```
 
 Link the raw computes you want to use into your folder. The files you will need are:
@@ -31,35 +46,39 @@ Link the raw computes you want to use into your folder. The files you will need 
 - the gff file of the pre-computed repeats (coordinates of repeatmasked regions)
 
 ```
-ln -s ~/annotation_course/data/raw_computes/repeatmasker.genome.gff
-ln -s ~/annotation_course/data/raw_computes/repeatrunner.genome.gff
+ln -s $data/raw_computes/repeatmasker.genome.gff
+ln -s $data/raw_computes/repeatrunner.genome.gff
 ```
 
 In addition, you will also need the genome sequence.
 ```
-ln -s ~/annotation_course/data/genome/genome.fa
+ln -s $data/genome/genome.fa
 ```
 Then you will also need EST and protein fasta file:  
 ```
-ln -s ~/annotation_course/data/evidence/est.genome.fa
-ln -s ~/annotation_course/data/evidence/proteins.genome.fa
+ln -s $data/evidence/est.genome.fa
+ln -s $data/evidence/proteins.genome.fa
 ```
-To finish you will could use a transcriptome assembly (This one has been made using Stringtie):
+To finish you will could use a transcriptome assembly (This is the same as the one you made using Stringtie):
 ```
-ln -s ~/annotation_course/data/RNAseq/stringtie/stringtie2genome.genome.gff
+ln -s $data/RNAseq/stringtie/transcript_stringtie.gff3 stringtie2genome.gff
+```
+OR
+```
+ln -s $RNAseq_assembly_path/stringtie/transcript_stringtie.gff3 stringtie2genome.gff
 ```
 
 /!\\ Always check that the gff files you provides as protein or EST contains match/match_part (gff alignment type ) feature types rather than genes/transcripts (gff annotation type) otherwise MAKER will not use the contained data properly. Here we have to fix the stringtie gff file.
 
 ```
-gff3_sp_alignment_output_style.pl --gff stringtie2genome.genome.gff -o stringtie2genome.genome.ok.gff
+gff3_sp_alignment_output_style.pl --gff stringtie2genome.gff -o stringtie2genome.ok.gff
 ```
 
 You should now have 2 repeat files, 1 EST file, 1 protein file, 1 transcript file, and the genome sequence in the working directory.
 
 For Maker to use this information, we need create the three config files, typing this command:
 ```
-module load maker
+module load maker/3.01.2-beta
 maker -CTL
 ```
 
@@ -71,11 +90,11 @@ nano maker_opts.ctl
 
 In the **maker_opts.ctl** you will set:
 
-- name of the genome sequence (genome=)
-- name of the 'EST' file in fasta format  (est=)
-- name of the 'Transcript' file in gff format (est_gff=)
-- name of the 'Protein' set file(s) (protein=)
-- name of the repeatmasker and repeatrunner files (rm_gff=)
+- name of the genome sequence (genome=)  
+- name of the 'EST' file in fasta format  (est=) :bulb:You can write the result of your denovo assembly Trinity.fasta there  
+- name of the 'Transcript' file in gff format (est_gff=)  
+- name of the 'Protein' set file(s) (protein=)  
+- name of the repeatmasker and repeatrunner files (rm_gff=)  
 
 You can list multiple files in one field by separating their names by a **comma** ','.
 
@@ -93,15 +112,15 @@ Before running MAKER check you have modified the maker_opts.ctl file properly.
 {% highlight bash %}
 
 \#-----Genome (these are always required)  
-genome=**genome.fa** #genome sequence (fasta file or fasta embeded in GFF3 file)  
+**genome=genome.fa** #genome sequence (fasta file or fasta embeded in GFF3 file)  
 organism\_type=eukaryotic #eukaryotic or prokaryotic. Default is eukaryotic
 
 ...
 
 \#-----EST Evidence (for best results provide a file for at least one)  
-**est=est.genome.fa** #set of ESTs or assembled mRNA-seq in fasta format  
+**est=Trinity.fasta** #set of ESTs or assembled mRNA-seq in fasta format  
 altest= #EST/cDNA sequence file in fasta format from an alternate organism  
-**est\_gff=stringtie2genome.genome.ok.gff** #aligned ESTs or mRNA-seq from an external GFF3 file  
+**est\_gff=stringtie2genome.ok.gff** #aligned ESTs or mRNA-seq from an external GFF3 file  
 altest\_gff= #aligned ESTs from a closly relate species in GFF3 format
 
 ...
@@ -116,7 +135,7 @@ protein\_gff= #aligned protein homology evidence from an external GFF3 file
 **model\_org=** #select a model organism for RepBase masking in RepeatMasker  
 rmlib= #provide an organism specific repeat library in fasta format for RepeatMasker   
 **repeat\_protein=** #provide a fasta file of transposable element proteins for RepeatRunner  
-rm\_gff=**repeatmasker.genome.gff,repeatrunner.genome.gff** #pre-identified repeat elements from an external GFF3 file  
+**rm\_gff=repeatmasker.genome.gff,repeatrunner.genome.gff** #pre-identified repeat elements from an external GFF3 file  
 prok\_rm=0 #forces MAKER to repeatmask prokaryotes (no reason to change this), 1 = yes, 0 = no  
 softmask=1 #use soft-masking rather than hard-masking in BLAST (i.e. seg and dust filtering)
 
@@ -175,7 +194,7 @@ This should create a **maker\_evidence** folder containing all computed data inc
 
 To get some statistics of your annotation you could read the **maker_stat.txt** file from the **maker\_evidence** folder or launch this script that work on any gff file :
 ```
-gff3_sp_statistics.pl --gff maker_evidence/annotationByType/maker.gff
+gff3_sp_statistics.pl --gff maker_evidence/maker.gff
 ```
 
 We could now also visualise the annotation in the Webapollo genome browser.

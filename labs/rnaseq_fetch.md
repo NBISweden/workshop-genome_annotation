@@ -9,7 +9,17 @@ objectives:
   - Understand the output
 ---
 
-<u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
+# Prerequisites
+For this exercise you need to be logged in to Uppmax.
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/proj/g2019006/nobackup/$USER/data
+export RNAseq_assembly_path=/proj/g2019006/nobackup/$USER/RNAseq_assembly
+mkdir -p $RNAseq_assembly_path
+```
 
 # Introduction
 
@@ -18,15 +28,12 @@ This exercise is meant to get you acquainted with the type of data you would nor
 You can create the folders where you want but I would suggest a folder organisation, if you do not follow this organisation remember to put the correct path to your data
 
 ```
-cd ~/annotation_course/
-mkdir RNAseq_assembly
-cd RNAseq_assembly
-
+cd $RNAseq_assembly_path
 ```
 
 ## Assembling transcripts based on RNA-seq data
 
-Rna-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you are studying and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
+RNA-seq data is in general very useful in annotation projects as the data usually comes from the actual organism you are studying and thus avoids the danger of introducing errors caused by differences in gene structure between your study organism and other species.
 
 Important remarks to remember before starting working with RNA-seq:
 
@@ -42,34 +49,91 @@ Important remarks to remember before starting working with RNA-seq:
 To check the technology used to sequences the RNAseq and get some extra information we have to use fastqc tool.
 
 ```
-module load bioinfo-tools
 module load FastQC/0.11.5
 
 mkdir fastqc_reports
 
-fastqc ~/annotation_course/?????/ERR305399_1.fastq.gz -o fastqc_reports/
+fastqc $data/raw_computes/ERR305399_1.fastq.gz -o fastqc_reports/
 ```
-scp the html file resulting of fastqc, what kind of result do you have?
+Copy the html file resulting of fastqc in your local machine
 
 ```
-scp login@rackham.uppmax.uu.se:~/annotation_course/???/YOURFILE .
+scp __YOURLOGIN__@rackham.uppmax.uu.se:/proj/g2019006/nobackup/__YOURLOGIN__/RNAseq_assembly/fastqc_reports/YOURFILE .
 ```
+:question: what kind of results do you have?
+
+<details>
+<summary>:key: Click to see the solution .</summary>
+<br>
+Fastqc reports give you different statistics about your RNAseq data before assembly.
+Next to each categories, there is color code to tell you when data is good (green), bad or missing information (red) and questionable results (orange).  
+
+<br>You can find more details about the results <a href="https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/">here</a>.
+</details>
+
+<br>
 Checking the fastq quality score format :
 
-As we will be using the scripts libraries available in the git gaas you need first to export the libraries (if you were logged off):
-
 ```
-export PERL5LIB=$PERL5LIB:~/RNAseq_assembly_annotation/GAAS/annotation/
-```
-Then :
-```
-~/annotation_course/GAAS/annotation/Tools/bin/fastq_guessMyFormat.pl -i ~/annotation_course/assembly_annotation/?????/ERR305399_1.fastq.gz
-
+fastq_guessMyFormat.pl -i $data/raw_computes/ERR305399_1.fastq.gz
 ```
 
 In the normal mode, it differentiates between Sanger/Illumina1.8+ and Solexa/Illumina1.3+/Illumina1.5+.
 In the advanced mode, it will try to pinpoint exactly which scoring system is used.
 
-More test can be made and should be made on RNA-seq data before doing the assembly, we have not time to do all of them during this course. have a look [here](https://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools)
+More test can be made and should be made on RNA-seq data before doing the assembly, we do not have time to do all of them during this course. Have a look [here](https://en.wikipedia.org/wiki/List_of_RNA-Seq_bioinformatics_tools)
 
-ADD JACQUES/MASTER STUDENTS SCRIPT TO CHECK RNA?
+### Checking the library type (read orientations)
+
+The information regarding library type can be very useful for reads to be assembled into a transcriptome or mapped to a reference assembly. This is because the library type can help to discern where in the transcriptome shorter ambiguous reads belong by using the read’s relative orientation and from which strand it was sequenced. Unfortunately, this information regarding the library type used is not included in sequencing output files and may be lost before the assembly of the data.
+
+Here a resume of the different library types:
+
+ <img align="center" src="https://github.com/NBISweden/GUESSmyLT/blob/master/library_types.jpg"  />
+
+In order to guess de-novo the library type we will use for this excercise: [GUESSmyLT](https://github.com/NBISweden/GUESSmyLT).  
+
+First link the data and load the necessary modules:  
+```bash
+cd $RNAseq_assembly_path
+ln -s $data/raw_computes/ERR305399_1.fastq.gz
+ln -s $data/raw_computes/ERR305399_2.fastq.gz
+ln -s $data/genome/genome.fa
+
+module load trinity/2.8.2
+module load BUSCO/3.0.2b
+source $BUSCO_SETUP
+module load bowtie2/2.3.4.3
+module load samtools/1.2
+module load python3/3.6.0
+module load snakemake/5.4.5
+```
+
+Then install [GUESSmyLT](https://github.com/NBISweden/GUESSmyLT):   
+```
+git clone https://github.com/NBISweden/GUESSmyLT.git
+cd GUESSmyLT
+python3 setup.py install --user
+```
+
+Check that the tool is working fine:  
+```bash
+~/.local/bin/GUESSmyLT -h
+```
+
+Let's know launch it on our data:  
+```bash
+cd $RNAseq_assembly_path
+ ~/.local/bin/GUESSmyLT --reads ERR305399_1.fastq.gz ERR305399_2.fastq.gz --reference genome.fa --mode genome --threads 10 --subsample 600000
+```
+
+:question:
+<ol><li>Do you recognize the pipeline framework run by GUESSmyLT? </li>
+<li>What library type has been used for the ERR305399 sample? </li>
+
+<details>
+<summary>:key: Click to see the solution .</summary>
+<br>
+<ol><li>kGUESSmyLT run <strong>Snakemake</strong>.</li>
+<li>In was ... in other term ... .</li>
+</details>

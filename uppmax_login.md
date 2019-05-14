@@ -75,9 +75,3 @@ SLURM queuing system. You can now continue with the specific exercise instructio
 but **please remember to never use more than 10 cores** as you will be sharing a node
 (i.e., a single computer) with someone else in the course and there are only 20 cores
 available in total per node.
-
-## Helpful Resources
-
-[Linux cheat sheet](files/linux-cheat-sheet.pdf)
-
-[UPPMAX cheat sheet](files/uppmax-cheat-sheet.png)

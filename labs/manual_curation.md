@@ -1,4 +1,15 @@
-# Manual curation
+---
+layout: default-overview
+title: Manual curation
+exercises: 60
+questions:
+  -
+  -
+objectives:
+  -
+  -
+---
+
 ## Overview
 
 It is easy to understand that automated gene build pipelines will never reach 100% accuracy in their reconstruction. This is due to a number of factors, including ambiguous information from competing input data, inherent uncertainties of ab-initio predictions as well as simplified decision processes when synthesising all available information into a transcript structure. It is therefore always important to manually inspect a gene build - and in basically all cases manual curation is highly recommended.
@@ -31,15 +42,15 @@ The tracks available are:
 - Augustus_drosophila : a pure ab initio annotation using Augustus with the drosophila model.
 - Maker\_evidence : A maker annotation using Evidence-based approach.
 - Maker\_abinitio : A maker annotation using Ab initio evidence-drived approach.  
-- Proteins : track of reviewed proteins aligned by Maker. 
+- Proteins : track of reviewed proteins aligned by Maker.
 - tophat_larva4 : RNAseq data (bam file) aligned to the genome by tophat.  
 - Cufflinks_larva4 : A cufflinks transcript assembly aligned by MAKER.
 - Stringtie_ERR305399 : A stringtie transcript assembly aligned by MAKER.
-- EST_from_NCBI : The ESTs aligned by maker during the annotation process. 
+- EST_from_NCBI : The ESTs aligned by maker during the annotation process.
 
 A genomic region of the chrosmosome is assigned to each of you. Your aim is to manualy annotate your assigned part using all the information available in the different tracks. Genomic region has been assigned without any biological consideration. So, if genes straddle two regions don't stop you at the end of yours :).  
 
-NOTES: Isoforms are allowed. Start each gene annotation by dragging-and-dropping the gene model that you think be the best. 
+NOTES: Isoforms are allowed. Start each gene annotation by dragging-and-dropping the gene model that you think be the best.
 
 1 :    	            50 000 - 140 500
 <br/>2	:        140 500	- 227 500
@@ -52,7 +63,7 @@ NOTES: Isoforms are allowed. Start each gene annotation by dragging-and-dropping
 <br/>9	:              749 500	- 836 500
 <br/>10	:                836 500	- 923 500
 <br/>11	:              923 500	- 1 010 500
-<br/>12	:              1 010 500	- 1 097 500 
+<br/>12	:              1 010 500	- 1 097 500
 <br/>13 :                1 097 500 - 1 184 500
 <br/>14 :                  1 184 500 - 1 268 000
 

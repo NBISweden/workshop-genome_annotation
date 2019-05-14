@@ -17,15 +17,11 @@ defaults:
 menu:
   - title: Overview
     url: index
-  - title: Uppmax Login
+  - title: Location
+    url: location
+  - title: Uppmax&nbsp;login
     url: uppmax_login
+  - title: Cheat&nbsp;sheets
+    url: files/cheat_sheet/cheat_sheets
   - title: Schedule
     url: schedule
-  - title: Travel info
-    url: travel
-  - title: Workshop Material
-    submenus:
-      - title: Lab 1
-        url: labs/lab1
-      - title: Lab 2
-        url: labs/lab2
