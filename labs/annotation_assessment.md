@@ -27,31 +27,31 @@ export abinitio_augustus_path=/proj/g2019006/nobackup/$USER/abinitio_augustus
 
 In this exercise you will handle different annotation files:
 
-  * the pure abinitio one done with augustus (practical : Abinitio with augustus),
+<br>• the pure abinitio one done with augustus (practical : Abinitio with augustus),
 
-  * the evidence-based done with MAKER
+<br>• the evidence-based done with MAKER
 
-  * the abinitio evidence-driven one done with MAKER.
+<br>• the abinitio evidence-driven one done with MAKER.
 
-  * the official annotation from Ensembl
+<br>• the official annotation from Ensembl
 
 ## overview
 
 Evaluating an annotation can be done in different ways:
 
-  * Looking at the number of genes  
+<br>• Looking at the number of genes  
 It isn't so much a quality check as a measure of congruency - i.e. the resulting numbers don't tell you which of the two gene builds is more correct.
 
-  * Comparison with another annotation  
+<br>• Comparison with another annotation  
  It does not help neither to see the quality of your annotation but could help to understand the major differences between several annotations.
 
-  * Comparison against a reference
+<br>• Comparison against a reference
  This case is really rare in real life.
 
-  * Running busco on proteins obtained from the annotation  
+<br>• Running busco on proteins obtained from the annotation  
  It provides a nice feeling about the quality of the annotation but is biased by the fact it focus only on well conserved genes between species during evolution. So, what about species specific genes ?
 
-  * In reference to the evidence alignments (AED score)  
+<br>• In reference to the evidence alignments (AED score)  
  It is what Maker uses internally to select gene models. After synthesizing and annotating loci, the resulting model will be ranked against the filtered evidence alignments. The more congruent these two points of information are, the lower the 'annotation edit distance' (AED) will be. The AED score can be used to e.g. check an annotation for problematic models that may then be subjected to manual curation.
 
 ### Gene number
