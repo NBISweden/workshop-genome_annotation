@@ -19,8 +19,8 @@ Setup the folder structure:
 source ~/git/GAAS/profiles/activate_rackham_env
 export data=/proj/g2019006/nobackup/$USER/data
 export structural_annotation_path=/proj/g2019006/nobackup/$USER/structural_annotation
-
 cd $structural_annotation_path/maker
+module load maker/3.01.2-beta
 ```
 
 # Introduction
@@ -59,7 +59,7 @@ This time, we do specify a reference species to be used by augustus, which will 
 ...
 *keep_preds=1*
 
-We must deactivate the evidence base predidction to enable MAKER to pass those alignalignents/hints to the ab-initio tool (That enable the ab-initio evidence-driven mode. Otherwise it would be pure abinitio).  
+We must deactivate the evidence base predidction to enable MAKER to pass those alignaligments/hints to the ab-initio tool (that enables the ab-initio evidence-driven mode. Otherwise it would be pure abinitio).  
 
 <i>protein2genome=0</i>  
 <i>est2genome=0</i>
@@ -81,7 +81,7 @@ organism\_type=eukaryotic #eukaryotic or prokaryotic. Default is eukaryotic
 \#-----EST Evidence (for best results provide a file for at least one)  
 **est=** #set of ESTs or assembled mRNA-seq in fasta format  
 altest= #EST/cDNA sequence file in fasta format from an alternate organism  
-**est\_gff=stringtie2genome.genome.ok.gff,est2genome.gff** #aligned ESTs or mRNA-seq from an external GFF3 file  
+**est\_gff=stringtie2genome.ok.gff,est2genome.gff** #aligned ESTs or mRNA-seq from an external GFF3 file  
 altest\_gff= #aligned ESTs from a closly relate species in GFF3 format
 
 ...
