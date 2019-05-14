@@ -18,6 +18,7 @@ Setup the folder structure:
 ```bash
 source ~/git/GAAS/profiles/activate_rackham_env
 export data=/proj/g2019006/nobackup/$USER/data
+export structural_annotation_path=/proj/g2019006/nobackup/$USER/structural_annotation
 export augustus_training_path=/proj/g2019006/nobackup/$USER/structural_annotation/augustus_training
 mkdir -p $augustus_training_path
 ```
@@ -25,7 +26,7 @@ mkdir -p $augustus_training_path
 # Introduction
 
 From the maker run evidence based, we can train our ab-initio predictors and then use them for the second run of annotation.
-You will need a set of genomic sequences with gene structures (sequence coordinates of starts and ends of exons and genes) and the most important part is selected the right set of genes.
+You will need a set of genomic sequences with gene structures (sequence coordinates of starts and ends of exons and genes) and the most important part is to select the right set of genes.
 In many cases, or as a first step towards modeling complete genes, it is sufficient to have only the coding parts of the gene structure (CDS).
 We will only train augustus today as it is one the best ab-initio predictor and one of the hardest to train.
 Maker also support SNAP (Works good, easy to train, not as good as others ab-initio especially on longer intron genomes), GeneMark (Self training, no hints, buggy, not good for fragmented genomes or long introns), FGENESH (Works great, costs money even for training) and now EVM.
@@ -66,15 +67,20 @@ Next step, we need to filter the best genes we will use for the training, we nee
 maker_select_models_by_AED_score.pl -f mrna.gff -v 0.3 -t "<=" -o filter/codingGeneFeatures.filter.gff
 ```
 
-We also need to select the longest ORF (we want to use the complete longest genes to avoid create incorrect and too short genes when we use the abinitio profile )
+We also need to select the longest ORF (we want to use the complete longest genes to avoid creating incorrect and too short genes when we use the abinitio profile )
 ```
 gff3_sp_keep_longest_isoform.pl -f filter/codingGeneFeatures.filter.gff -o filter/codingGeneFeatures.filter.longest_cds.gff
 ```
+/!\\ If you receive this error "Nothing to do... this file doesn't contain any isoform !", it means that you do not have any isoforms. Thus, you can directly use filtered annotation (based on AED) for following step.
+```
+cp filter/codingGeneFeatures.filter.gff filter/codingGeneFeatures.filter.longest_cds.gff
+```
+
 There are different ways of proceeding after the first selection and we are using "the approached of spliced alignments of protein sequences of the same or a very closely related species" against the assembled genomic sequence.
 In order to do so, we translate our coding genes into proteins, format the protein fasta file to be able to run a recursive blast and then select the best ones.
 Indeed, each sequence can contain one or more genes; the genes can be on either strand. However, the genes must not overlap, and only one transcript per gene is allowed.
 ```
-gff3_sp_extract_sequences.pl -g filter/codingGeneFeatures.filter.longest_cds.gff3 -f $data/genome/genome.fa -o protein/codingGeneFeatures.filter.longest_cds.proteins.fa
+gff3_sp_extract_sequences.pl -g filter/codingGeneFeatures.filter.longest_cds.gff -f $data/genome/genome.fa -o protein/codingGeneFeatures.filter.longest_cds.proteins.fa
 
 module load blast/2.7.1+   
 
@@ -82,10 +88,10 @@ makeblastdb -in protein/codingGeneFeatures.filter.longest_cds.proteins.fa -dbtyp
 
 blastp -query protein/codingGeneFeatures.filter.longest_cds.proteins.fa -db protein/codingGeneFeatures.filter.longest_cds.proteins.fa -outfmt 6 -out blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive
 
-gff3_sp_filter_by_mrnaBlastValue_bioperl.pl --gff filter/codingGeneFeatures.filter.longest_cds.gff3 --blast blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile nonredundant/codingGeneFeatures.nr.gff
+gff3_sp_filter_by_mrnaBlastValue_bioperl.pl --gff filter/codingGeneFeatures.filter.longest_cds.gff --blast blast_recursive/codingGeneFeatures.filter.longest_cds.proteins.fa.blast_recursive --outfile nonredundant/codingGeneFeatures.nr.gff
 
 ```
-Sequences need to be converted in a simple genbank format.
+Sequences need to be converted to a simple genbank format.
 ```
 module load augustus/3.2.3
 
@@ -115,8 +121,8 @@ source $BUSCO_SETUP
 
 new_species.pl --species=dmel_$USER
 
-etraining --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk.train 
+etraining --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk
 
-augustus --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk.test | tee run.log 
+augustus --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk | tee run.log 
 ```
 - Look at the accuracy report, what does it mean? why? see [Training Augustus](http://www.vcru.wisc.edu/simonlab/bioinformatics/programs/augustus/docs/tutorial2015/training.html)
