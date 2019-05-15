@@ -33,7 +33,7 @@ Room: E10:4308
 **10.45-11.30** [Practical: find evidence](labs/find_all_evidence)  
 **11.30-12.00** [Practical: work with gff](labs/gff)  
 **12.00-13.00** Lunch  
-**13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/)  (Jacques Dainat)  
+**13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/Structural_annotation_general.pdf)  (Jacques Dainat)  
 **14.00-15.00** [Practical: Abinitio with augustus](labs/augustus)  
 **15.00-15.15** Coffee break  
 **14.00-17.00** Practical: Evidence based annotation - How to prepare RNAseq (short reads)  
@@ -49,7 +49,7 @@ Room: E10:4308
 
 Room: E10:4308  
 **09.00-9.15** Summary of yesterday’s exercise  
-**09.15-10.00** [Lecture: Structural annotation - Maker](slides/) (Jacques Dainat)  
+**09.15-10.00** [Lecture: Structural annotation - Maker](lectures/Structural_annotation_MAKER.pdf) (Jacques Dainat)  
 **10.00-10.15** Coffee break  
 **10.15-12.00** [Practical: Evidence based annotation - MAKER](labs/maker_evidence)  
 **12.00-13.00** Lunch  
