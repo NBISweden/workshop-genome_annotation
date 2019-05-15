@@ -55,6 +55,7 @@ less augustus.xxx
 Now edit the file to fix the 9th column:  
 
   ```bash
+  chmod +w augustus.xxx
   nano augustus.xxx
   ```
 
