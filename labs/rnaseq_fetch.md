@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Preparing RNAseq data for assembly
-exercises: 45
+exercises: 30
 questions:
   - How do I check the quality of my RNAseq data?
 objectives:
