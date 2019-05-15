@@ -67,7 +67,7 @@ From the ensembl biomart web page at [http://www.ensembl.org/biomart/martview](h
   <ol>
    <li>On the left menu click on &lt;<strong>Dataset</strong>&gt;, then select the &lt;<strong>Ensembl Genes</strong>&gt; database and the &lt;<strong>Drosophila melanogaster</strong>&gt; dataset.</li>
    <li>On the left menu click on &lt;<strong>Filters</strong>&gt;, then select the &lt;<strong>REGION</strong>&gt; paragraph, tick the checkbox &lt;<strong>Chromosome/scaffold</strong>&gt; and select the chromosome number &lt;<strong>4</strong>&gt;.</li>
-   <li>On the left menu click on &lt;<strong>Attributes</strong>&gt;, then tick the checkbox &lt;<strong>Sequences</strong>&gt; and tick the checkbox &lt;<strong>Peptide</strong>&gt;.</li>
+   <li>On the left menu click on &lt;<strong>Attributes</strong>&gt;, then tick the checkbox &lt;<strong>Sequences</strong>&gt; then open the <strong>SEQUENCES</strong>&gt; section and tick the checkbox &lt;<strong>Peptide</strong>&gt;.</li>
 <li>You can check how many genes are related to your criterium by clicking the &lt;<strong>Count</strong>&gt; button at the top. To see the selected dataset (and to download it) you have to click the &lt;<strong>Results</strong>&gt; button.</li>
   </ol>
 </details>  
