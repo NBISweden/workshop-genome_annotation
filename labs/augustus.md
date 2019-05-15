@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Abinitio with augustus
-exercises: 60
+exercises: 45
 questions:
   - How to run augustus?
   - How visualise you results?
