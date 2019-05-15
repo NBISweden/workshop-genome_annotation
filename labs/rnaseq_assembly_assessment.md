@@ -50,6 +50,7 @@ Busco will take 30 min to run so you can check the results in $data/RNAseq/busco
 You need first to extract the transcript sequences from the gtf transcript file :
 
 ```
+ln -s $data/genome/genome.fa
 gff3_sp_extract_sequences.pl --cdna -g $RNAseq_assembly_path/guided_assembly/stringtie/transcripts.gtf -f $data/genome/genome.fa -o $RNAseq_assembly_path/guided_assembly/stringtie/transcripts_stringtie.fa
 ```
 Then you can run busco again :
