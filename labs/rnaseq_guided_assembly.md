@@ -1,7 +1,7 @@
 ---
 layout: default-overview
 title: Genome-Guided Transcriptome Assembly
-exercises: 65
+exercises: 45
 questions:
   - How to assemble my RNAseq genome-guided?
 objectives:
