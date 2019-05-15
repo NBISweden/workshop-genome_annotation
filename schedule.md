@@ -33,14 +33,14 @@ Room: E10:4308
 **10.45-11.30** [Practical: find evidence](labs/find_all_evidence)  
 **11.30-12.00** [Practical: work with gff](labs/gff)  
 **12.00-13.00** Lunch  
-**13.00-14.00** [Lecture : Structural annotation - the different approaches](lectures/Structural_annotation_general.pdf)  (Jacques Dainat)  
-**14.00-15.00** [Practical: Abinitio with augustus](labs/augustus)  
-**15.00-15.15** Coffee break  
-**14.00-17.00** Practical: Evidence based annotation - How to prepare RNAseq (short reads)  
-       •  **14.00-14.45** [Prepare data](labs/rnaseq_fetch)  
-       •  **14.45-15.45** [Guided assembly](labs/rnaseq_guided_assembly)  
-       •  **15.45-16.10** [Denovo assembly](labs/rnaseq_denovo_assembly)  
-       •  **16.10-17.00** [Quality assessment ](labs/rnaseq_assembly_assessment)  
+**13.00-13.45** [Lecture : Structural annotation - the different approaches](lectures/Structural_annotation_general.pdf)  (Jacques Dainat)  
+**13.45-14.30** [Practical: Abinitio with augustus](labs/augustus)  
+**14.30-14.45** Coffee break  
+**14.45-17.00** Practical: Evidence based annotation - How to prepare RNAseq (short reads)  
+       •  **14.45-15.15** [Prepare data](labs/rnaseq_fetch)  
+       •  **15.15-16.00** [Guided assembly](labs/rnaseq_guided_assembly)  
+       •  **16.00-16.20** [Denovo assembly](labs/rnaseq_denovo_assembly)  
+       •  **16.20-17.00** [Quality assessment ](labs/rnaseq_assembly_assessment)  
 <hr>
 
 ### Day 2  
