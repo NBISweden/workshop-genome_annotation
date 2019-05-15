@@ -25,7 +25,7 @@ mkdir -p $work_with_gff
 
 # Recognize the format
 
-GFF and GTF format are close and could be difficult to differentiate. To a complete overview of the format you can have a look in the cheat sheet section.
+GFF and GTF format are close and could be difficult to differentiate. To a complete overview of the format you can have a look in the <strong>cheat sheet</strong> section.
 
 ```bash
 cd $work_with_gff
