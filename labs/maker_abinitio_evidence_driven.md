@@ -55,7 +55,13 @@ ln -s maker_evidence/protein2genome.gff
 
 This time, we do specify a reference species to be used by augustus, which will enable ab-initio gene finding and keep_preds=1 will also show abinitio prediction not supported by any evidences :  
 
-*augustus\_species=fly* #Augustus gene prediction species model  (:bulb:this is where you can call the database you trained for augustus dmel_$USER you need to write ../augustus_training/dmel_results_noAbinitio_clean/augustus_config/species/dmel_$USER/)   
+*augustus\_species=fly* #Augustus gene prediction species model  (:bulb:this is where you can call the database you trained for augustus dmel_$USER ) 
+
+you need to do in the terminal
+```
+AUGUSTUS_CONFIG_PATH=/proj/g2019006/nobackup/$USER/structural_annotation/augustus_training/dmel_results_noAbinitio_clean/augustus_config
+```
+
 ...
 *keep_preds=1*
 
