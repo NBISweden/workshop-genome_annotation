@@ -119,7 +119,7 @@ cd compare_ref
 
 Then, copy or sym-link the EnsEMBL reference annotation as well as yours:
 ```
-ln -s $abinitio_augustus_pathaugustus_drosophila.gff
+ln -s $abinitio_augustus_path/augustus_drosophila.gff
 ln -s $structural_annotation_path/maker/complement/maker_abinitio_cplt_by_evidence.gff
 ln -s $data/annotation/ensembl.genome.gff
 ```
