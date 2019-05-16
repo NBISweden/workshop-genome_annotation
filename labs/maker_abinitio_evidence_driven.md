@@ -70,12 +70,9 @@ With these settings, Maker will run augustus to predict gene loci, but inform th
 Before running MAKER check you have modified the maker_opts.ctl file properly.
 <details>
 <summary>:key: Click here to see the expected maker_opts.ctl.</summary>
-<style>
-.box {
-   background:#FF0000;
-}
-</style>
-<div class="box">
+
+<span style="background-color: rgba(155, 155, 155, 0.8); color: rgba(254, 254, 254, 0);">
+
 \#-----Genome (these are always required)  
 **genome=genome.fa** #genome sequence (fasta file or fasta embeded in GFF3 file)  
 organism\_type=eukaryotic #eukaryotic or prokaryotic. Default is eukaryotic
@@ -123,7 +120,7 @@ unmask=0 #also run ab-initio prediction programs on unmasked sequence, 1 = yes, 
 **keep_preds=1**
 ...
 
-</div>
+</span>
 
 </details>  
 To better understand the different parameters you can have a look [here](http://weatherby.genetics.utah.edu/MAKER/wiki/index.php/The_MAKER_control_files_explained)
