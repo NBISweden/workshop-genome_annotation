@@ -145,7 +145,7 @@ Note that the measures employed by genometools function in a all-or-nothing fash
 :question:From the comparison of your annotations (the pure abinitio Augustus one and the one made with MAKER) to the Ensembl annotation, which one **seems** to be the most comprehensive to you ?
 
 <details>
-<summary>:key: Click here to see the expected output of ensembl vs augustus
+<summary>:key: Click here to see the expected output of ensembl vs augustus.</summary>
 {% highlight bash %}
 gene sensitivity (mRNA level): 100.00% (0/0) (missing genes: 0)
 gene specificity (mRNA level):   0.00% (0/60) (wrong genes: 60)
@@ -203,7 +203,7 @@ nucleotide specificity (CDS level):  84.76% (TP=152785/(TP=152785 + FP=27479))
 </details>
 
 <details>
-<summary>:key: Click here to see the expected output of ensembl vs amker_abinitio_cplt_by_evidence
+<summary>:key: Click here to see the expected output of ensembl vs amker_abinitio_cplt_by_evidence.</summary>
 {% highlight bash %}
 gene sensitivity (mRNA level): 100.00% (0/0) (missing genes: 0)
 gene specificity (mRNA level):   0.00% (0/106) (wrong genes: 106)
