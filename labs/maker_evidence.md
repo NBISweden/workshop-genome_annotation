@@ -59,7 +59,7 @@ Then you will also need EST and protein fasta file:
 ln -s $data/evidence/est.genome.fa
 ln -s $data/evidence/proteins.genome.fa
 ```
-To finish you will could use a transcriptome assembly (This is the same as the one you made using Stringtie):
+To finish you could use a transcriptome assembly (This is the same as the one you made using Stringtie and/or the Trinity.fasta):
 ```
 ln -s $data/RNAseq/stringtie/transcript_stringtie.gff3 stringtie2genome.gff
 ```
