@@ -123,6 +123,6 @@ new_species.pl --species=dmel_$USER
 
 etraining --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk
 
-augustus --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk | tee run.log 
+augustus --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk.test | tee run.log 
 ```
 - Look at the accuracy report, what does it mean? why? see [Training Augustus](http://www.vcru.wisc.edu/simonlab/bioinformatics/programs/augustus/docs/tutorial2015/training.html)
