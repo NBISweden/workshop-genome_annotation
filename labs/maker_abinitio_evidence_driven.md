@@ -59,7 +59,7 @@ This time, we do specify a reference species to be used by augustus, which will 
 
 you need to do in the terminal
 ```
-AUGUSTUS_CONFIG_PATH=/proj/g2019006/nobackup/$USER/structural_annotation/augustus_training/dmel_results_noAbinitio_clean/augustus_config
+AUGUSTUS_CONFIG_PATH=/proj/g2019006/nobackup/$USER/structural_annotation/augustus_training/maker_results_noAbinitio_clean/augustus_config
 ```
 
 ...
