@@ -37,8 +37,6 @@ Maker also support SNAP (Works good, easy to train, not as good as others ab-ini
 cd into the folder and then load all modules that we will need to train Augustus
 ```
 cd $augustus_training_path
-
-module load cufflinks/2.2.1
 ```
 
 You will need to symlink all data you will need such as the gff files from the first run of maker and the chromosome 4 fasta sequence.
@@ -50,8 +48,7 @@ ln -s $structural_annotation_path/maker/maker_evidence/maker.gff maker_no_abinit
 First step is to select only the coding genes from the maker.gff file and remove all tRNA ( :bulb: **Tips**: in this case there no tRNA but it is important to remove them)
 ```
 gff3_sp_splitByLevel2Feature.pl -g maker_no_abinitio.gff -o maker_results_noAbinitio_clean
-
-cd maker_results_noAbinitio_clean
+ln -s maker_results_noAbinitio_clean/mrna.gff
 ```
 In this folder you will need to create different folders
 ```
@@ -100,6 +97,7 @@ gff2gbSmallDNA.pl nonredundant/codingGeneFeatures.nr.gff $data/genome/genome.fa 
 In order for the test accuracy to be statistically meaningful the test set should also be large enough (100-200 genes).
 You should split the set of gene structures randomly.
 ```
+module load cufflinks/2.2.1
 randomSplit.pl gff2genbank/codingGeneFeatures.nr.gbk 100
 ```
 :question:What happened? how can you solve it? what might be the consequences of it?
