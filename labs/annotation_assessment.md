@@ -147,6 +147,7 @@ Note that the measures employed by genometools function in a all-or-nothing fash
 <details>
 <summary>:key: Click here to see the expected output of ensembl vs augustus.</summary>
 {% highlight bash %}
+  
 gene sensitivity (mRNA level): 100.00% (0/0) (missing genes: 0)
 gene specificity (mRNA level):   0.00% (0/60) (wrong genes: 60)
 gene sensitivity (CDS level): 100.00% (0/0) (missing genes: 0)
@@ -199,12 +200,15 @@ nucleotide sensitivity (mRNA level):  46.95% (TP=191195/(TP=191195 + FN=216048))
 nucleotide specificity (mRNA level):  69.73% (TP=191195/(TP=191195 + FP=83008))
 nucleotide sensitivity (CDS level):  58.15% (TP=152785/(TP=152785 + FN=109956))
 nucleotide specificity (CDS level):  84.76% (TP=152785/(TP=152785 + FP=27479))
+
 {% endhighlight %}
+
 </details>
 
 <details>
 <summary>:key: Click here to see the expected output of ensembl vs amker_abinitio_cplt_by_evidence.</summary>
 {% highlight bash %}
+  
 gene sensitivity (mRNA level): 100.00% (0/0) (missing genes: 0)
 gene specificity (mRNA level):   0.00% (0/106) (wrong genes: 106)
 gene sensitivity (CDS level): 100.00% (0/0) (missing genes: 0)
@@ -257,8 +261,11 @@ nucleotide sensitivity (mRNA level):  58.04% (TP=236347/(TP=236347 + FN=170896))
 nucleotide specificity (mRNA level):  95.88% (TP=236347/(TP=236347 + FP=10163))
 nucleotide sensitivity (CDS level):  81.94% (TP=215303/(TP=215303 + FN=47438))
 nucleotide specificity (CDS level):  94.55% (TP=215303/(TP=215303 + FP=12412))
+
 {% endhighlight %}
+
 </details>  
+
 ### Filter MAKER annotation by AED score
 
 A AED value of 0 means the whole gene model is supported by evidence while 1 means there is none. Let's try to select only models with good congruency with evidence lines, AED <0.3.
