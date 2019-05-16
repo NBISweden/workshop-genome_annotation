@@ -170,7 +170,7 @@ There exist a number of 'annotation viewers' - IGV, Argo and Apollo, to name a f
 
 ### Using WebApollo to view annotations
 Transfer your maker annotation files to your computer using the scp command.  
-Then, jump to [WebApollo](http://annotation-prod.scilifelab.se:8080/NBIS_course/) and upload your annotation track into the genome portal called **drosophila\_melanogaster\_chr4**. [Here find the WebApollo instruction](labs/webapollo_usage)  
+Then, jump to [WebApollo](http://annotation-prod.scilifelab.se:8080/NBIS_course/) and upload your annotation track into the genome portal called **drosophila\_melanogaster\_chr4**. [Here find the WebApollo instruction](labs/webapollo_usage.md)  
 You can now compare your gene builds against this reference. Some questions to ask yourself:
 
 :question:Do my gene builds recover all the genes found in the reference?  
