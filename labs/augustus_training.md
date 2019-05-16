@@ -121,7 +121,7 @@ source $BUSCO_SETUP
 
 new_species.pl --species=dmel_$USER
 
-etraining --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk
+etraining --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk.train
 
 augustus --species=dmel_$USER gff2genbank/codingGeneFeatures.nr.gbk.test | tee run.log 
 ```
