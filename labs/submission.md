@@ -1,3 +1,31 @@
+---
+layout: default-overview
+title: Submissionn
+exercises: 20
+questions:
+  - How to prepare annotation file for submission?
+  - How to submit an annotation to INSDC database?
+objectives:
+  - be able to prepare an annotation file for submission
+---
+
+# Prerequisites
+For this exercise you need to be logged in to Uppmax.
+
+Setup the folder structure:
+
+```bash
+source ~/git/GAAS/profiles/activate_rackham_env
+export data=/proj/g2019006/nobackup/$USER/data
+export submission_path=/proj/g2019006/nobackup/$USER/submission
+export structural_annotation_path=/proj/g2019006/nobackup/$USER/structural_annotation
+mkdir -p $submission_path
+cd $submission_path
+ln -s $data/genome/genome.fa
+ln -s $structural_annotation_path/maker/complement/maker_abinitio_cplt_by_evidence.gff maker_final.gff
+
+```
+
 <u>**Setup:**</u> For this exercise you need to be logged in to Uppmax. Follow the [UPPMAX login instructions](uppmax_login).
 
 # Submission to public repository (creation of an EMBL file)
@@ -16,7 +44,7 @@ First you need to download and install EMBLmyGFF3:
 ```
 module load python/2.7.6
 pip install --user git+https://github.com/NBISweden/EMBLmyGFF3.git
-~/.local/bin/EMBLmyGFF3 finalOutputDir/codingGeneFeatures.gff 4.fa -o my_annotation_ready_to_submit.embl
+~/.local/bin/EMBLmyGFF3 maker_final.gff genome.fa -o my_annotation_ready_to_submit.embl
 ```
 
 You now have a EMBL flat file ready to submit. In theory to finsish the submission, you will have to send this archived file to their ftp server and finish the submission process in the website side too.
