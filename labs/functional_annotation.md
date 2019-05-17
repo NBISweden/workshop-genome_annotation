@@ -21,6 +21,7 @@ export data=/proj/g2019006/nobackup/$USER/data
 export functional_annotation_path=/proj/g2019006/nobackup/$USER/functional_annotation
 export structural_annotation_path=/proj/g2019006/nobackup/$USER/structural_annotation
 mkdir -p $functional_annotation_path
+chmod +w $data/blastdb/uniprot_dmel/
 ```
 
 ## Introduction
