@@ -50,7 +50,6 @@ run_BUSCO.py -i $data/raw_computes/Chlamydia_trachomatis_a_363.fa -o chlamydia_b
 ```
 look at the results of busco in short_summary_chlamydia_busco.txt
 
-:question:what outputs do you have? where do you have the annotation?
 <br>:question:what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
 <br>:question:how do you expect the annotation will be?
 
