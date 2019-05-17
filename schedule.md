@@ -26,7 +26,7 @@ Genome Annotation Service
 **Wednesday 15th**
 
 Room: E10:4308  
-**09.00-09.45** [Lecture: Understanding Annotation](lectures/) (Henrik Lantz)  
+**09.00-09.45** [Lecture: Understanding Annotation](lectures/Introduction_HL.pptx) (Henrik Lantz)  
 **09.45-10.00** [Practical: Get started](labs/get_started)  
 **10.00-10.15** Coffee break  
 **10.15-10.45** [Practical: assembly check](labs/assembly_check)  
