@@ -54,6 +54,9 @@ look at the results of busco in short_summary_chlamydia_busco.txt
 <br>:question:what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
 <br>:question:how do you expect the annotation will be?
 
+For E.coli, the genome file is uniprot-escherichia.fasta and the protein file is : Escherichia_coli_k_12_prot.fa
+
+
 Do the same for the two other assemblies and answer those questions again.
 
 ## Prokka
