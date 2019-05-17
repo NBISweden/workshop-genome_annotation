@@ -40,7 +40,7 @@ cd $functional_annotation_path
 Now link the annotation you choose to work with. The command will looks like:
 ```
 ln -s $structural_annotation_path/maker/complement/maker_abinitio_cplt_by_evidence.gff maker_final.gff  
-ln -s $structural_annotation_path/maker/complement/maker_abinitio_cplt_by_evidence.fasta maker_final.faa
+ln -s $structural_annotation_path/maker/complement/maker_abinitio_cplt_by_evidence.fa maker_final.faa
 ```
 
 ## Interproscan approach
