@@ -47,12 +47,18 @@ gff3_sp_flag_short_introns.pl --gff maker_final.gff -o maker_final_short_intron_
 gff3_sp_fix_features_locations_duplicated.pl --gff -o maker_final_short_intron_flagged_duplicated_location_fixed.gff
 ```
 
-First you need to download and install EMBLmyGFF3:
+Then you need to download and install EMBLmyGFF3:
 ```bash
 module load python/2.7.6
 pip install --user git+https://github.com/NBISweden/EMBLmyGFF3.git
 ~/.local/bin/EMBLmyGFF3 maker_final_short_intron_flagged_duplicated_location_fixed.gff genome.fa -o my_annotation_ready_to_submit.embl
 ```
+
+Before to try to submit your file, you must check that everything is fine with the official embl-api-validator. You can find it at the [ena repository](https://github.com/enasequence/sequencetools). Download the validator and validate your file.
+```bash
+wget http://central.maven.org/maven2/uk/ac/ebi/ena/sequence/embl-api-validator/1.1.265/embl-api-validator-1.1.265.jar
+java -jar embl-api-validator-1.1.265.jar -r my_annotation_ready_to_submit.embl
+
 
 You now have a EMBL flat file ready to submit. In theory to finsish the submission, you will have to send this archived file to their ftp server and finish the submission process in the website side too.
 But we will not go further. We are done. CONGRATULATION you know most of the secrets needed to understand the annotations on and perform your own !
