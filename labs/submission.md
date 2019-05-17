@@ -1,6 +1,6 @@
 ---
 layout: default-overview
-title: Submissionn
+title: Submission
 exercises: 20
 questions:
   - How to prepare annotation file for submission?
