@@ -20,16 +20,15 @@ export bacterial_annotation_path=/proj/g2019006/nobackup/$USER/bacterial_annotat
 mkdir -p $bacterial_annotation_path
 ```
 
-
-# Organizing data
-
-Before going into the exercises below, you should create in your home folder a specific folder for this practical session and copy a folder with the course data using:  
-
-```
-cd $bacterial_annotation_path
-```
-
 # Bacterial annotation using Prokka
+
+You will work on 3 different bacterial genomes (one E coli, one chlamydia and one streptococcus).
+```bash
+cd $bacterial_annotation_path
+ln -s $data/raw_computes/Escherichia_coli_k_12.fa
+ln -s $data/raw_computes/Chlamydia_trachomatis_a_363.fa 
+ln -s $data/raw_computes/Streptococcus.fa
+```
 
 Before running Prokka on genomes assemblies, it is a good step to start with checking the gene content of the assembly
 
@@ -37,7 +36,7 @@ Before running Prokka on genomes assemblies, it is a good step to start with che
 
 [BUSCO](https://busco.ezlab.org/) provides measures for quantitative assessment of genome assembly, gene set, and transcriptome completeness. Genes that make up the BUSCO sets for each major lineage are selected from orthologous groups with genes present as single-copy orthologs in at least 90% of the species.
 
-You will run BUSCO on 3 bacterial assemblies provided (one E coli, one chlamydia and one streptococcus). We will select the lineage set of bacteria.
+Run BUSCO on the 3 bacterial assemblies provided. We will select the lineage set of bacteria.
 
 BUSCO is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up the environment.
 
@@ -46,15 +45,12 @@ module load BUSCO/3.0.2b
 
 source $BUSCO_SETUP
 
-run_BUSCO.py -i $data/raw_computes/Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
+run_BUSCO.py -i Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
 ```
 look at the results of busco in short_summary_chlamydia_busco.txt
 
 <br>:question:what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
 <br>:question:how do you expect the annotation will be?
-
-For E.coli, the genome file is uniprot-escherichia.fasta and the protein file is : Escherichia_coli_k_12_prot.fa
-
 
 Do the same for the two other assemblies and answer those questions again.
 
@@ -66,6 +62,9 @@ You are going to use the same assemblies you used previously for Busco
 
 ```
 module unload BUSCO
+ln -s $data/raw_computes/uniprot-escherichia.fasta
+ln -s $data/raw_computes/uniprot-chlamydia.fasta
+ln -s $data/raw_computes/uniprot-streptococcus.fasta
 
 module load prokka/1.12-12547ca
 
