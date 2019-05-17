@@ -122,5 +122,6 @@ You can do it for the two other genomes.
 <summary>:key: Click to see the solution .</summary>  
 Often the BUSCO results for genes are slightly lower than the BUSCO results for the full genome, this is due to the fact that annotation method will always not predict everything.
 It should not be too much of a difference either.
+Sometimes but really rarely, the BUSCO after annotation will be better than the BUSCO assembly. It is due to the fact that BUSCO check the compleness in two different way. 
 
 </details>
