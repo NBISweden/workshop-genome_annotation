@@ -58,7 +58,7 @@ Before to try to submit your file, you must check that everything is fine with t
 ```bash
 wget http://central.maven.org/maven2/uk/ac/ebi/ena/sequence/embl-api-validator/1.1.265/embl-api-validator-1.1.265.jar
 java -jar embl-api-validator-1.1.265.jar -r my_annotation_ready_to_submit.embl
+```
 
-
-You now have a EMBL flat file ready to submit. In theory to finsish the submission, you will have to send this archived file to their ftp server and finish the submission process in the website side too.
+If the file is validated, you now have a EMBL flat file ready to submit. In theory to finsish the submission, you will have to send this archived file to their ftp server and finish the submission process in the website side too.
 But we will not go further. We are done. CONGRATULATION you know most of the secrets needed to understand the annotations on and perform your own !
