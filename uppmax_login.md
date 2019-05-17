@@ -58,8 +58,10 @@ Now check which node you got (replace *username* with your uppmax user name) lik
 $ squeue -u username
 ```
 
-Under Nodelist you will see the name of the node that has been reserved for you. The names
-follow the format mXX, e.g., m34.
+Under Nodelist you will see the name of the node that has been reserved for you. In the following example the name
+is r36.  
+
+ <img align="center" src="https://raw.githubusercontent.com/NBISweden/workshop-genome_annotation/master/files/slurm_squeue.png" width="700" />
 
 Connect to the node you were dealt like this:
 
