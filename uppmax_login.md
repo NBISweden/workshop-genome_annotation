@@ -59,9 +59,9 @@ $ squeue -u username
 ```
 
 Under Nodelist you will see the name of the node that has been reserved for you. In the following example the name
-is r36.
+is r36.  
 
-<img align="center" src="https://raw.githubusercontent.com/NBISweden/workshop-genome_annotation/master/files/slurm_squeue.png" />
+ <img align="center" src="https://raw.githubusercontent.com/NBISweden/workshop-genome_annotation/master/files/slurm_squeue.png"  />
 
 Connect to the node you were dealt like this:
 
