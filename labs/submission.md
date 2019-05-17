@@ -40,11 +40,18 @@ In order to submit to **EBI**, the use of a tool like [EMBLmyGFF3](https://githu
 **Let's prepare your annotation to submit to ENA (EBI)**
 
 In real life, prior to a submission to ENA, you need to create an account and create a project asking a locus_tag for your annotation. You have also to fill lot of metada information related to the assembly and so on. We will skip those tasks using fake information.
-First you need to download and install EMBLmyGFF3:
+
+First you need to filter and add extra information to your file otherwise submission might fail:
+```bash
+gff3_sp_flag_short_introns.pl --gff maker_final.gff -o maker_final_short_intron_flagged.gff
+gff3_sp_fix_features_locations_duplicated.pl --gff -o maker_final_short_intron_flagged_duplicated_location_fixed.gff
 ```
+
+First you need to download and install EMBLmyGFF3:
+```bash
 module load python/2.7.6
 pip install --user git+https://github.com/NBISweden/EMBLmyGFF3.git
-~/.local/bin/EMBLmyGFF3 maker_final.gff genome.fa -o my_annotation_ready_to_submit.embl
+~/.local/bin/EMBLmyGFF3 maker_final_short_intron_flagged_duplicated_location_fixed.gff genome.fa -o my_annotation_ready_to_submit.embl
 ```
 
 You now have a EMBL flat file ready to submit. In theory to finsish the submission, you will have to send this archived file to their ftp server and finish the submission process in the website side too.
