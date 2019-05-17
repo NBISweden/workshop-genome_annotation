@@ -87,7 +87,7 @@ More test can be made and should be made on RNA-seq data before doing the assemb
 
 The information regarding library type can be very useful for reads to be assembled into a transcriptome or mapped to a reference assembly. This is because the library type can help to discern where in the transcriptome shorter ambiguous reads belong by using the read’s relative orientation and from which strand it was sequenced. Unfortunately, this information regarding the library type used is not included in sequencing output files and may be lost before the assembly of the data.
 
-Here a resume of the different library types:
+Here a resume of the different library types:  
 
  <img align="center" src="https://raw.githubusercontent.com/NBISweden/GUESSmyLT/master/library_types.jpg"  />
 
