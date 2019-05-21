@@ -3,11 +3,13 @@ layout: default-overview
 title: Manual curation
 exercises: 60
 questions:
-  -
-  -
+  - How do I load data into a genome browser?
+  - How do we modify gene models?
+  - How to interpret the different tracks?
 objectives:
-  -
-  -
+  - Be confident to navigate into a genome browser.
+  - Learn how to modify gene models.
+  - Learn how to interpret different tracks to build/correct a gene model.
 ---
 
 ## Overview
