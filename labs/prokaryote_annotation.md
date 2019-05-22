@@ -72,21 +72,22 @@ prokka --help
 ```
 The goal of the exercise is for you to learn how to use prokka and to annotate the 3 assemblies and then visualize them in IGV.  
 
-Run prokka without any options and then with options of your choices (we encourage you to try at least the options --proteins and --rfam )  
+Run prokka without any options and then with options of your choices (we encourage you to try at least the options --proteins and --rfam)    
 
 <details>
 <summary>:key: Click to see part of the solution .</summary>  
 
 <br>Running prokka with only the output option looks like this :  
+
 <br><code> prokka Chlamydia_trachomatis_genome.fa --outdir prokka_Chlamydia
-</code>
+</code>  
 
-Running prokka with --proteins and --rfam looks like this :
+<br>Running prokka with --proteins and --rfam looks like this :  
 
-<code> prokka Chlamydia_trachomatis_genome.fa --proteins uniprot-chlamydia.fasta --rfam --outdir prokka_Chlamydia_prot_rfam
-</code>
+<br><code> prokka Chlamydia_trachomatis_genome.fa --proteins uniprot-chlamydia.fasta --rfam --outdir prokka_Chlamydia_prot_rfam
+</code>  
 
-You can try other options to see what you would need to modify in your own projects!
+<br>You can try other options to see what you would need to modify in your own projects!
 
 </details>
 
