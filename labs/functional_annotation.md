@@ -62,38 +62,30 @@ Launch Interproscan with the option -h if you want have a look about all the par
 module load InterProScan
 interproscan.sh -i maker_final.faa -t p -dp -pa -appl Pfam,ProDom-2006.1,SuperFamily-1.75 --goterms --iprlookup
 ```
-This analyse will fail.
+This analyse will fail.  
 
-***Why? What is the error message displaying?***
- <br />
+:question:Why? What is the error message displaying?  
 
 If you did not have a look at the maker_final.faa, please have look and find a solution to
-make interproscan run.
+make interproscan run.  
 
-
-***TIP*** : `gff3_sp_extract_sequences.pl --help`
-
-
- <br />
+:bulb:***TIP*** : `gff3_sp_extract_sequences.pl --help`  
 
 <details>
-<summary> **Interproscan problem** - Click to expand the solution </summary>
+<summary> :key:**Interproscan problem** - Click to expand the solution </summary>
 
-Interproscan is really selective on the fasta input data, there should not be any stop codon * or any character other than ATCG (except in the header of course)
+Interproscan is really selective on the fasta input data, there should not be any stop codon * or any character other than ATCG (except in the header of course)  
 
-You need to rerun the first script with the parameters --cfs and --cis:
+You need to rerun the first script with the parameters --cfs and --cis:  
 
 ```bash
-gff3_sp_extract_sequences.pl maker_abinitio_cplt_by_evidence.gff -f genome.fa -p -o AA.fa --cfs --cis
-```
-or you can do
+gff3_sp_extract_sequences.pl maker_abinitio_cplt_by_evidence.gff -f genome.fa -p -o maker_final_fixed.faa --cfs --cis
+```  
+or you can do  
 ```bash
-sed -e s/*// maker_final.faa > maker_final_fixed.faa
+sed -e 's/*//g' maker_final.faa > maker_final_fixed.faa
 ```
-
-
 </details>
- <br />
 
 Rerun the previous interproscan command.
 
@@ -121,7 +113,7 @@ A 'full' Blast analysis can run for several days and consume several GB of Ram. 
 
 ### Perform Blast searches from the command line on Uppmax:
 
-To run Blast on your data, use the Ncbi Blast+ package against a Drosophila-specific database (included in the folder we have provided for you, under **annotation\_course/data/blastdb/uniprot\_dmel/uniprot\_dmel.fa**) - of course, any other NCBI database would also work:
+To run Blast on your data, use the Ncbi Blast+ package against a Drosophila-specific database (included in the folder we have provided for you, under **$data/blastdb/uniprot\_dmel/uniprot\_dmel.fa**) - of course, any other NCBI database would also work:
 ```
 module load blast/2.7.1+
 blastp -db $data/blastdb/uniprot_dmel/uniprot_dmel.fa -query maker_final.faa -outfmt 6 -out blast.out -num_threads 8
