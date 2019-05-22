@@ -52,7 +52,7 @@ Look at the results of busco in short_summary_chlamydia_busco.txt
 <br>:question:what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
 <br>:question:how do you expect the annotation will be?
 
-Do the same for the two other assemblies and answer those questions again (you just need to change the assembly and the name of the output folder).
+Do the same for the two other assemblies and answer those questions again (you just need to change the input assembly and the name of the output folder).
 
 ## Prokka
 
@@ -84,12 +84,12 @@ Run prokka without any options and then with options of your choices (we encoura
 
 <br>Running prokka with only --rfam looks like this :  
 
-<br><code> prokka Chlamydia_trachomatis_genome.fa --rfam --outdir prokka_Chlamydia_prot_rfam
+<br><code> prokka Chlamydia_trachomatis_genome.fa --rfam --outdir prokka_Chlamydia_rfam
 </code>  
 
 <br>Running prokka with only --proteins looks like this :  
 
-<br><code> prokka Chlamydia_trachomatis_genome.fa --proteins uniprot-chlamydia.fasta --rfam --outdir prokka_Chlamydia_prot_rfam
+<br><code> prokka Chlamydia_trachomatis_genome.fa --proteins uniprot-chlamydia.fasta --rfam --outdir prokka_Chlamydia_prot
 </code>  
 
 <br>Running prokka with --proteins and --rfam looks like this :  
