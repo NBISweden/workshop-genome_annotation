@@ -83,9 +83,7 @@ gff3_sp_extract_sequences.pl maker_abinitio_cplt_by_evidence.gff -f genome.fa -p
 </code>  
 <br>
 or you can do  
-<code>
-sed -e s/*//g maker_final.faa > maker_final_fixed.faa
-</code>
+<code>sed -e 's/*//g' maker_final.faa > maker_final_fixed.faa</code>
 </details>
 
 Rerun the previous interproscan command.
