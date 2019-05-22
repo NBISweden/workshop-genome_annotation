@@ -69,7 +69,7 @@ This analyse will fail.
 If you did not have a look at the maker_final.faa, please have look and find a solution to
 make interproscan run.  
 
-:bulb:***TIP*** : `gff3_sp_extract_sequences.pl --help`  
+:bulb:***TIP*** : ```gff3_sp_extract_sequences.pl --help```  
 
 <details>
 <summary> :key:**Interproscan problem** - Click to expand the solution </summary>

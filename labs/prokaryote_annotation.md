@@ -47,7 +47,7 @@ source $BUSCO_SETUP
 
 run_BUSCO.py -i Chlamydia_trachomatis_genome.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
 ```
-look at the results of busco in short_summary_chlamydia_busco.txt
+Look at the results of busco in short_summary_chlamydia_busco.txt
 
 <br>:question:what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
 <br>:question:how do you expect the annotation will be?
@@ -70,15 +70,15 @@ module load prokka/1.12-12547ca
 
 prokka --help
 ```
-The goal of the exercise is for you to learn how to use prokka and to annotate the 3 assemblies and then visualize them in IGV.
+The goal of the exercise is for you to learn how to use prokka and to annotate the 3 assemblies and then visualize them in IGV.  
 
-run prokka without any options and then with options of your choices (we encourage you to try at least the options --proteins and --rfam )
+Run prokka without any options and then with options of your choices (we encourage you to try at least the options --proteins and --rfam )  
 
 <details>
 <summary>:key: Click to see part of the solution .</summary>  
 
-Running prokka with only the output option looks like this :
-<code> prokka Chlamydia_trachomatis_genome.fa --outdir prokka_Chlamydia
+<br>Running prokka with only the output option looks like this :  
+<br><code> prokka Chlamydia_trachomatis_genome.fa --outdir prokka_Chlamydia
 </code>
 
 Running prokka with --proteins and --rfam looks like this :
@@ -121,8 +121,10 @@ You can do it for the two other genomes.
 
 <details>
 <summary>:key: Click to see the solution .</summary>  
-Often the BUSCO results for genes are slightly lower than the BUSCO results for the full genome, this is due to the fact that annotation method will always not predict everything.
+The results of busco should be better for the annotation than for the genome.
+This is due to the fact that prodigal does a better structural prediction during the annotation with Prokka than the prediction done during the run of Busco.
+
+For eukaryotic annotation however BUSCO results for genes are slightly lower than the BUSCO results for the full genome, this is due to the fact that annotation method will always not predict everything.
 It should not be too much of a difference either.
-Sometimes but really rarely, the BUSCO after annotation will be better than the BUSCO assembly. It is due to the fact that BUSCO check the compleness in two different way.
 
 </details>
