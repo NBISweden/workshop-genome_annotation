@@ -89,7 +89,7 @@ Run prokka without any options and then with options of your choices (we encoura
 
 <br>Running prokka with only --proteins looks like this :  
 
-<br><code> prokka Chlamydia_trachomatis_genome.fa --proteins uniprot-chlamydia.fasta --rfam --outdir prokka_Chlamydia_prot
+<br><code> prokka Chlamydia_trachomatis_genome.fa --proteins uniprot-chlamydia.fasta --outdir prokka_Chlamydia_prot
 </code>  
 
 <br>Running prokka with --proteins and --rfam looks like this :  
