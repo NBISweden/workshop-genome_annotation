@@ -38,7 +38,7 @@ Before running Prokka on genomes assemblies, it is a good step to start with che
 
 Run BUSCO on the 3 bacterial assemblies provided. We will select the lineage set of bacteria.
 
-BUSCO is using augustus to run, as we have no administator rights on uppmax we need to copy the config file of augustus in a folder we can write in and set up the environment.
+BUSCO is using augustus to run, as we have no administator rights on uppmax we need to source the $BUSCO_SETUP that will copy the augustus folder with the config files.
 
 ```
 module load BUSCO/3.0.2b
@@ -52,7 +52,7 @@ Look at the results of busco in short_summary_chlamydia_busco.txt
 <br>:question:what do you think about this assembly? Is it a good one? can you see any potential problem with continuing the annotation?
 <br>:question:how do you expect the annotation will be?
 
-Do the same for the two other assemblies and answer those questions again.
+Do the same for the two other assemblies and answer those questions again (you just need to change the assembly and the name of the output folder).
 
 ## Prokka
 
@@ -75,11 +75,21 @@ The goal of the exercise is for you to learn how to use prokka and to annotate t
 Run prokka without any options and then with options of your choices (we encourage you to try at least the options --proteins and --rfam)    
 
 <details>
-<summary>:key: Click to see part of the solution .</summary>  
+<summary>:key: Click to see example on how to run prokka (you do not need to run all of them you can run prokka only with the output options and the two options --proteins and --rfam) .</summary>  
 
 <br>Running prokka with only the output option looks like this :  
 
 <br><code> prokka Chlamydia_trachomatis_genome.fa --outdir prokka_Chlamydia
+</code>  
+
+<br>Running prokka with only --rfam looks like this :  
+
+<br><code> prokka Chlamydia_trachomatis_genome.fa --rfam --outdir prokka_Chlamydia_prot_rfam
+</code>  
+
+<br>Running prokka with only --proteins looks like this :  
+
+<br><code> prokka Chlamydia_trachomatis_genome.fa --proteins uniprot-chlamydia.fasta --rfam --outdir prokka_Chlamydia_prot_rfam
 </code>  
 
 <br>Running prokka with --proteins and --rfam looks like this :  
@@ -122,7 +132,7 @@ You can do it for the two other genomes.
 
 <details>
 <summary>:key: Click to see the solution .</summary>  
-The results of busco should be better for the annotation than for the genome.
+<br>The results of busco should be better for the annotation than for the genome.
 This is due to the fact that prodigal does a better structural prediction during the annotation with Prokka than the prediction done during the run of Busco.
 
 For eukaryotic annotation however BUSCO results for genes are slightly lower than the BUSCO results for the full genome, this is due to the fact that annotation method will always not predict everything.
