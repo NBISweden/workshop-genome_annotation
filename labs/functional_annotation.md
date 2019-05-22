@@ -77,14 +77,15 @@ make interproscan run.
 Interproscan is really selective on the fasta input data, there should not be any stop codon * or any character other than ATCG (except in the header of course)  
 
 You need to rerun the first script with the parameters --cfs and --cis:  
-
-```bash
+<br>
+<code>
 gff3_sp_extract_sequences.pl maker_abinitio_cplt_by_evidence.gff -f genome.fa -p -o maker_final_fixed.faa --cfs --cis
-```  
+</code>  
+<br>
 or you can do  
-```bash
-sed -e 's/*//g' maker_final.faa > maker_final_fixed.faa
-```
+<code>
+sed -e s/*//g maker_final.faa > maker_final_fixed.faa
+</code>
 </details>
 
 Rerun the previous interproscan command.
