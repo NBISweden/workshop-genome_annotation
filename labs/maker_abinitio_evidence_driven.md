@@ -55,9 +55,9 @@ ln -s maker_evidence/protein2genome.gff
 
 This time, we do specify a reference species to be used by augustus, which will enable ab-initio gene finding and keep_preds=1 will also show abinitio prediction not supported by any evidences :  
 
-*augustus\_species=fly* #Augustus gene prediction species model  (:bulb:this is where you can call the database you trained for augustus dmel_$USER ) 
+*augustus\_species=fly* #Augustus gene prediction species model  (:bulb:this is where you can call the database you trained for augustus dmel_$USER )
 
-you need to do in the terminal
+To be able to use dmel_$USER you need to type in the terminal :
 ```
 AUGUSTUS_CONFIG_PATH=/proj/g2019006/nobackup/$USER/structural_annotation/augustus_training/maker_results_noAbinitio_clean/augustus_config
 ```
@@ -77,7 +77,7 @@ Before running MAKER check you have modified the maker_opts.ctl file properly.
 <details>
 <summary>:key: Click here to see the expected maker_opts.ctl.</summary>
 {% highlight bash %}
-  
+
 #-----Genome (these are always required)  
 genome=genome.fa #genome sequence (fasta file or fasta embeded in GFF3 file)  
 organism_type=eukaryotic #eukaryotic or prokaryotic. Default is eukaryotic

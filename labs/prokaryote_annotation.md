@@ -25,9 +25,9 @@ mkdir -p $bacterial_annotation_path
 You will work on 3 different bacterial genomes (one E coli, one chlamydia and one streptococcus).
 ```bash
 cd $bacterial_annotation_path
-ln -s $data/raw_computes/Escherichia_coli_k_12.fa
-ln -s $data/raw_computes/Chlamydia_trachomatis_a_363.fa 
-ln -s $data/raw_computes/Streptococcus.fa
+ln -s $data/raw_computes/Escherichia_coli_genome.fa
+ln -s $data/raw_computes/Chlamydia_trachomatis_genome.fa
+ln -s $data/raw_computes/Streptococcus_genome.fa
 ```
 
 Before running Prokka on genomes assemblies, it is a good step to start with checking the gene content of the assembly
@@ -45,7 +45,7 @@ module load BUSCO/3.0.2b
 
 source $BUSCO_SETUP
 
-run_BUSCO.py -i Chlamydia_trachomatis_a_363.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
+run_BUSCO.py -i Chlamydia_trachomatis_genome.fa -o chlamydia_busco -m geno -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
 ```
 look at the results of busco in short_summary_chlamydia_busco.txt
 
@@ -58,7 +58,7 @@ Do the same for the two other assemblies and answer those questions again.
 
 Prokka is a really easy tool to use for bacterial annotation.
 
-You are going to use the same assemblies you used previously for Busco
+You are going to use the same assemblies you used previously for Busco and link protein sequence of the three species
 
 ```
 module unload BUSCO
@@ -78,12 +78,12 @@ run prokka without any options and then with options of your choices (we encoura
 <summary>:key: Click to see part of the solution .</summary>  
 
 Running prokka with only the output option looks like this :
-<code> prokka $data/raw_computes/Chlamydia_trachomatis_a_363.fa --outdir prokka_Chlamydia
+<code> prokka Chlamydia_trachomatis_genome.fa --outdir prokka_Chlamydia
 </code>
 
 Running prokka with --proteins and --rfam looks like this :
 
-<code> prokka $data/raw_computes/Chlamydia_trachomatis_a_363.fa --proteins $data/raw_computes/uniprot-chlamydia.fasta --rfam --outdir prokka_Chlamydia_prot_rfam
+<code> prokka Chlamydia_trachomatis_genome.fa --proteins uniprot-chlamydia.fasta --rfam --outdir prokka_Chlamydia_prot_rfam
 </code>
 
 You can try other options to see what you would need to modify in your own projects!
@@ -113,7 +113,7 @@ BUSCO can also be used after the annotation to check if you found the genes you 
 ```
 module load BUSCO/3.0.2b
 
-run_BUSCO.py -i prokka_Chlamydia/PROKKA_05102019.faa -o chlamydia_busco_prot -m prot -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
+run_BUSCO.py -i prokka_Chlamydia/PROKKA_XXXX.faa -o chlamydia_busco_prot -m prot -c 8 -l /sw/apps/bioinfo/BUSCO/v2_lineage_sets/bacteria_odb9
 ```
 You can do it for the two other genomes.
 
@@ -123,6 +123,6 @@ You can do it for the two other genomes.
 <summary>:key: Click to see the solution .</summary>  
 Often the BUSCO results for genes are slightly lower than the BUSCO results for the full genome, this is due to the fact that annotation method will always not predict everything.
 It should not be too much of a difference either.
-Sometimes but really rarely, the BUSCO after annotation will be better than the BUSCO assembly. It is due to the fact that BUSCO check the compleness in two different way. 
+Sometimes but really rarely, the BUSCO after annotation will be better than the BUSCO assembly. It is due to the fact that BUSCO check the compleness in two different way.
 
 </details>
