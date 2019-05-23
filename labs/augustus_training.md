@@ -34,20 +34,21 @@ Maker also support SNAP (Works good, easy to train, not as good as others ab-ini
 
 ## Training Augustus
 
-cd into the folder and then load all modules that we will need to train Augustus
+Move into the folder where we will train Augustus
 ```
 cd $augustus_training_path
 ```
 
-You will need to symlink all data you will need such as the gff files from the first run of maker and the chromosome 4 fasta sequence.
+You will need to symlink the evidence-based annotation (the gff annotation file from the first run of maker) and the genome fasta sequence.
 ```
-ln -s $structural_annotation_path/maker/maker_evidence/maker.gff maker_no_abinitio.gff
+ln -s $structural_annotation_path/maker/maker_evidence/maker.gff maker_evidence.gff
+ln -s $data/genome/genome.fa
 ```
 ## Compile a set of training and test genes
 
 First step is to select only the coding genes from the maker.gff file and remove all tRNA ( :bulb: **Tips**: in this case there no tRNA but it is important to remove them)
 ```
-gff3_sp_splitByLevel2Feature.pl -g maker_no_abinitio.gff -o maker_results_noAbinitio_clean
+gff3_sp_splitByLevel2Feature.pl -g maker_evidence.gff -o maker_results_noAbinitio_clean
 ln -s maker_results_noAbinitio_clean/mrna.gff
 ```
 In this folder you will need to create different folders
@@ -77,7 +78,7 @@ There are different ways of proceeding after the first selection and we are usin
 In order to do so, we translate our coding genes into proteins, format the protein fasta file to be able to run a recursive blast and then select the best ones.
 Indeed, each sequence can contain one or more genes; the genes can be on either strand. However, the genes must not overlap, and only one transcript per gene is allowed.
 ```
-gff3_sp_extract_sequences.pl -g filter/codingGeneFeatures.filter.longest_cds.gff -f $data/genome/genome.fa -o protein/codingGeneFeatures.filter.longest_cds.proteins.fa
+gff3_sp_extract_sequences.pl -g filter/codingGeneFeatures.filter.longest_cds.gff -f genome.fa -o protein/codingGeneFeatures.filter.longest_cds.proteins.fa
 
 module load blast/2.7.1+   
 
