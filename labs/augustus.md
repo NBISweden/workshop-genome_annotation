@@ -98,5 +98,5 @@ Load this result file into Webapollo and compare with your earlier results.
 
 # Closing remarks
 
-We have seen how to assess the quality of the assembly and how to launch a quick annotation using an abinitio tool.
+We have seen how to launch a quick annotation using the abinitio tool Augustus.
 We have also seen the importance to use a species specific hmm model into the ab initio tool. Thus, the limitation of this approach is linked to the pre-trained species that are available.
