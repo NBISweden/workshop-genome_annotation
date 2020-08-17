@@ -60,9 +60,6 @@ genome.all.maker.evm.proteins.fasta
 genome.all.maker.evm.transcripts.fasta
 genome.all.maker.fgenesh.proteins.fasta
 genome.all.maker.fgenesh.transcripts.fasta
-genome.all.maker.genemark.proteins.fasta
-genome.all.maker.genemark.transcripts.fasta
-genome.all.maker.noncoding.fasta
 genome.all.maker.non_overlapping_ab_initio.proteins.fasta
 genome.all.maker.non_overlapping_ab_initio.transcripts.fasta
 genome.all.maker.proteins.fasta
@@ -70,12 +67,16 @@ genome.all.maker.snap_masked.proteins.fasta
 genome.all.maker.snap_masked.transcripts.fasta
 genome.all.maker.transcripts.fasta
 genome.all.maker.trnascan.noncoding.fasta
+maker_annotation.gff
+maker_annotation.noncoding.fasta
+maker_annotation.proteins.fasta
+maker_annotation.transcripts.fasta
+maker_annotation_stat.txt
 maker_bopts.ctl
 maker_evm.ctl
 maker_exe.ctl
-maker_annotation.gff
+maker_mix.gff
 maker_opts.ctl
-maker_annotation_stat.txt
 protein2genome.gff
 protein_gff_protein2genome.gff
 repeat_gff_repeatmasker.gff
@@ -103,13 +104,19 @@ On this same sequence, belonging to the gene, is located a transcript from posit
 And so on.
 
  * **maker_annotation_stat.txt**  
-Statistics of the annotation (maker.gff annotation file).
+Statistics of the annotation (maker_annotation.gff annotation file).
 
- * **genome.all.maker.transcripts.fasta**  
+ * **maker_annotation.noncoding.fasta** 
+This fasta file contains the nucleotide sequences of the non-coding features.
+
+ * **maker_annotation.proteins.fasta** 
+This fasta file contains the amino acid sequences of the proteins translated from the CDS of the MAKER gene models.
+
+ * **maker_annotation.transcripts.fasta**  
 This fasta file contains the nucleotide sequences of the transcripts (mRNA) of the MAKER gene models.
 
- * **genome.all.maker.proteins.fasta** 
-This fasta file contains the amino acid sequences of the proteins translated from the CDS of the MAKER gene models.
+ * **maker_mix.gff**  
+This gff file contains all data produced by MAKER. In other terms all the data contained in all the other gff files are hold in this file. So it a mix of different type of feature e.g match/match_part, gene models, repeats, non-coding features, etc. This file is the one to use when using `maker_gff=` parameter from the `#-----Re-annotation Using MAKER Derived GFF3` of the `maker_opts.ctl` file.
 
  * **cdna2genome.gff**  
 Contains the fasta sequences provided by the **est=** parameter that have been succefuly mapped onto the assembly.
