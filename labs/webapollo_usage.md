@@ -1,6 +1,6 @@
 ### Using WebApollo to view annotations
 
-For this course, we have set up a WebApollo installation - as a reminder, the url is [http://annotation-prod.scilifelab.se:8080/NBIS_course](http://annotation-prod.scilifelab.se:8080/NBIS_course/).
+For this course, we have set up a WebApollo installation - as a reminder, the url is [https://webapollo.nbis.se/elixirannotation2021/](https://webapollo.nbis.se/elixirannotation2021/).
 
 Login information are the following:<br/> 
 **username: userX**  (Where X is the number you have been assigned)<br/> 
